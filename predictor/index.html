@@ -7959,7 +7959,6 @@ function closeMiniMenu() {
     }
 }
 
-// --- Android Permission Dialog ---
 function requestOverlayPermission() {
     // Close the mini menu
     closeMiniMenu();
@@ -7984,14 +7983,19 @@ function allowOverlayPermission() {
     if (dialog) {
         dialog.style.display = 'none';
     }
-    showToast('✅ Overlay permission granted!', 'success');
     
-    // Show the floating button after permission is granted
-    setTimeout(function() {
-        showAviatorButton();
-    }, 500);
+    // Show the predictor widget
+    if (typeof showPredictorWidget === 'function') {
+        showPredictorWidget();
+        showToast('📊 Widget activated! Open Aviator to see crash points.', 'success');
+    } else {
+        showToast('✅ Overlay permission granted!', 'success');
+        // Show the floating button after permission is granted
+        setTimeout(function() {
+            showAviatorButton();
+        }, 500);
+    }
 }
-
 // --- Floating Aviator Button (Dummy) ---
 function showAviatorButton() {
     // Don't show if already exists
@@ -11773,5 +11777,392 @@ function updateStarRating(serverId) {
        </button>
      </div>
    </div>
+       <!-- ============================================================
+         MINIMAL OVERLAY WIDGET - PREDICTOR
+         ============================================================ -->
+         <div id="predictorWidget" style="
+         display: none;
+         position: fixed;
+         bottom: 120px;
+         right: 20px;
+         z-index: 999999;
+         background: rgba(0, 0, 0, 0.75);
+         backdrop-filter: blur(12px);
+         -webkit-backdrop-filter: blur(12px);
+         border: 1px solid rgba(255, 255, 255, 0.08);
+         border-radius: 30px;
+         padding: 10px 16px 10px 20px;
+         min-width: 100px;
+         max-width: 200px;
+         user-select: none;
+         touch-action: none;
+         cursor: grab;
+         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+         transition: none;
+         display: none;
+         align-items: center;
+         gap: 10px;
+     ">
+         <!-- Crash Point Display -->
+         <span id="predictorCrashPoint" style="
+             color: #ffffff;
+             font-size: 22px;
+             font-weight: 700;
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+             letter-spacing: 0.5px;
+             font-variant-numeric: tabular-nums;
+             pointer-events: none;
+             min-width: 60px;
+             text-align: center;
+         ">---x</span>
+         
+         <!-- Close Button -->
+         <span onclick="dismissPredictorWidget()" style="
+             color: rgba(255,255,255,0.3);
+             font-size: 18px;
+             font-weight: 300;
+             cursor: pointer;
+             padding: 0 4px;
+             transition: color 0.2s;
+             pointer-events: auto;
+         " onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">✕</span>
+     </div>
+ 
+     <style>
+         /* Widget Glow Pulse */
+         @keyframes predictorWidgetPulse {
+             0%, 100% { opacity: 1; }
+             50% { opacity: 0.6; }
+         }
+         .predictor-widget-waiting {
+             animation: predictorWidgetPulse 1.5s ease-in-out infinite;
+         }
+     </style>
+         <script>
+          // ============================================================
+          // MINIMAL OVERLAY WIDGET - PREDICTOR
+          // ============================================================
+          
+          let predictorWidgetActive = false;
+          let predictorWidgetDismissed = false;
+          let predictorWidgetPosition = { x: null, y: null };
+          let predictorWidgetCheckInterval = null;
+          
+          // Load saved position
+          function loadPredictorWidgetPosition() {
+              try {
+                  const saved = localStorage.getItem('sharpi_predictor_widget_position');
+                  if (saved) {
+                      const pos = JSON.parse(saved);
+                      predictorWidgetPosition = pos;
+                      const el = document.getElementById('predictorWidget');
+                      if (el && pos.x !== null && pos.y !== null) {
+                          el.style.left = pos.x + 'px';
+                          el.style.top = pos.y + 'px';
+                          el.style.right = 'auto';
+                          el.style.bottom = 'auto';
+                      }
+                  }
+              } catch (e) {}
+          }
+          
+          // Save widget position
+          function savePredictorWidgetPosition() {
+              try {
+                  const el = document.getElementById('predictorWidget');
+                  if (el) {
+                      const rect = el.getBoundingClientRect();
+                      predictorWidgetPosition.x = rect.left;
+                      predictorWidgetPosition.y = rect.top;
+                      localStorage.setItem('sharpi_predictor_widget_position', JSON.stringify(predictorWidgetPosition));
+                  }
+              } catch (e) {}
+          }
+          
+          // Show widget
+          function showPredictorWidget() {
+              if (predictorWidgetDismissed) return;
+              const el = document.getElementById('predictorWidget');
+              if (el) {
+                  el.style.display = 'flex';
+                  predictorWidgetActive = true;
+                  loadPredictorWidgetPosition();
+                  startPredictorWidgetSync();
+              }
+          }
+          
+          // Hide widget
+          function hidePredictorWidget() {
+              const el = document.getElementById('predictorWidget');
+              if (el) {
+                  el.style.display = 'none';
+                  predictorWidgetActive = false;
+                  stopPredictorWidgetSync();
+              }
+          }
+          
+          // Dismiss widget (permanently until re-enabled)
+          function dismissPredictorWidget() {
+              predictorWidgetDismissed = true;
+              hidePredictorWidget();
+              localStorage.setItem('sharpi_predictor_widget_dismissed', 'true');
+              showToast('Widget dismissed. Re-enable from settings.', 'warning');
+          }
+          
+          // Update widget with crash point
+          function updatePredictorWidgetCrashPoint(value) {
+              const el = document.getElementById('predictorCrashPoint');
+              if (!el) return;
+              
+              if (predictorWidgetDismissed) return;
+              
+              if (value === null || value === undefined || value === '---x') {
+                  el.textContent = '---x';
+                  el.style.color = '#ffffff';
+                  el.style.opacity = '0.4';
+                  el.classList.add('predictor-widget-waiting');
+                  return;
+              }
+              
+              let displayValue = value;
+              if (typeof value === 'number') {
+                  displayValue = value.toFixed(2) + 'x';
+              }
+              el.textContent = displayValue;
+              el.style.opacity = '1';
+              el.classList.remove('predictor-widget-waiting');
+              
+              // Color based on multiplier
+              const numValue = typeof value === 'number' ? value : parseFloat(value);
+              if (!isNaN(numValue)) {
+                  if (numValue < 2) {
+                      el.style.color = '#60a5fa';
+                  } else if (numValue < 5) {
+                      el.style.color = '#a78bfa';
+                  } else if (numValue < 10) {
+                      el.style.color = '#f59e0b';
+                  } else {
+                      el.style.color = '#f87171';
+                  }
+              }
+          }
+          
+          // ============================================================
+          // CROSS-APP SYNC - READ FROM AVIATOR
+          // ============================================================
+          
+          function startPredictorWidgetSync() {
+              stopPredictorWidgetSync();
+              // Check every 500ms for updates from Aviator
+              predictorWidgetCheckInterval = setInterval(function() {
+                  if (!predictorWidgetActive || predictorWidgetDismissed) {
+                      return;
+                  }
+                  
+                  try {
+                      // Read crash point from localStorage (written by Aviator)
+                      const crashData = localStorage.getItem('sharpi_aviator_crash');
+                      if (crashData) {
+                          const data = JSON.parse(crashData);
+                          const timestamp = data.timestamp || 0;
+                          const now = Date.now();
+                          
+                          // Only use data if it's less than 3 seconds old
+                          if (now - timestamp < 3000) {
+                              const value = data.crashPoint;
+                              if (value !== undefined && value !== null) {
+                                  updatePredictorWidgetCrashPoint(value);
+                              }
+                          } else {
+                              // Data too old - show waiting
+                              updatePredictorWidgetCrashPoint(null);
+                          }
+                      } else {
+                          // No data - show waiting
+                          updatePredictorWidgetCrashPoint(null);
+                      }
+                  } catch (e) {
+                      // Error reading data
+                      updatePredictorWidgetCrashPoint(null);
+                  }
+              }, 500);
+          }
+          
+          function stopPredictorWidgetSync() {
+              if (predictorWidgetCheckInterval) {
+                  clearInterval(predictorWidgetCheckInterval);
+                  predictorWidgetCheckInterval = null;
+              }
+          }
+          
+          // ============================================================
+          // PREDICTOR WIDGET DRAG FUNCTIONALITY
+          // ============================================================
+          (function setupPredictorWidgetDrag() {
+              const widget = document.getElementById('predictorWidget');
+              if (!widget) return;
+              
+              let isDragging = false;
+              let dragOffsetX = 0;
+              let dragOffsetY = 0;
+              let hasMoved = false;
+              
+              widget.addEventListener('mousedown', function(e) {
+                  if (e.target.tagName === 'SPAN' && e.target.textContent === '✕') return;
+                  isDragging = true;
+                  hasMoved = false;
+                  const rect = widget.getBoundingClientRect();
+                  dragOffsetX = e.clientX - rect.left;
+                  dragOffsetY = e.clientY - rect.top;
+                  widget.style.cursor = 'grabbing';
+                  widget.style.transition = 'none';
+                  e.preventDefault();
+              });
+              
+              document.addEventListener('mousemove', function(e) {
+                  if (!isDragging) return;
+                  hasMoved = true;
+                  let x = e.clientX - dragOffsetX;
+                  let y = e.clientY - dragOffsetY;
+                  
+                  const rect = widget.getBoundingClientRect();
+                  const maxX = window.innerWidth - rect.width;
+                  const maxY = window.innerHeight - rect.height;
+                  x = Math.max(0, Math.min(x, maxX));
+                  y = Math.max(0, Math.min(y, maxY));
+                  
+                  widget.style.left = x + 'px';
+                  widget.style.top = y + 'px';
+                  widget.style.right = 'auto';
+                  widget.style.bottom = 'auto';
+              });
+              
+              document.addEventListener('mouseup', function() {
+                  if (isDragging) {
+                      isDragging = false;
+                      widget.style.cursor = 'grab';
+                      if (hasMoved) {
+                          savePredictorWidgetPosition();
+                      }
+                  }
+              });
+              
+              // Touch support
+              widget.addEventListener('touchstart', function(e) {
+                  if (e.target.tagName === 'SPAN' && e.target.textContent === '✕') return;
+                  const touch = e.touches[0];
+                  const rect = widget.getBoundingClientRect();
+                  dragOffsetX = touch.clientX - rect.left;
+                  dragOffsetY = touch.clientY - rect.top;
+                  isDragging = true;
+                  hasMoved = false;
+                  e.preventDefault();
+              }, { passive: false });
+              
+              document.addEventListener('touchmove', function(e) {
+                  if (!isDragging) return;
+                  hasMoved = true;
+                  const touch = e.touches[0];
+                  let x = touch.clientX - dragOffsetX;
+                  let y = touch.clientY - dragOffsetY;
+                  
+                  const rect = widget.getBoundingClientRect();
+                  const maxX = window.innerWidth - rect.width;
+                  const maxY = window.innerHeight - rect.height;
+                  x = Math.max(0, Math.min(x, maxX));
+                  y = Math.max(0, Math.min(y, maxY));
+                  
+                  widget.style.left = x + 'px';
+                  widget.style.top = y + 'px';
+                  widget.style.right = 'auto';
+                  widget.style.bottom = 'auto';
+              }, { passive: false });
+              
+              document.addEventListener('touchend', function() {
+                  if (isDragging) {
+                      isDragging = false;
+                      if (hasMoved) {
+                          savePredictorWidgetPosition();
+                      }
+                  }
+              });
+          })();
+          
+          // ============================================================
+          // CHECK WIDGET DISMISSED STATE
+          // ============================================================
+          (function checkPredictorWidgetDismissed() {
+              try {
+                  const dismissed = localStorage.getItem('sharpi_predictor_widget_dismissed');
+                  if (dismissed === 'true') {
+                      predictorWidgetDismissed = true;
+                  }
+              } catch (e) {}
+          })();
+          
+          // ============================================================
+          // HOOK INTO PREDICTOR "START OVERLAY" BUTTON
+          // ============================================================
+          
+          // Override the existing allowOverlayPermission function
+          const originalAllowOverlay = window.allowOverlayPermission || function() {
+              // Original implementation
+          };
+          
+          window.allowOverlayPermission = function() {
+              originalAllowOverlay();
+              
+              // Show the predictor widget
+              setTimeout(function() {
+                  showPredictorWidget();
+                  showToast('📊 Widget activated! Open Aviator to see crash points.', 'success');
+              }, 500);
+          };
+          
+          // Also check if widget should be shown on page load (if already enabled)
+          document.addEventListener('DOMContentLoaded', function() {
+              // Check if user previously enabled widget (not dismissed)
+              if (!predictorWidgetDismissed) {
+                  // Check if widget was previously active
+                  try {
+                      const wasActive = localStorage.getItem('sharpi_predictor_widget_active');
+                      if (wasActive === 'true') {
+                          setTimeout(showPredictorWidget, 1000);
+                      }
+                  } catch (e) {}
+              }
+          });
+          
+          // Save active state when widget is shown
+          const originalShowPredictorWidget = showPredictorWidget;
+          showPredictorWidget = function() {
+              originalShowPredictorWidget();
+              try {
+                  localStorage.setItem('sharpi_predictor_widget_active', 'true');
+              } catch (e) {}
+          };
+          
+          // Save dismissed state when widget is dismissed
+          const originalDismissPredictorWidget = dismissPredictorWidget;
+          dismissPredictorWidget = function() {
+              originalDismissPredictorWidget();
+              try {
+                  localStorage.removeItem('sharpi_predictor_widget_active');
+              } catch (e) {}
+          };
+          
+          // ============================================================
+          // EXPOSE WIDGET CONTROLS GLOBALLY
+          // ============================================================
+          window.showPredictorWidget = showPredictorWidget;
+          window.hidePredictorWidget = hidePredictorWidget;
+          window.dismissPredictorWidget = dismissPredictorWidget;
+          window.updatePredictorWidgetCrashPoint = updatePredictorWidgetCrashPoint;
+          window.predictorWidgetActive = predictorWidgetActive;
+          window.predictorWidgetDismissed = predictorWidgetDismissed;
+          
+          console.log('✅ Minimal Overlay Widget loaded (Predictor)');
+          console.log('📌 Widget will show crash points from Aviator when game is active');
+          </script>
 </body>
 </html>
