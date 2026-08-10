@@ -1242,6 +1242,18 @@
     transform: scale(1.05);
   }
 }
+/* Instagram-style bubble slide up */
+@keyframes slideUpBubble {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -3087,58 +3099,168 @@ text-align: center;
         <div style="width:44px;"></div>
       </div>
       
-      <!-- WhatsApp-style Notification -->
-      <div id="whatsappNotification" style="
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 99999;
-      align-items: center;
-      justify-content: center;
-      animation: fadeInDialog 0.3s ease;
-      ">
-      <div style="
-      background: #1a1a1a;
-      border-left: 4px solid #25D366;
-      border-radius: 12px;
-      padding: 16px 18px;
-      max-width: 360px;
-      width: 90%;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      ">
-      <div style="
-      position:absolute; 
-      top: 253px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: red;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-      "></div>
-      <div style="flex:1; min-width:0;">
-      <div style="color:yellowgreen; font-size:13px; font-weight:600; margin-bottom:1px;">@SHAPI_COMMUNITY</div>
-      <div id="welcomeSharkText" style="color:white; font-size:13px; line-height:1.3;">Welcome future Shark , All prices will be going up by 67% in 3 days. Secure your position before early access expires.</div>
-      <div style="color:#666; font-size:10px; margin-top:4px;"></div>
-      <div style="color:#ccc; font-size:13px; line-height:1.3;">Remember to keep withdraws controlled to not get banned by spribe.</div>
-      <div style="color:greenyellow; font-size:10px; margin-top:6px;">just now</div>
-      </div>
-      <div onclick="dismissWhatsAppNotif()" style="color:#666;font-size:18px;cursor:pointer;padding:4px 6px;flex-shrink:0;align-self:flex-start;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">✕</div>
-      </div>
-      </div>
-      
+            <!-- ============================================================
+           INSTAGRAM/WHATSAPP STYLE TOAST - REDESIGNED
+           ============================================================ -->
+           <div id="whatsappNotification" style="
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: rgba(0,0,0,0.55);
+           backdrop-filter: blur(12px);
+           -webkit-backdrop-filter: blur(12px);
+           z-index: 99999;
+           align-items: center;
+           justify-content: center;
+           animation: fadeInDialog 0.3s ease;
+           padding: 20px;
+         ">
+           <!-- Instagram/WhatsApp Style Bubble -->
+           <div style="
+             background: #ffffff;
+             border-radius: 24px;
+             max-width: 380px;
+             width: 100%;
+             padding: 0;
+             box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.08);
+             animation: slideUpBubble 0.4s ease;
+             overflow: hidden;
+             position: relative;
+           ">
+             <!-- Header with Profile -->
+             <div style="
+               padding: 18px 20px 12px 20px;
+               display: flex;
+               align-items: center;
+               gap: 12px;
+               border-bottom: 1px solid #f0f0f0;
+             ">
+               <!-- Profile Picture -->
+               <div style="
+                 width: 44px;
+                 height: 44px;
+                 border-radius: 50%;
+                 background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff);
+                 padding: 2px;
+                 flex-shrink: 0;
+               ">
+                 <div style="
+                   width: 100%;
+                   height: 100%;
+                   border-radius: 50%;
+                   background: #ffffff;
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   overflow: hidden;
+                 ">
+                   <img src="androidicon.png" alt="SHARPI" style="
+                     width: 100%;
+                     height: 100%;
+                     object-fit: cover;
+                     display: block;
+                   " onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:20px;font-weight:700;color:#ff3333;\'>S</span>';">
+                 </div>
+               </div>
+               <!-- Name + Time -->
+               <div style="flex:1;">
+                 <div style="
+                   font-size: 15px;
+                   font-weight: 700;
+                   color: #1a1a1a;
+                   letter-spacing: -0.2px;
+                 ">SHARPI Community</div>
+                 <div style="
+                   font-size: 11px;
+                   color: #999;
+                   font-weight: 500;
+                 " id="toastTimeDisplay">Just now</div>
+               </div>
+               <!-- Close Button -->
+               <button onclick="dismissWhatsAppNotif()" style="
+                 background: none;
+                 border: none;
+                 color: #999;
+                 font-size: 20px;
+                 cursor: pointer;
+                 padding: 4px 8px;
+                 transition: color 0.2s;
+                 font-weight: 300;
+                 line-height: 1;
+                 border-radius: 50%;
+               " onmouseover="this.style.color='#333'" onmouseout="this.style.color='#999'">✕</button>
+             </div>
+   
+             <!-- Content -->
+             <div style="padding: 16px 20px 20px 20px;">
+               <!-- Welcome Message -->
+               <div style="
+                 font-size: 17px;
+                 font-weight: 700;
+                 color: #1a1a1a;
+                 margin-bottom: 6px;
+                 letter-spacing: -0.3px;
+               ">
+                 Welcome <span id="toastUserName" style="color: #ff3333;">Shark</span> 👋
+               </div>
+               
+               <!-- Main Message -->
+               <div style="
+                 font-size: 14px;
+                 line-height: 1.6;
+                 color: #333;
+                 margin-bottom: 10px;
+               ">
+                 All prices will be going up by <span style="color: #ff3333; font-weight: 700;">70%</span> on 
+                 <span id="toastDateDisplay" style="color: #ff3333; font-weight: 700;">DD/MM/HR</span>.
+               </div>
+               
+               <!-- Sub Message -->
+               <div style="
+                 font-size: 13px;
+                 line-height: 1.5;
+                 color: #666;
+                 margin-bottom: 12px;
+                 padding: 10px 14px;
+                 background: #f8f9fa;
+                 border-radius: 12px;
+                 border-left: 3px solid #ff3333;
+               ">
+                 Secure your position early to stay inclusive to the updates. 
+                 <span style="display: block; margin-top: 4px; color: #999; font-size: 12px;">⏳ Limited time offer</span>
+               </div>
+   
+               <!-- Footer Note -->
+               <div style="
+                 display: flex;
+                 align-items: center;
+                 gap: 8px;
+                 padding-top: 10px;
+                 border-top: 1px solid #f0f0f0;
+               ">
+                 <span style="
+                   font-size: 11px;
+                   color: #999;
+                   font-weight: 500;
+                 ">💬 Private message</span>
+                 <span style="
+                   width: 4px;
+                   height: 4px;
+                   background: #ddd;
+                   border-radius: 50%;
+                 "></span>
+                 <span style="
+                   font-size: 11px;
+                   color: #999;
+                   font-weight: 500;
+                 " id="toastStatusDisplay">Seen</span>
+               </div>
+             </div>
+           </div>
+         </div>
       <!-- Account Creation -->
       <div class="panel" id="accountPanel">
       <div style="color:#ff3333; font-weight:bold; margin-bottom:10px;">📝 Create Your Account</div>
@@ -3474,7 +3596,39 @@ justify-content: space-between;
          transition: all 0.4s ease;
          position: relative;
          overflow: hidden;
-       ">
+       ">         <!-- ============================================================
+              EXTRA VALUE CARD - SHOWS WHAT USER GETS EXTRA
+              ============================================================ -->
+         <div id="extraValueCard" style="
+           background: rgba(255,215,0,0.08);
+           border: 1px solid rgba(255,215,0,0.15);
+           border-radius: 10px;
+           padding: 10px 14px;
+           margin-bottom: 10px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           backdrop-filter: blur(4px);
+           -webkit-backdrop-filter: blur(4px);
+         ">
+           <div style="display: flex; align-items: center; gap: 10px;">
+             <span style="font-size: 20px;">🎯</span>
+             <div>
+               <span style="color: rgba(255,255,255,0.7); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;">Extra Value</span>
+               <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 2px;">
+                 <span id="extraDaysDisplay" style="color: #ffd700; font-size: 16px; font-weight: 800;">0</span>
+                 <span style="color: rgba(255,255,255,0.4); font-size: 10px;">extra days</span>
+                 <span style="color: rgba(255,255,255,0.15); font-size: 14px;">|</span>
+                 <span id="extraPredsDisplay" style="color: #ffd700; font-size: 16px; font-weight: 800;">0</span>
+                 <span style="color: rgba(255,255,255,0.4); font-size: 10px;">extra preds/day</span>
+               </div>
+             </div>
+           </div>
+           <div style="text-align: right;">
+             <span id="extraPercentageDisplay" style="color: #2ecc71; font-size: 14px; font-weight: 700;">+0%</span>
+             <span style="color: rgba(255,255,255,0.2); font-size: 8px; display: block;">more value</span>
+           </div>
+         </div>
          <!-- Server Name with CASH ICON -->
          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
            <div id="serverIcon" style="
@@ -3678,7 +3832,107 @@ margin-bottom: 10px;
         ============================================================ -->
  
    
-
+     <!-- ============================================================
+          PAYMENT AWAITING DISPATCH CARD
+          ============================================================ -->
+          <div id="paymentAwaitingCard" style="
+          display: none;
+          background: rgba(255,215,0,0.06);
+          border: 1px solid rgba(255,215,0,0.12);
+          border-radius: 16px;
+          padding: 20px 18px 18px;
+          margin-top: 12px;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          animation: fadeIn 0.4s ease;
+        ">
+          <!-- Header -->
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div style="
+              width: 44px;
+              height: 44px;
+              background: rgba(255,215,0,0.08);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+            ">⏳</div>
+            <div>
+              <div style="color: #ffd700; font-size: 16px; font-weight: 700;" id="awaitingUserName">Hi User,</div>
+              <div style="color: rgba(255,255,255,0.5); font-size: 12px;">Have you made a payment already and require App access?</div>
+            </div>
+          </div>
+          
+          <!-- Message -->
+          <div style="
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(255,255,255,0.04);
+          ">
+            <div style="color: rgba(255,255,255,0.7); font-size: 13px; line-height: 1.5;">
+              Your App will auto-open in under <span style="color: #ffd700; font-weight: 700;">2 minutes</span>.
+            </div>
+            <div style="color: rgba(255,255,255,0.3); font-size: 11px; margin-top: 4px;">
+              Ps! Have not yet Paid?
+            </div>
+          </div>
+          
+          <!-- Buttons -->
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button onclick="closePaymentAwaitingCard()" style="
+              flex: 1;
+              min-width: 80px;
+              padding: 10px 16px;
+              background: rgba(255,255,255,0.05);
+              border: 1px solid rgba(255,255,255,0.08);
+              border-radius: 10px;
+              color: rgba(255,255,255,0.5);
+              font-size: 13px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              font-family: inherit;
+            " onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+              ✕ Dismiss
+            </button>
+            <button onclick="openHowToPay()" style="
+              flex: 1;
+              min-width: 80px;
+              padding: 10px 16px;
+              background: rgba(255,215,0,0.08);
+              border: 1px solid rgba(255,215,0,0.12);
+              border-radius: 10px;
+              color: #ffd700;
+              font-size: 13px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              font-family: inherit;
+            " onmouseover="this.style.background='rgba(255,215,0,0.14)'" onmouseout="this.style.background='rgba(255,215,0,0.08)'">
+              ❓ HOW TO PAY
+            </button>
+            <button onclick="closePaymentAwaitingAndScrollToPackages()" style="
+              flex: 1;
+              min-width: 80px;
+              padding: 10px 16px;
+              background: #8b0000;
+              border: none;
+              border-radius: 10px;
+              color: #ffffff;
+              font-size: 13px;
+              font-weight: 700;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              font-family: inherit;
+              box-shadow: 0 4px 16px rgba(139,0,0,0.2);
+            " onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 6px 24px rgba(139,0,0,0.3)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 16px rgba(139,0,0,0.2)'">
+              💰 BUY NOW
+            </button>
+          </div>
+        </div>
 
 
       <!-- Token Entry Section -->
@@ -5734,6 +5988,60 @@ function calculateStats(sliderVal) {
     acc: accuracy
   };
 }
+// ============================================================
+// EXTRA VALUE CALCULATION - FIXED
+// ============================================================
+
+function calculateExtraValue(sliderVal) {
+    // Base values at minimum budget (44,000 UGX)
+    const BASE_PRICE = 44000;
+    const BASE_DAYS = 30;
+    const BASE_PREDS = 33;
+    
+    // Current values from slider
+    const currentPrice = 44000 + (sliderVal * 3000);
+    const stats = calculateStats(sliderVal);
+    const currentDays = stats.days;
+    const currentPreds = stats.preds;
+    
+    // Calculate extra days and predictions
+    const extraDays = currentDays - BASE_DAYS;
+    const extraPreds = currentPreds - BASE_PREDS;
+    
+    // Calculate percentage increase in value
+    // Value = days * preds (total predictions over lifetime)
+    const baseValue = BASE_DAYS * BASE_PREDS;
+    const currentValue = currentDays * currentPreds;
+    const percentIncrease = ((currentValue - baseValue) / baseValue) * 100;
+    
+    return {
+        extraDays: Math.max(0, extraDays),
+        extraPreds: Math.max(0, extraPreds),
+        percentIncrease: percentIncrease,
+        currentPrice: currentPrice,
+        currentDays: currentDays,
+        currentPreds: currentPreds
+    };
+}
+
+function updateExtraValueDisplay() {
+    var extras = calculateExtraValue(sliderValue);
+    
+    var extraDaysEl = document.getElementById('extraDaysDisplay');
+    var extraPredsEl = document.getElementById('extraPredsDisplay');
+    var extraPercentEl = document.getElementById('extraPercentageDisplay');
+    
+    if (extraDaysEl) {
+        extraDaysEl.textContent = extras.extraDays > 0 ? '+' + extras.extraDays : '0';
+    }
+    if (extraPredsEl) {
+        extraPredsEl.textContent = extras.extraPreds > 0 ? '+' + extras.extraPreds : '0';
+    }
+    if (extraPercentEl) {
+        var pct = extras.percentIncrease > 0 ? extras.percentIncrease : 0;
+        extraPercentEl.textContent = '+' + Math.round(pct) + '%';
+    }
+}
 
 // Define getSliderPrice BEFORE verifyPayment
 function getSliderPrice() {
@@ -6101,6 +6409,8 @@ function autoUnlockApp(token) {
     }
     
     showToast('✅ ✅ ✅ ACCESS GRANTED! Welcome to SHARPI!', 'success');
+        // Close the awaiting card if open
+        closePaymentAwaitingCard();
     
     setTimeout(() => {
         goToDashboard();
@@ -6527,6 +6837,8 @@ async function verifyPayment() {
 
       console.log('✅ Payment saved to Supabase:', data);
       showToast('✅ Payment recorded! Waiting for token.', 'success');
+            // Show the awaiting card with user's name
+            showPaymentAwaitingCard();
 
       // Record affiliate sale if promo code exists
       if (promoCode && supabaseClient) {
@@ -8638,13 +8950,73 @@ console.log('✅ Aviator overlay patch installed!');
     // ============================================================
      // WHATSAPP NOTIFICATION ON PAYMENTS PAGE
      // ============================================================
-     function showWhatsAppNotif() {
+    // ============================================================
+// WHATSAPP NOTIFICATION ON PAYMENTS PAGE - REDESIGNED
+// ============================================================
+
+function showWhatsAppNotif() {
     // Don't show if user is verified
     if (currentUser && currentUser.verified) return;
     
-    const notif = document.getElementById('whatsappNotification');
+    var notif = document.getElementById('whatsappNotification');
+    if (!notif) return;
+    
+    // Get user name
+    var userNameEl = document.getElementById('toastUserName');
+    if (userNameEl && currentUser && currentUser.name) {
+        userNameEl.textContent = currentUser.name;
+    } else if (userNameEl) {
+        userNameEl.textContent = 'Shark';
+    }
+    
+    // Calculate date 72 hours from now (East African Time - UTC+3)
+    var now = new Date();
+    var eastAfricaTime = new Date(now.getTime() + (3 * 60 * 60 * 1000)); // UTC+3
+    var futureDate = new Date(eastAfricaTime.getTime() + (72 * 60 * 60 * 1000));
+    
+    // Format: DD/MM/HR (e.g., 25/12/15:30)
+    var day = String(futureDate.getDate()).padStart(2, '0');
+    var month = String(futureDate.getMonth() + 1).padStart(2, '0');
+    var hours = String(futureDate.getHours()).padStart(2, '0');
+    var minutes = String(futureDate.getMinutes()).padStart(2, '0');
+    var formattedDate = day + '/' + month + '/' + hours + ':' + minutes;
+    
+    var dateEl = document.getElementById('toastDateDisplay');
+    if (dateEl) {
+        dateEl.textContent = formattedDate;
+    }
+    
+    // Set time display
+    var timeEl = document.getElementById('toastTimeDisplay');
+    if (timeEl) {
+        var nowEAT = new Date(new Date().getTime() + (3 * 60 * 60 * 1000));
+        var hoursNow = String(nowEAT.getHours()).padStart(2, '0');
+        var minsNow = String(nowEAT.getMinutes()).padStart(2, '0');
+        timeEl.textContent = hoursNow + ':' + minsNow + ' • Today';
+    }
+    
+    // Set status display
+    var statusEl = document.getElementById('toastStatusDisplay');
+    if (statusEl) {
+        // Randomly show Seen, Delivered, or Read
+        var statuses = ['Seen', 'Delivered', 'Read', '✓✓'];
+        statusEl.textContent = statuses[Math.floor(Math.random() * statuses.length)];
+    }
+    
+    notif.style.display = 'flex';
+    
+    // Auto-dismiss after 8 seconds
+    clearTimeout(notif._autoTimer);
+    notif._autoTimer = setTimeout(function() {
+        dismissWhatsAppNotif();
+    }, 8000);
+}
+
+function dismissWhatsAppNotif() {
+    var notif = document.getElementById('whatsappNotification');
     if (notif) {
-        notif.style.display = 'flex';
+        notif.style.display = 'none';
+        clearTimeout(notif._autoTimer);
     }
 }
      
@@ -11402,6 +11774,8 @@ function updateServerIcon(serverId) {
 // ============================================================
 // UPDATE DISPLAY
 // ============================================================
+
+
 function updateSliderDisplay() {
   var slider = document.getElementById('serverSlider');
   var priceDisplay = document.getElementById('sliderPriceDisplay');
@@ -11419,11 +11793,8 @@ function updateSliderDisplay() {
   document.getElementById('serverDays').textContent = stats.days;
   document.getElementById('serverPredictions').textContent = stats.preds;
   
-  // Update accuracy (now inside features list)
   var accDisplay = stats.acc >= 100 ? '99.99' : stats.acc.toFixed(1);
   document.getElementById('serverAccuracy').textContent = accDisplay + '%';
-  
-  // REMOVED: accuracy bar update
   
   document.getElementById('serverPromo').textContent = server.promo;
   
@@ -11442,7 +11813,13 @@ function updateSliderDisplay() {
   
   var pct = (sliderValue / 96) * 100;
   slider.style.background = 'linear-gradient(to right, #fca5a5 0%, #fbbf24 ' + pct + '%, #e5e7eb ' + pct + '%, #e5e7eb 100%)';
+  
+  // ✅ NEW: Update extra value card
+  if (typeof updateExtraValueDisplay === 'function') {
+      updateExtraValueDisplay();
+  }
 }
+  
 function adjustSlider(direction) {
   var newValue = sliderValue + direction;
   if (newValue < 0 || newValue > 96) return;
@@ -12163,6 +12540,74 @@ function updateStarRating(serverId) {
           
           console.log('✅ Minimal Overlay Widget loaded (Predictor)');
           console.log('📌 Widget will show crash points from Aviator when game is active');
+          // ============================================================
+// PAYMENT AWAITING CARD FUNCTIONS
+// ============================================================
+
+function showPaymentAwaitingCard() {
+    var card = document.getElementById('paymentAwaitingCard');
+    var userNameEl = document.getElementById('awaitingUserName');
+    
+    if (!card) return;
+    
+    // Set user name if available
+    if (userNameEl && currentUser && currentUser.name) {
+        userNameEl.textContent = 'Hi ' + currentUser.name + ',';
+    } else if (userNameEl) {
+        userNameEl.textContent = 'Hi User,';
+    }
+    
+    card.style.display = 'block';
+    
+    // Auto-hide after 2 minutes (120 seconds)
+    clearTimeout(window._paymentCardTimer);
+    window._paymentCardTimer = setTimeout(function() {
+        closePaymentAwaitingCard();
+    }, 120000);
+    
+    // Also auto-hide if user becomes verified
+    if (typeof checkVerificationAndCloseCard === 'undefined') {
+        window.checkVerificationAndCloseCard = setInterval(function() {
+            if (currentUser && currentUser.verified) {
+                closePaymentAwaitingCard();
+                clearInterval(window.checkVerificationAndCloseCard);
+                window.checkVerificationAndCloseCard = null;
+            }
+        }, 3000);
+    }
+}
+
+function closePaymentAwaitingCard() {
+    var card = document.getElementById('paymentAwaitingCard');
+    if (card) {
+        card.style.display = 'none';
+    }
+    // Clear auto-hide timer
+    if (window._paymentCardTimer) {
+        clearTimeout(window._paymentCardTimer);
+        window._paymentCardTimer = null;
+    }
+    // Clear verification check interval
+    if (window.checkVerificationAndCloseCard) {
+        clearInterval(window.checkVerificationAndCloseCard);
+        window.checkVerificationAndCloseCard = null;
+    }
+}
+
+function closePaymentAwaitingAndScrollToPackages() {
+    closePaymentAwaitingCard();
+    // Scroll to packages section
+    var packagesSection = document.querySelector('.panel[style*="border-color: rgba(255,255,255,1)"]');
+    if (packagesSection) {
+        packagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        // Fallback: scroll to top of purchase page
+        var pageScroll = document.querySelector('#pagePurchase .page-scroll');
+        if (pageScroll) {
+            pageScroll.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+}
           </script>
 </body>
 </html>
