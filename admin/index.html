@@ -73,7 +73,6 @@
             margin: 0 auto;
         }
 
-        /* HEADER */
         .admin-header {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
@@ -192,7 +191,6 @@
             }
         }
 
-        /* BUTTONS */
         .btn {
             padding: 8px 16px;
             border: none;
@@ -230,37 +228,24 @@
             background: linear-gradient(135deg, var(--text-green), #059669);
             color: white;
         }
-        .btn-green:hover {
-            opacity: .9;
-        }
         .btn-green:disabled {
             opacity: .5;
             cursor: not-allowed;
-            transform: none;
         }
 
         .btn-red {
             background: linear-gradient(135deg, var(--text-red), #dc2626);
             color: white;
         }
-        .btn-red:hover {
-            opacity: .9;
-        }
 
         .btn-blue {
             background: linear-gradient(135deg, var(--text-blue), #2563eb);
             color: white;
         }
-        .btn-blue:hover {
-            opacity: .9;
-        }
 
         .btn-purple {
             background: linear-gradient(135deg, var(--text-purple), #7c3aed);
             color: white;
-        }
-        .btn-purple:hover {
-            opacity: .9;
         }
 
         .btn-outline {
@@ -290,7 +275,6 @@
             background: #2ee07a;
         }
 
-        /* PANELS */
         .panel {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
@@ -347,7 +331,6 @@
             flex-wrap: wrap;
         }
 
-        /* STATS GRID */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -415,7 +398,6 @@
             letter-spacing: .5px;
         }
 
-        /* TABS */
         .tabs {
             display: flex;
             flex-wrap: wrap;
@@ -478,7 +460,6 @@
             }
         }
 
-        /* TABLE */
         .table-responsive {
             overflow-x: auto;
         }
@@ -557,7 +538,6 @@
             color: var(--text-red);
         }
 
-        /* FILTERS */
         .filters {
             display: flex;
             flex-wrap: wrap;
@@ -592,7 +572,6 @@
             color: var(--text-primary);
         }
 
-        /* TOAST */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -634,7 +613,6 @@
             }
         }
 
-        /* EMPTY STATE */
         .empty-state {
             text-align: center;
             padding: 30px;
@@ -646,7 +624,6 @@
             opacity: .5;
         }
 
-        /* QUICK ACTION CARDS */
         .quick-action-card {
             background: var(--bg-input);
             border-radius: var(--radius);
@@ -733,7 +710,6 @@
             font-weight: 500;
         }
 
-        /* ADMIN ACTIVITY LOG */
         .activity-log-item {
             display: flex;
             align-items: center;
@@ -799,7 +775,6 @@
             white-space: nowrap;
         }
 
-        /* ASSISTANT ADMIN CARDS */
         .assistant-card {
             background: var(--bg-input);
             border-radius: var(--radius);
@@ -862,7 +837,6 @@
             color: var(--text-muted);
         }
 
-        /* INVITE LINK */
         .invite-link-box {
             background: var(--bg-input);
             border-radius: var(--radius);
@@ -881,7 +855,6 @@
             word-break: break-all;
         }
 
-        /* KEY CHECK */
         .key-check-result {
             padding: 10px 14px;
             border-radius: 6px;
@@ -926,7 +899,6 @@
             border-color: var(--text-gold);
         }
 
-        /* LOOKUP GRID */
         .lookup-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -955,7 +927,6 @@
             letter-spacing: .3px;
         }
 
-        /* TREE VIEW */
         .tree-node {
             padding: 8px 0;
             border-left: 2px solid var(--border);
@@ -1024,7 +995,6 @@
             margin-left: 20px;
         }
 
-        /* PAYMENT HISTORY */
         .payment-history-card {
             background: var(--bg-input);
             border-radius: var(--radius);
@@ -1063,7 +1033,6 @@
             color: var(--text-secondary);
         }
 
-        /* RESPONSIVE */
         @media(max-width:768px) {
             .admin-header {
                 flex-direction: column;
@@ -1241,7 +1210,6 @@
             overflow: hidden;
             text-align: center;
         ">
-            <!-- Decorative Line -->
             <div style="
                 position: absolute;
                 top: 0;
@@ -1302,7 +1270,6 @@
                 }
             </style>
 
-            <!-- Logo -->
             <div style="margin-bottom: 16px;">
                 <div style="
                     width: 60px;
@@ -1320,7 +1287,6 @@
                 <p id="loginSubtitle" style="color: var(--text-muted); font-size: 12px; margin-top: 2px;">🔐 Secure Access Required</p>
             </div>
 
-            <!-- Fingerprint Section -->
             <div id="fingerprintSection">
                 <div id="fingerprintIconContainer" style="
                     width: 80px;
@@ -1373,7 +1339,6 @@
                     margin-bottom: 10px;
                 "></div>
 
-                <!-- Register Button -->
                 <button id="registerFingerprintBtn" onclick="registerFingerprint()" style="
                     width: 100%;
                     padding: 10px;
@@ -1392,7 +1357,6 @@
                 </button>
             </div>
 
-            <!-- Windows Password Fallback -->
             <div id="windowsFallbackSection" style="display: none; margin-top: 8px;">
                 <div style="border-top: 1px solid var(--border-light); padding-top: 12px; margin-bottom: 12px;">
                     <span style="color: var(--text-muted); font-size: 10px; text-transform: uppercase; letter-spacing: 1px;">Windows Authentication</span>
@@ -1429,7 +1393,6 @@
                 <div id="windowsError" style="color: var(--text-red); font-size: 11px; text-align: center; min-height: 16px; display: none; margin-top: 6px;"></div>
             </div>
 
-            <!-- Device Info -->
             <div style="
                 background: var(--bg-input);
                 border-radius: 8px;
@@ -1446,7 +1409,6 @@
                 <span id="osDetected"></span>
             </div>
 
-            <!-- Footer -->
             <div style="
                 margin-top: 14px;
                 padding-top: 12px;
@@ -1467,7 +1429,6 @@
     ============================================================ -->
     <div class="admin-container" style="opacity: 0.3; pointer-events: none; filter: blur(4px);">
 
-        <!-- HEADER -->
         <header class="admin-header">
             <div class="brand">
                 <div class="logo-icon">🦈</div>
@@ -1488,9 +1449,6 @@
             </div>
         </header>
 
-        <!-- ============================================================
-        STATS OVERVIEW
-        ============================================================ -->
         <div class="panel">
             <div class="panel-header">
                 <div class="title">
@@ -1517,9 +1475,6 @@
             </div>
         </div>
 
-        <!-- ============================================================
-        TABS
-        ============================================================ -->
         <div class="panel">
             <div class="tabs" id="tabHeaders">
                 <button class="tab active" data-tab="quickactions">⚡ Quick Actions <span class="tab-badge" id="quickActionsTabBadge">0</span></button>
@@ -1534,9 +1489,6 @@
                 <button class="tab" data-tab="payment">💳 Payment Keys</button>
             </div>
 
-            <!-- ============================================================
-            TAB 0: QUICK ACTIONS
-            ============================================================ -->
             <div class="tab-content active" id="tab-quickactions">
                 <div class="panel-header">
                     <div class="title">⚡ Quick Actions <span class="badge green" id="quickActionsLiveBadge">● LIVE</span></div>
@@ -1561,9 +1513,6 @@
                 </div>
             </div>
 
-            <!-- ============================================================
-            TAB 1: AFFILIATES
-            ============================================================ -->
             <div class="tab-content" id="tab-affiliates">
                 <div class="filters">
                     <input type="text" id="affiliateSearch" placeholder="🔍 Search affiliates..." oninput="filterAffiliates()" />
@@ -1576,9 +1525,6 @@
                 <div id="affiliatesList"><div class="loading">🔄 Loading affiliates...</div></div>
             </div>
 
-            <!-- ============================================================
-            TAB 2: TREE
-            ============================================================ -->
             <div class="tab-content" id="tab-tree">
                 <div class="panel-header">
                     <div class="title">🌳 Affiliate Tree <span class="badge green">Full Hierarchy</span></div>
@@ -1596,9 +1542,6 @@
                 </div>
             </div>
 
-            <!-- ============================================================
-            TAB 3: USERS
-            ============================================================ -->
             <div class="tab-content" id="tab-users">
                 <div class="filters">
                     <input type="text" id="appUserSearch" placeholder="🔍 Search users..." oninput="filterAppUsers()" />
@@ -1611,9 +1554,6 @@
                 <div id="appUsersList"><div class="loading">🔄 Loading users...</div></div>
             </div>
 
-            <!-- ============================================================
-            TAB 4: SALES
-            ============================================================ -->
             <div class="tab-content" id="tab-sales">
                 <div class="filters">
                     <input type="text" id="salesSearch" placeholder="🔍 Search sales..." oninput="filterSales()" />
@@ -1630,9 +1570,6 @@
                 <div id="salesList"><div class="loading">🔄 Loading sales...</div></div>
             </div>
 
-            <!-- ============================================================
-            TAB 5: TOKENS
-            ============================================================ -->
             <div class="tab-content" id="tab-tokens">
                 <div class="filters">
                     <input type="text" id="tokenSearch" placeholder="🔍 Search tokens..." oninput="filterTokens()" />
@@ -1645,9 +1582,6 @@
                 <div id="tokensList"><div class="loading">🔄 Loading tokens...</div></div>
             </div>
 
-            <!-- ============================================================
-            TAB 6: ADMINS (Supreme Only)
-            ============================================================ -->
             <div class="tab-content" id="tab-admins">
                 <div class="panel-header">
                     <div class="title">👑 Admin Management <span class="badge purple">Supreme Only</span></div>
@@ -1668,9 +1602,6 @@
                 <div id="adminsList"><div class="loading">🔄 Loading admins...</div></div>
             </div>
 
-            <!-- ============================================================
-            TAB 7: ACTIVITY LOG
-            ============================================================ -->
             <div class="tab-content" id="tab-activity">
                 <div class="panel-header">
                     <div class="title">📜 Activity Log <span class="badge green">Live</span></div>
@@ -1700,9 +1631,6 @@
                 </div>
             </div>
 
-            <!-- ============================================================
-            TAB 8: LOOKUP
-            ============================================================ -->
             <div class="tab-content" id="tab-lookup">
                 <div class="panel-header">
                     <div class="title">🔍 Affiliate Lookup <span class="badge green">Full Profile</span></div>
@@ -1717,9 +1645,6 @@
                 </div>
             </div>
 
-            <!-- ============================================================
-            TAB 9: PAYMENT KEYS
-            ============================================================ -->
             <div class="tab-content" id="tab-payment">
                 <div class="panel-header">
                     <div class="title">💳 Payment Keys <span class="badge green">Check & History</span></div>
@@ -1770,44 +1695,62 @@
     </div>
 
     <!-- ============================================================
-    SCRIPT - COMPLETE ADMIN SYSTEM
+    SCRIPT - COMPLETE ADMIN SYSTEM (FIXED)
     ============================================================ -->
     <script>
         // ============================================================
-        // COMPLETE ADMIN SYSTEM - SUPREME + ASSISTANT ADMINS
+        // COMPLETE ADMIN SYSTEM - SUPREME + ASSISTANT ADMINS (FIXED)
         // ============================================================
 
         // ============================================================
-        // 1. CONFIGURATION
+        // 1. ADMIN STATE - INITIALIZED FIRST
         // ============================================================
-        const SUPABASE_URL = 'https://wkdewqwqhopbwygsfdav.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_5QGobPerm0Bw973REoEvXg_Cs6n70lZ';
-
-        const ADMIN_CONFIG = {
-            windowsPassword: 'SharpiAdmin2026!', // Windows fallback (only for supreme)
-            sessionTimeout: 30 * 60 * 1000, // 30 minutes
-            maxLoginAttempts: 5,
-            lockoutDuration: 15 * 60 * 1000 // 15 minutes
+        var adminState = {
+            isAuthenticated: false,
+            currentUser: null,
+            isSupreme: false,
+            isAssistant: false,
+            sessionStart: null,
+            loginAttempts: 0,
+            lockoutUntil: null,
+            fingerprintCredentialId: null,
+            isFingerprintRegistered: false,
+            assistantAdmins: [],
+            activityLog: []
         };
 
-        let supabaseClient = null;
-        let currentAdmin = null;
-        let allAdmins = [];
-        let activityLog = [];
-        let allAffiliates = [];
-        let allAppUsers = [];
-        let allSales = [];
-        let allTokens = [];
-        let allGeneratedKeys = [];
-        let allQuickActions = [];
-        let allPaymentHistory = [];
-        let affiliateTreeData = [];
-        let chartInstance = null;
-        let adminRealtimeChannel = null;
-        let adminSessionInterval = null;
+        // ============================================================
+        // 2. CONFIGURATION
+        // ============================================================
+        var SUPABASE_URL = 'https://wkdewqwqhopbwygsfdav.supabase.co';
+        var SUPABASE_ANON_KEY = 'sb_publishable_5QGobPerm0Bw973REoEvXg_Cs6n70lZ';
+
+        var ADMIN_CONFIG = {
+            windowsPassword: 'SharpiAdmin2026!',
+            sessionTimeout: 30 * 60 * 1000,
+            maxLoginAttempts: 5,
+            lockoutDuration: 15 * 60 * 1000
+        };
+
+        var supabaseClient = null;
+        var currentAdmin = null;
+        var allAdmins = [];
+        var activityLog = [];
+        var allAffiliates = [];
+        var allAppUsers = [];
+        var allSales = [];
+        var allTokens = [];
+        var allGeneratedKeys = [];
+        var allQuickActions = [];
+        var allPaymentHistory = [];
+        var affiliateTreeData = [];
+        var chartInstance = null;
+        var adminRealtimeChannel = null;
+        var adminSessionInterval = null;
+        var isAuthenticating = false;
 
         // ============================================================
-        // 2. INITIALIZE SUPABASE
+        // 3. INITIALIZE SUPABASE
         // ============================================================
         function initSupabase() {
             if (typeof supabase !== 'undefined' && supabase.createClient) {
@@ -1825,33 +1768,33 @@
         }
 
         // ============================================================
-        // 3. TOAST
+        // 4. TOAST
         // ============================================================
-        function showToast(msg, type = '') {
-            const el = document.getElementById('toast');
+        function showToast(msg, type) {
+            var el = document.getElementById('toast');
             if (!el) return;
             el.textContent = msg;
-            el.className = 'toast show ' + type;
+            el.className = 'toast show ' + (type || '');
             clearTimeout(el._timer);
-            el._timer = setTimeout(() => { el.className = 'toast'; }, 5000);
+            el._timer = setTimeout(function() { el.className = 'toast'; }, 5000);
         }
 
         // ============================================================
-        // 4. EAST AFRICAN TIME (EAT) - UTC+3
+        // 5. EAST AFRICAN TIME (EAT) - UTC+3
         // ============================================================
         function getEATTime() {
-            const now = new Date();
+            var now = new Date();
             return new Date(now.getTime() + (3 * 60 * 60 * 1000));
         }
 
         function formatEATTime(date) {
-            const d = date || getEATTime();
-            const hours = String(d.getHours()).padStart(2, '0');
-            const minutes = String(d.getMinutes()).padStart(2, '0');
-            const day = String(d.getDate()).padStart(2, '0');
-            const month = String(d.getMonth() + 1).padStart(2, '0');
-            const year = d.getFullYear();
-            return `${day}/${month}/${year} ${hours}:${minutes}`;
+            var d = date || getEATTime();
+            var hours = String(d.getHours()).padStart(2, '0');
+            var minutes = String(d.getMinutes()).padStart(2, '0');
+            var day = String(d.getDate()).padStart(2, '0');
+            var month = String(d.getMonth() + 1).padStart(2, '0');
+            var year = d.getFullYear();
+            return day + '/' + month + '/' + year + ' ' + hours + ':' + minutes;
         }
 
         function getEATTimestamp() {
@@ -1859,12 +1802,12 @@
         }
 
         // ============================================================
-        // 5. DETECT OS
+        // 6. DETECT OS
         // ============================================================
         function detectOS() {
-            const ua = navigator.userAgent;
-            const osDetected = document.getElementById('osDetected');
-            const windowsSection = document.getElementById('windowsFallbackSection');
+            var ua = navigator.userAgent;
+            var osDetected = document.getElementById('osDetected');
+            var windowsSection = document.getElementById('windowsFallbackSection');
 
             if (ua.indexOf('Windows') !== -1) {
                 if (osDetected) osDetected.textContent = '🖥️ Windows';
@@ -1890,10 +1833,10 @@
         }
 
         // ============================================================
-        // 6. FINGERPRINT SUPPORT CHECK
+        // 7. FINGERPRINT SUPPORT CHECK
         // ============================================================
         function checkFingerprintSupport() {
-            const supportEl = document.getElementById('deviceSupportStatus');
+            var supportEl = document.getElementById('deviceSupportStatus');
             if (!window.PublicKeyCredential) {
                 if (supportEl) {
                     supportEl.textContent = '❌ Fingerprint not supported';
@@ -1909,9 +1852,31 @@
         }
 
         // ============================================================
-        // 7. FINGERPRINT AUTHENTICATION
+        // 8. FINGERPRINT AUTHENTICATION
         // ============================================================
-        let isAuthenticating = false;
+        function setFpStatus(message) {
+            var el = document.getElementById('fingerprintStatus');
+            if (el) {
+                el.textContent = message;
+                el.style.color = 'var(--text-secondary)';
+            }
+        }
+
+        function showFpError(message) {
+            var el = document.getElementById('fingerprintError');
+            if (el) {
+                el.textContent = message;
+                el.style.display = 'block';
+            }
+        }
+
+        function hideFpError() {
+            var el = document.getElementById('fingerprintError');
+            if (el) {
+                el.textContent = '';
+                el.style.display = 'none';
+            }
+        }
 
         async function registerFingerprint() {
             if (!checkFingerprintSupport()) {
@@ -1920,8 +1885,8 @@
             }
 
             setFpStatus('⏳ Registering fingerprint...');
-            const iconContainer = document.getElementById('fingerprintIconContainer');
-            const scanningRing = document.getElementById('scanningRing');
+            var iconContainer = document.getElementById('fingerprintIconContainer');
+            var scanningRing = document.getElementById('scanningRing');
 
             if (iconContainer) iconContainer.style.borderColor = 'rgba(251,191,36,0.4)';
             if (scanningRing) {
@@ -1930,10 +1895,10 @@
             }
 
             try {
-                const challenge = new Uint8Array(32);
+                var challenge = new Uint8Array(32);
                 crypto.getRandomValues(challenge);
 
-                const credential = await navigator.credentials.create({
+                var credential = await navigator.credentials.create({
                     publicKey: {
                         challenge: challenge,
                         rp: {
@@ -1959,10 +1924,9 @@
                     }
                 });
 
-                const credentialId = new Uint8Array(credential.rawId);
-                const credentialIdBase64 = btoa(String.fromCharCode.apply(null, credentialId));
+                var credentialId = new Uint8Array(credential.rawId);
+                var credentialIdBase64 = btoa(String.fromCharCode.apply(null, credentialId));
 
-                // Save to sessionStorage
                 sessionStorage.setItem('fp_credential_id', credentialIdBase64);
                 sessionStorage.setItem('fp_registered', 'true');
 
@@ -1977,7 +1941,7 @@
 
                 showToast('✅ Fingerprint registered! Tap to login.', 'success');
 
-                setTimeout(() => {
+                setTimeout(function() {
                     startFingerprintAuth();
                 }, 1500);
 
@@ -2007,8 +1971,8 @@
                 return;
             }
 
-            const savedCredential = sessionStorage.getItem('fp_credential_id');
-            const savedRegistered = sessionStorage.getItem('fp_registered');
+            var savedCredential = sessionStorage.getItem('fp_credential_id');
+            var savedRegistered = sessionStorage.getItem('fp_registered');
 
             if (!savedCredential || savedRegistered !== 'true') {
                 document.getElementById('registerFingerprintBtn').style.display = 'block';
@@ -2018,8 +1982,8 @@
 
             isAuthenticating = true;
             setFpStatus('🔍 Scanning fingerprint...');
-            const iconContainer = document.getElementById('fingerprintIconContainer');
-            const scanningRing = document.getElementById('scanningRing');
+            var iconContainer = document.getElementById('fingerprintIconContainer');
+            var scanningRing = document.getElementById('scanningRing');
             if (iconContainer) iconContainer.style.borderColor = 'rgba(251,191,36,0.6)';
             if (scanningRing) {
                 scanningRing.style.display = 'block';
@@ -2028,13 +1992,13 @@
             hideFpError();
 
             try {
-                const credentialIdBase64 = savedCredential;
-                const credentialIdBytes = Uint8Array.from(atob(credentialIdBase64), c => c.charCodeAt(0));
+                var credentialIdBase64 = savedCredential;
+                var credentialIdBytes = Uint8Array.from(atob(credentialIdBase64), function(c) { return c.charCodeAt(0); });
 
-                const challenge = new Uint8Array(32);
+                var challenge = new Uint8Array(32);
                 crypto.getRandomValues(challenge);
 
-                const assertion = await navigator.credentials.get({
+                var assertion = await navigator.credentials.get({
                     publicKey: {
                         challenge: challenge,
                         allowCredentials: [{
@@ -2054,9 +2018,24 @@
                     }
                     if (iconContainer) iconContainer.style.borderColor = 'rgba(52,211,153,0.4)';
 
-                    // SUCCESS - login as Supreme
-                    loginAsSupreme();
+                    // Ensure adminState exists
+                    if (!adminState) {
+                        adminState = {
+                            isAuthenticated: false,
+                            currentUser: null,
+                            isSupreme: false,
+                            isAssistant: false,
+                            sessionStart: null,
+                            loginAttempts: 0,
+                            lockoutUntil: null,
+                            fingerprintCredentialId: null,
+                            isFingerprintRegistered: false,
+                            assistantAdmins: [],
+                            activityLog: []
+                        };
+                    }
 
+                    loginAsSupreme();
                     setFpStatus('✅ Access granted!');
                     showToast('✅ Fingerprint verified! Welcome Admin.', 'success');
                 }
@@ -2082,7 +2061,7 @@
                 if (iconContainer) iconContainer.style.borderColor = 'rgba(248,113,113,0.3)';
                 setFpStatus('👆 Tap fingerprint to try again');
 
-                setTimeout(() => {
+                setTimeout(function() {
                     if (iconContainer) iconContainer.style.borderColor = 'rgba(251,191,36,0.08)';
                     setFpStatus('👆 Tap the fingerprint to login');
                 }, 2000);
@@ -2090,18 +2069,18 @@
         }
 
         // ============================================================
-        // 8. WINDOWS LOGIN (Fallback for Supreme)
+        // 9. WINDOWS LOGIN (Fallback for Supreme)
         // ============================================================
         function handleWindowsLogin(event) {
             event.preventDefault();
-            const password = document.getElementById('windowsPassword').value;
+            var password = document.getElementById('windowsPassword').value;
 
             if (password === ADMIN_CONFIG.windowsPassword) {
                 loginAsSupreme();
                 showToast('✅ Windows authentication successful!', 'success');
                 document.getElementById('windowsError').style.display = 'none';
             } else {
-                const errorEl = document.getElementById('windowsError');
+                var errorEl = document.getElementById('windowsError');
                 errorEl.textContent = '❌ Incorrect Windows password';
                 errorEl.style.display = 'block';
                 document.getElementById('windowsPassword').value = '';
@@ -2110,54 +2089,90 @@
         }
 
         // ============================================================
-        // 9. LOGIN AS SUPREME ADMIN
+        // 10. LOGIN AS SUPREME ADMIN
         // ============================================================
         function loginAsSupreme() {
-            currentAdmin = {
-                id: 'supreme_001',
-                username: 'sharpi_supreme',
-                displayName: 'Hossam Balidawa',
-                role: 'supreme',
-                isSupreme: true,
-                isAssistant: false
-            };
+            try {
+                if (!adminState) {
+                    adminState = {
+                        isAuthenticated: false,
+                        currentUser: null,
+                        isSupreme: false,
+                        isAssistant: false,
+                        sessionStart: null,
+                        loginAttempts: 0,
+                        lockoutUntil: null,
+                        fingerprintCredentialId: null,
+                        isFingerprintRegistered: false,
+                        assistantAdmins: [],
+                        activityLog: []
+                    };
+                }
 
-            adminState.isAuthenticated = true;
-            adminState.currentUser = currentAdmin;
-            adminState.sessionStart = Date.now();
+                currentAdmin = {
+                    id: 'supreme_001',
+                    username: 'sharpi_supreme',
+                    displayName: 'Hossam Balidawa',
+                    role: 'supreme',
+                    isSupreme: true,
+                    isAssistant: false
+                };
 
-            // Save session
-            sessionStorage.setItem('admin_session', JSON.stringify({
-                isAuthenticated: true,
-                userId: currentAdmin.id,
-                username: currentAdmin.username,
-                displayName: currentAdmin.displayName,
-                role: currentAdmin.role,
-                sessionStart: adminState.sessionStart,
-                authMethod: 'fingerprint'
-            }));
+                adminState.isAuthenticated = true;
+                adminState.currentUser = currentAdmin;
+                adminState.sessionStart = Date.now();
 
-            hideFingerprintLogin();
-            updateAdminUI();
-            startSessionMonitor();
+                sessionStorage.setItem('admin_session', JSON.stringify({
+                    isAuthenticated: true,
+                    userId: currentAdmin.id,
+                    username: currentAdmin.username,
+                    displayName: currentAdmin.displayName,
+                    role: currentAdmin.role,
+                    sessionStart: adminState.sessionStart,
+                    authMethod: 'fingerprint'
+                }));
 
-            // Load all data
-            setTimeout(() => {
-                loadAllData();
-                loadAdmins();
-                loadActivityLog();
-            }, 500);
+                hideFingerprintLogin();
+                updateAdminUI();
+                startSessionMonitor();
+
+                setTimeout(function() {
+                    loadAllData();
+                    loadAdmins();
+                    loadActivityLog();
+                }, 500);
+
+            } catch (e) {
+                console.error('❌ Login error:', e);
+                showToast('❌ Login failed: ' + e.message, 'error');
+            }
         }
 
         // ============================================================
-        // 10. CHECK SESSION ON LOAD
+        // 11. CHECK SESSION ON LOAD
         // ============================================================
         function checkAdminSession() {
             try {
-                const saved = sessionStorage.getItem('admin_session');
+                if (!adminState) {
+                    adminState = {
+                        isAuthenticated: false,
+                        currentUser: null,
+                        isSupreme: false,
+                        isAssistant: false,
+                        sessionStart: null,
+                        loginAttempts: 0,
+                        lockoutUntil: null,
+                        fingerprintCredentialId: null,
+                        isFingerprintRegistered: false,
+                        assistantAdmins: [],
+                        activityLog: []
+                    };
+                }
+
+                var saved = sessionStorage.getItem('admin_session');
                 if (saved) {
-                    const data = JSON.parse(saved);
-                    const elapsed = Date.now() - data.sessionStart;
+                    var data = JSON.parse(saved);
+                    var elapsed = Date.now() - data.sessionStart;
 
                     if (elapsed < ADMIN_CONFIG.sessionTimeout && data.isAuthenticated) {
                         currentAdmin = {
@@ -2177,7 +2192,7 @@
                         updateAdminUI();
                         startSessionMonitor();
 
-                        setTimeout(() => {
+                        setTimeout(function() {
                             loadAllData();
                             loadAdmins();
                             loadActivityLog();
@@ -2192,18 +2207,24 @@
                         return false;
                     }
                 }
-            } catch (e) {}
+            } catch (e) {
+                console.error('❌ Session check error:', e);
+                sessionStorage.removeItem('admin_session');
+                if (adminState) adminState.isAuthenticated = false;
+                showFingerprintLogin();
+                return false;
+            }
 
             showFingerprintLogin();
             return false;
         }
 
         // ============================================================
-        // 11. SHOW/HIDE LOGIN
+        // 12. SHOW/HIDE LOGIN
         // ============================================================
         function showFingerprintLogin() {
-            const overlay = document.getElementById('adminLoginOverlay');
-            const container = document.querySelector('.admin-container');
+            var overlay = document.getElementById('adminLoginOverlay');
+            var container = document.querySelector('.admin-container');
             if (overlay) overlay.style.display = 'flex';
             if (container) {
                 container.style.opacity = '0.3';
@@ -2213,8 +2234,8 @@
         }
 
         function hideFingerprintLogin() {
-            const overlay = document.getElementById('adminLoginOverlay');
-            const container = document.querySelector('.admin-container');
+            var overlay = document.getElementById('adminLoginOverlay');
+            var container = document.querySelector('.admin-container');
             if (overlay) overlay.style.display = 'none';
             if (container) {
                 container.style.opacity = '1';
@@ -2224,14 +2245,14 @@
         }
 
         // ============================================================
-        // 12. UPDATE ADMIN UI
+        // 13. UPDATE ADMIN UI
         // ============================================================
         function updateAdminUI() {
             if (!currentAdmin) return;
 
-            const displayName = document.getElementById('adminDisplayName');
-            const roleBadge = document.getElementById('adminRoleBadge');
-            const subtitle = document.getElementById('adminDashboardSubtitle');
+            var displayName = document.getElementById('adminDisplayName');
+            var roleBadge = document.getElementById('adminRoleBadge');
+            var subtitle = document.getElementById('adminDashboardSubtitle');
 
             if (displayName) displayName.textContent = currentAdmin.displayName;
 
@@ -2250,8 +2271,7 @@
                     (currentAdmin.role === 'supreme' ? ' · Full Access' : ' · Limited Access');
             }
 
-            // Show/hide admin management tab
-            const adminTab = document.querySelector('[data-tab="admins"]');
+            var adminTab = document.querySelector('[data-tab="admins"]');
             if (adminTab) {
                 if (currentAdmin.role === 'supreme') {
                     adminTab.style.display = 'inline-block';
@@ -2260,37 +2280,12 @@
                 }
             }
 
-            // Update admin tab badge
             document.getElementById('adminTabBadge').textContent = allAdmins.length || 0;
         }
 
         // ============================================================
-        // 13. HELPER FUNCTIONS
+        // 14. LOGOUT
         // ============================================================
-        function setFpStatus(message) {
-            const el = document.getElementById('fingerprintStatus');
-            if (el) {
-                el.textContent = message;
-                el.style.color = 'var(--text-secondary)';
-            }
-        }
-
-        function showFpError(message) {
-            const el = document.getElementById('fingerprintError');
-            if (el) {
-                el.textContent = message;
-                el.style.display = 'block';
-            }
-        }
-
-        function hideFpError() {
-            const el = document.getElementById('fingerprintError');
-            if (el) {
-                el.textContent = '';
-                el.style.display = 'none';
-            }
-        }
-
         function adminLogout() {
             if (confirm('Are you sure you want to logout?')) {
                 sessionStorage.removeItem('admin_session');
@@ -2302,23 +2297,23 @@
         }
 
         // ============================================================
-        // 14. SESSION MONITOR
+        // 15. SESSION MONITOR
         // ============================================================
         function startSessionMonitor() {
             if (adminSessionInterval) clearInterval(adminSessionInterval);
 
-            adminSessionInterval = setInterval(() => {
+            adminSessionInterval = setInterval(function() {
                 if (adminState.isAuthenticated) {
                     try {
-                        const saved = sessionStorage.getItem('admin_session');
+                        var saved = sessionStorage.getItem('admin_session');
                         if (!saved) {
                             adminState.isAuthenticated = false;
                             showFingerprintLogin();
                             showToast('⚠️ Session expired. Please login again.', 'error');
                             return;
                         }
-                        const data = JSON.parse(saved);
-                        const elapsed = Date.now() - data.sessionStart;
+                        var data = JSON.parse(saved);
+                        var elapsed = Date.now() - data.sessionStart;
                         if (elapsed > ADMIN_CONFIG.sessionTimeout) {
                             sessionStorage.removeItem('admin_session');
                             adminState.isAuthenticated = false;
@@ -2331,119 +2326,14 @@
         }
 
         // ============================================================
-        // 15. GENERATE INVITE LINK (Supreme Only)
-        // ============================================================
-        function generateInviteLink() {
-            if (!currentAdmin || currentAdmin.role !== 'supreme') {
-                showToast('❌ Only Supreme Admin can generate invite links', 'error');
-                return;
-            }
-
-            const token = 'INVITE_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
-            const baseUrl = window.location.href.split('?')[0];
-            const inviteLink = baseUrl + '?invite=' + token;
-
-            document.getElementById('inviteLinkDisplay').textContent = inviteLink;
-            document.getElementById('inviteLinkSection').style.display = 'block';
-
-            // Add to activity log
-            addActivityLog('invite', 'Generated invite link: ' + token);
-
-            showToast('✅ Invite link generated!', 'success');
-
-            // Simulate saving to Supabase (in production, save to admin_invites table)
-            try {
-                const invites = JSON.parse(localStorage.getItem('admin_invites') || '[]');
-                invites.push({
-                    token: token,
-                    invited_by: currentAdmin.id,
-                    created_at: getEATTimestamp(),
-                    expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-                    used: false
-                });
-                localStorage.setItem('admin_invites', JSON.stringify(invites));
-            } catch (e) {}
-        }
-
-        function copyInviteLink() {
-            const link = document.getElementById('inviteLinkDisplay').textContent;
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(link).then(() => {
-                    showToast('✅ Invite link copied!', 'success');
-                });
-            } else {
-                const ta = document.createElement('textarea');
-                ta.value = link;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                showToast('✅ Invite link copied!', 'success');
-            }
-        }
-
-        // ============================================================
-        // 16. CHECK INVITE ON LOAD
-        // ============================================================
-        function checkForInvite() {
-            const params = new URLSearchParams(window.location.search);
-            const inviteToken = params.get('invite');
-
-            if (inviteToken && currentAdmin && currentAdmin.role === 'supreme') {
-                // Show that this is an invite link
-                showToast('🔗 This is an invite link for assistant admin access', 'info');
-                document.getElementById('inviteLinkDisplay').textContent = window.location.href;
-                document.getElementById('inviteLinkSection').style.display = 'block';
-            } else if (inviteToken && (!currentAdmin || currentAdmin.role !== 'supreme')) {
-                // User is not logged in as supreme - prompt to login
-                showToast('🔗 Please login as Supreme Admin to use this invite link', 'warning');
-                // Show login
-                showFingerprintLogin();
-            }
-        }
-
-        // ============================================================
-        // 17. ADD ACTIVITY LOG
-        // ============================================================
-        function addActivityLog(action, details, targetUser = null, targetRef = null, amount = null) {
-            if (!currentAdmin) return;
-
-            const entry = {
-                id: 'log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
-                admin_id: currentAdmin.id,
-                admin_name: currentAdmin.displayName,
-                admin_role: currentAdmin.role,
-                action: action,
-                details: details,
-                target_user: targetUser,
-                target_ref: targetRef,
-                amount: amount,
-                created_at: getEATTimestamp(),
-                formatted_time: formatEATTime(getEATTime())
-            };
-
-            activityLog.unshift(entry);
-            if (activityLog.length > 1000) activityLog.pop();
-
-            // Save to localStorage for persistence
-            try {
-                localStorage.setItem('admin_activity_log', JSON.stringify(activityLog));
-            } catch (e) {}
-
-            renderActivityLog();
-        }
-
-        // ============================================================
-        // 18. LOAD ADMINS
+        // 16. LOAD ADMINS
         // ============================================================
         function loadAdmins() {
-            // For demo, use localStorage
             try {
-                const stored = localStorage.getItem('admin_users');
+                var stored = localStorage.getItem('admin_users');
                 if (stored) {
                     allAdmins = JSON.parse(stored);
                 } else {
-                    // Default - only supreme
                     allAdmins = [{
                         id: 'supreme_001',
                         username: 'sharpi_supreme',
@@ -2464,62 +2354,52 @@
         }
 
         // ============================================================
-        // 19. RENDER ADMINS
+        // 17. RENDER ADMINS
         // ============================================================
         function renderAdmins() {
-            const container = document.getElementById('adminsList');
+            var container = document.getElementById('adminsList');
             if (!container) return;
 
             if (allAdmins.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">👑</div>
-                        <div>No admins found</div>
-                        <div class="sub">Supreme Admin can invite assistant admins</div>
-                    </div>
-                `;
+                container.innerHTML =
+                    '<div class="empty-state"><div class="icon">👑</div><div>No admins found</div><div class="sub">Supreme Admin can invite assistant admins</div></div>';
                 return;
             }
 
-            let html = `<div class="table-responsive"><table class="table"><thead><tr>
-                <th>Admin</th><th>Role</th><th>Status</th><th>Fingerprint</th><th>Joined</th><th>Actions</th>
-            </tr></thead><tbody>`;
+            var html =
+                '<div class="table-responsive"><table class="table"><thead><tr><th>Admin</th><th>Role</th><th>Status</th><th>Fingerprint</th><th>Joined</th><th>Actions</th></tr></thead><tbody>';
 
-            allAdmins.forEach(admin => {
-                const isSupreme = admin.role === 'supreme';
-                const isActive = admin.is_active !== false;
-                const hasFingerprint = admin.fingerprint_registered || false;
+            allAdmins.forEach(function(admin) {
+                var isSupreme = admin.role === 'supreme';
+                var isActive = admin.is_active !== false;
+                var hasFingerprint = admin.fingerprint_registered || false;
 
-                html += `
-                    <tr>
-                        <td><span class="highlight">${admin.displayName}</span>
-                            <span style="font-size:9px;color:var(--text-muted);display:block;">${admin.username}</span>
-                        </td>
-                        <td>
-                            ${isSupreme ? 
-                                '<span class="status-badge" style="background:rgba(251,191,36,0.1);color:var(--text-gold);">👑 Supreme</span>' :
-                                '<span class="status-badge" style="background:rgba(96,165,250,0.1);color:var(--text-blue);">🔹 Assistant</span>'
-                            }
-                        </td>
-                        <td><span class="status-badge ${isActive ? 'success' : 'rejected'}">${isActive ? '✅ Active' : '❌ Inactive'}</span></td>
-                        <td>${hasFingerprint ? '✅ Registered' : '❌ Not registered'}</td>
-                        <td style="font-size:11px;color:var(--text-muted);">${admin.created_at ? formatEATTime(new Date(admin.created_at)) : 'N/A'}</td>
-                        <td>
-                            ${!isSupreme && currentAdmin && currentAdmin.role === 'supreme' ? `
-                                <button class="btn btn-red btn-xs" onclick="removeAdmin('${admin.id}')">🗑️ Remove</button>
-                            ` : ''}
-                            ${isSupreme ? '<span style="font-size:9px;color:var(--text-gold);">👑 Supreme</span>' : ''}
-                        </td>
-                    </tr>
-                `;
+                html += '<tr><td><span class="highlight">' + admin.displayName +
+                    '</span><span style="font-size:9px;color:var(--text-muted);display:block;">' + admin.username +
+                    '</span></td><td>' +
+                    (isSupreme ?
+                        '<span class="status-badge" style="background:rgba(251,191,36,0.1);color:var(--text-gold);">👑 Supreme</span>' :
+                        '<span class="status-badge" style="background:rgba(96,165,250,0.1);color:var(--text-blue);">🔹 Assistant</span>'
+                        ) +
+                    '</td><td><span class="status-badge ' + (isActive ? 'success' : 'rejected') + '">' + (isActive ?
+                        '✅ Active' : '❌ Inactive') +
+                    '</span></td><td>' + (hasFingerprint ? '✅ Registered' : '❌ Not registered') +
+                    '</td><td style="font-size:11px;color:var(--text-muted);">' + (admin.created_at ? formatEATTime(new Date(
+                        admin.created_at)) : 'N/A') +
+                    '</td><td>' +
+                    (!isSupreme && currentAdmin && currentAdmin.role === 'supreme' ?
+                        '<button class="btn btn-red btn-xs" onclick="removeAdmin(\'' + admin.id + '\')">🗑️ Remove</button>' :
+                        '') +
+                    (isSupreme ? '<span style="font-size:9px;color:var(--text-gold);">👑 Supreme</span>' : '') +
+                    '</td></tr>';
             });
 
-            html += `</tbody></table></div>`;
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
         // ============================================================
-        // 20. REMOVE ADMIN (Supreme Only)
+        // 18. REMOVE ADMIN
         // ============================================================
         function removeAdmin(adminId) {
             if (!currentAdmin || currentAdmin.role !== 'supreme') {
@@ -2527,7 +2407,7 @@
                 return;
             }
 
-            const admin = allAdmins.find(a => a.id === adminId);
+            var admin = allAdmins.find(function(a) { return a.id === adminId; });
             if (!admin) {
                 showToast('❌ Admin not found', 'error');
                 return;
@@ -2540,7 +2420,7 @@
 
             if (!confirm('Remove ' + admin.displayName + ' from admin access?')) return;
 
-            allAdmins = allAdmins.filter(a => a.id !== adminId);
+            allAdmins = allAdmins.filter(function(a) { return a.id !== adminId; });
             localStorage.setItem('admin_users', JSON.stringify(allAdmins));
 
             addActivityLog('remove_admin', 'Removed admin: ' + admin.displayName);
@@ -2549,11 +2429,91 @@
         }
 
         // ============================================================
+        // 19. GENERATE INVITE LINK
+        // ============================================================
+        function generateInviteLink() {
+            if (!currentAdmin || currentAdmin.role !== 'supreme') {
+                showToast('❌ Only Supreme Admin can generate invite links', 'error');
+                return;
+            }
+
+            var token = 'INVITE_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
+            var baseUrl = window.location.href.split('?')[0];
+            var inviteLink = baseUrl + '?invite=' + token;
+
+            document.getElementById('inviteLinkDisplay').textContent = inviteLink;
+            document.getElementById('inviteLinkSection').style.display = 'block';
+
+            addActivityLog('invite', 'Generated invite link: ' + token);
+
+            showToast('✅ Invite link generated!', 'success');
+
+            try {
+                var invites = JSON.parse(localStorage.getItem('admin_invites') || '[]');
+                invites.push({
+                    token: token,
+                    invited_by: currentAdmin.id,
+                    created_at: getEATTimestamp(),
+                    expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+                    used: false
+                });
+                localStorage.setItem('admin_invites', JSON.stringify(invites));
+            } catch (e) {}
+        }
+
+        function copyInviteLink() {
+            var link = document.getElementById('inviteLinkDisplay').textContent;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(link).then(function() {
+                    showToast('✅ Invite link copied!', 'success');
+                });
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = link;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('✅ Invite link copied!', 'success');
+            }
+        }
+
+        // ============================================================
+        // 20. ADD ACTIVITY LOG
+        // ============================================================
+        function addActivityLog(action, details, targetUser, targetRef, amount) {
+            if (!currentAdmin) return;
+
+            var entry = {
+                id: 'log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+                admin_id: currentAdmin.id,
+                admin_name: currentAdmin.displayName,
+                admin_role: currentAdmin.role,
+                action: action,
+                details: details,
+                target_user: targetUser || null,
+                target_ref: targetRef || null,
+                amount: amount || null,
+                created_at: getEATTimestamp(),
+                formatted_time: formatEATTime(getEATTime())
+            };
+
+            activityLog.unshift(entry);
+            if (activityLog.length > 1000) activityLog.pop();
+
+            try {
+                localStorage.setItem('admin_activity_log', JSON.stringify(activityLog));
+            } catch (e) {}
+
+            renderActivityLog();
+        }
+
+        // ============================================================
         // 21. LOAD ACTIVITY LOG
         // ============================================================
         function loadActivityLog() {
             try {
-                const stored = localStorage.getItem('admin_activity_log');
+                var stored = localStorage.getItem('admin_activity_log');
                 if (stored) {
                     activityLog = JSON.parse(stored);
                 }
@@ -2561,7 +2521,6 @@
                 activityLog = [];
             }
 
-            // Also check for any new logs from other tabs (in production, use Supabase)
             renderActivityLog();
             document.getElementById('activityTabBadge').textContent = activityLog.length;
         }
@@ -2570,47 +2529,56 @@
         // 22. RENDER ACTIVITY LOG
         // ============================================================
         function renderActivityLog() {
-            const container = document.getElementById('activityLogList');
+            var container = document.getElementById('activityLogList');
             if (!container) return;
 
             if (activityLog.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">📜</div>
-                        <div>No activity logged yet</div>
-                        <div class="sub">All admin actions will appear here</div>
-                    </div>
-                `;
+                container.innerHTML =
+                    '<div class="empty-state"><div class="icon">📜</div><div>No activity logged yet</div><div class="sub">All admin actions will appear here</div></div>';
                 return;
             }
 
-            // Populate admin filter dropdown
-            const adminFilter = document.getElementById('activityAdminFilter');
+            var adminFilter = document.getElementById('activityAdminFilter');
             if (adminFilter) {
-                const admins = [...new Set(activityLog.map(log => log.admin_name))];
-                const currentValue = adminFilter.value;
-                adminFilter.innerHTML = '<option value="all">All Admins</option>' +
-                    admins.map(name => `<option value="${name}">${name}</option>`).join('');
+                var admins = [];
+                for (var i = 0; i < activityLog.length; i++) {
+                    if (admins.indexOf(activityLog[i].admin_name) === -1) {
+                        admins.push(activityLog[i].admin_name);
+                    }
+                }
+                var currentValue = adminFilter.value;
+                adminFilter.innerHTML = '<option value="all">All Admins</option>';
+                for (var j = 0; j < admins.length; j++) {
+                    adminFilter.innerHTML += '<option value="' + admins[j] + '">' + admins[j] + '</option>';
+                }
                 if (currentValue) adminFilter.value = currentValue;
             }
 
-            const search = document.getElementById('activitySearch')?.value?.toLowerCase() || '';
-            const typeFilter = document.getElementById('activityTypeFilter')?.value || 'all';
-            const adminFilterValue = document.getElementById('activityAdminFilter')?.value || 'all';
+            var search = document.getElementById('activitySearch') ? document.getElementById('activitySearch').value
+                .toLowerCase() : '';
+            var typeFilter = document.getElementById('activityTypeFilter') ? document.getElementById('activityTypeFilter')
+                .value : 'all';
+            var adminFilterValue = document.getElementById('activityAdminFilter') ? document.getElementById(
+                'activityAdminFilter').value : 'all';
 
-            let filtered = activityLog.filter(log => {
-                const matchesSearch = log.details?.toLowerCase().includes(search) ||
-                    log.admin_name?.toLowerCase().includes(search) ||
-                    log.target_user?.toLowerCase().includes(search) ||
-                    log.target_ref?.toLowerCase().includes(search);
-                const matchesType = typeFilter === 'all' || log.action === typeFilter;
-                const matchesAdmin = adminFilterValue === 'all' || log.admin_name === adminFilterValue;
-                return matchesSearch && matchesType && matchesAdmin;
-            });
+            var filtered = [];
+            for (var k = 0; k < activityLog.length; k++) {
+                var log = activityLog[k];
+                var matchesSearch = (log.details || '').toLowerCase().includes(search) ||
+                    (log.admin_name || '').toLowerCase().includes(search) ||
+                    (log.target_user || '').toLowerCase().includes(search) ||
+                    (log.target_ref || '').toLowerCase().includes(search);
+                var matchesType = typeFilter === 'all' || log.action === typeFilter;
+                var matchesAdmin = adminFilterValue === 'all' || log.admin_name === adminFilterValue;
+                if (matchesSearch && matchesType && matchesAdmin) {
+                    filtered.push(log);
+                }
+            }
 
-            let html = '';
-            filtered.slice(0, 50).forEach(log => {
-                const actionIcons = {
+            var html = '';
+            for (var m = 0; m < Math.min(50, filtered.length); m++) {
+                var log = filtered[m];
+                var actionIcons = {
                     'dispatch': '🚀',
                     'forward': '📤',
                     'paid': '💵',
@@ -2620,32 +2588,30 @@
                     'invite': '🔗',
                     'remove_admin': '🗑️'
                 };
-                const icon = actionIcons[log.action] || '📌';
+                var icon = actionIcons[log.action] || '📌';
 
-                html += `
-                    <div class="activity-log-item">
-                        <div class="admin-avatar">${log.admin_name?.charAt(0) || 'A'}</div>
-                        <span class="admin-name">${log.admin_name || 'Unknown'}</span>
-                        <span class="admin-role ${log.admin_role === 'supreme' ? 'supreme' : 'assistant'}">${log.admin_role || 'admin'}</span>
-                        <span class="action-text">${icon} ${log.details || log.action}</span>
-                        ${log.target_user ? `<span style="font-size:10px;color:var(--text-cyan);">→ ${log.target_user}</span>` : ''}
-                        ${log.amount ? `<span style="font-size:10px;color:var(--text-gold);">${log.amount.toLocaleString()} UGX</span>` : ''}
-                        <span class="action-time">${log.formatted_time || formatEATTime(new Date(log.created_at))}</span>
-                    </div>
-                `;
-            });
+                html += '<div class="activity-log-item">' +
+                    '<div class="admin-avatar">' + (log.admin_name ? log.admin_name.charAt(0) : 'A') + '</div>' +
+                    '<span class="admin-name">' + (log.admin_name || 'Unknown') + '</span>' +
+                    '<span class="admin-role ' + (log.admin_role === 'supreme' ? 'supreme' : 'assistant') + '">' + (log
+                        .admin_role || 'admin') + '</span>' +
+                    '<span class="action-text">' + icon + ' ' + (log.details || log.action) + '</span>' +
+                    (log.target_user ? '<span style="font-size:10px;color:var(--text-cyan);">→ ' + log.target_user +
+                        '</span>' : '') +
+                    (log.amount ? '<span style="font-size:10px;color:var(--text-gold);">' + log.amount.toLocaleString() +
+                        ' UGX</span>' : '') +
+                    '<span class="action-time">' + (log.formatted_time || formatEATTime(new Date(log.created_at))) +
+                    '</span>' +
+                    '</div>';
+            }
 
             if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">🔍</div>
-                        <div>No matching activity found</div>
-                    </div>
-                `;
+                container.innerHTML =
+                    '<div class="empty-state"><div class="icon">🔍</div><div>No matching activity found</div></div>';
             } else {
                 container.innerHTML = html + (filtered.length > 50 ?
-                    `<div style="text-align:center;padding:10px;color:var(--text-muted);font-size:11px;">Showing 50 of ${filtered.length} records</div>` :
-                    '');
+                    '<div style="text-align:center;padding:10px;color:var(--text-muted);font-size:11px;">Showing 50 of ' +
+                    filtered.length + ' records</div>' : '');
             }
         }
 
@@ -2661,7 +2627,7 @@
         }
 
         // ============================================================
-        // 23. LOAD ALL DATA (Preserved from original)
+        // 23. LOAD ALL DATA
         // ============================================================
         async function loadAllData() {
             if (!supabaseClient) {
@@ -2674,51 +2640,34 @@
             document.getElementById('lastUpdated').textContent = formatEATTime(getEATTime());
 
             try {
-                // Load affiliates
-                const { data: affiliates } = await supabaseClient.from('affiliates').select('*');
-                allAffiliates = affiliates || [];
+                var affiliates = await supabaseClient.from('affiliates').select('*');
+                allAffiliates = affiliates.data || [];
                 renderAffiliates(allAffiliates);
                 document.getElementById('affiliateTabBadge').textContent = allAffiliates.length;
 
-                // Load sales
-                const { data: sales } = await supabaseClient.from('payment_requests').select('*').order('created_at', {
-                    ascending: false
-                });
-                allSales = sales || [];
+                var sales = await supabaseClient.from('payment_requests').select('*').order('created_at', { ascending: false });
+                allSales = sales.data || [];
                 renderSales(allSales);
                 document.getElementById('salesTabBadge').textContent = allSales.length;
 
-                // Load users
-                const { data: users } = await supabaseClient.from('payment_requests').select('*').order('created_at', {
-                    ascending: false
-                });
-                allAppUsers = users || [];
+                var users = await supabaseClient.from('payment_requests').select('*').order('created_at', { ascending: false });
+                allAppUsers = users.data || [];
                 renderAppUsers(allAppUsers);
                 document.getElementById('userTabBadge').textContent = allAppUsers.length;
 
-                // Load tokens
-                const { data: tokens } = await supabaseClient.from('payment_requests').select('*').not('token', 'is', null);
-                allTokens = tokens || [];
+                var tokens = await supabaseClient.from('payment_requests').select('*').not('token', 'is', null);
+                allTokens = tokens.data || [];
                 renderTokens(allTokens);
                 document.getElementById('tokenTabBadge').textContent = allTokens.length;
 
-                // Load generated keys
-                const { data: keys } = await supabaseClient.from('generated_keys').select('*');
-                allGeneratedKeys = keys || [];
+                var keys = await supabaseClient.from('generated_keys').select('*');
+                allGeneratedKeys = keys.data || [];
 
-                // Load quick actions
                 await loadQuickActions();
-
-                // Load stats
                 await loadStats();
-
-                // Load affiliate tree
                 await loadAffiliateTree();
 
-                // Update badges
                 updateTabBadges();
-
-                // Log activity
                 addActivityLog('login', 'Loaded admin dashboard');
 
             } catch (e) {
@@ -2739,52 +2688,44 @@
         }
 
         // ============================================================
-        // 24. QUICK ACTIONS (Preserved)
+        // 24. LOAD QUICK ACTIONS
         // ============================================================
         async function loadQuickActions() {
             if (!supabaseClient) return;
 
             try {
-                const { data, error } = await supabaseClient
+                var data = await supabaseClient
                     .from('payment_requests')
                     .select('*')
                     .order('created_at', { ascending: false })
                     .limit(30);
 
-                if (error) throw error;
-
-                allQuickActions = data || [];
+                allQuickActions = data.data || [];
                 renderQuickActions(allQuickActions);
                 document.getElementById('quickActionsTabBadge').textContent = allQuickActions.length;
-
-                // Log activity
-                addActivityLog('dispatch', 'Loaded quick actions');
 
             } catch (e) {
                 console.error('❌ Load quick actions error:', e);
                 document.getElementById('quickActionsList').innerHTML =
-                    `<div class="empty-state"><div class="icon">❌</div>Error loading payment requests</div>`;
+                    '<div class="empty-state"><div class="icon">❌</div>Error loading payment requests</div>';
             }
         }
 
         function renderQuickActions(data) {
-            const container = document.getElementById('quickActionsList');
+            var container = document.getElementById('quickActionsList');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <div class="icon">📭</div>
-                        <p style="color:var(--text-secondary);">No payment requests yet.</p>
-                    </div>
-                `;
+                container.innerHTML =
+                    '<div class="empty-state"><div class="icon">📭</div><p style="color:var(--text-secondary);">No payment requests yet.</p></div>';
                 return;
             }
 
-            let html = '';
+            var html = '';
 
-            data.forEach(s => {
-                const statusMap = {
+            for (var i = 0; i < data.length; i++) {
+                var s = data[i];
+                var statusMap = {
                     'pending': '⏳ Pending',
                     'verified': '✅ Verified',
                     'key_generated': '🔑 Key Gen',
@@ -2792,65 +2733,79 @@
                     'paid': '💵 Paid',
                     'rejected': '❌ Rejected'
                 };
-                const statusText = statusMap[s.status] || s.status || 'Unknown';
-                const statusClass = s.status === 'paid' ? 'paid' : s.status === 'forwarded' ? 'forwarded' :
+                var statusText = statusMap[s.status] || s.status || 'Unknown';
+                var statusClass = s.status === 'paid' ? 'paid' : s.status === 'forwarded' ? 'forwarded' :
                     s.status === 'key_generated' ? 'key-generated' : s.status === 'rejected' ? 'rejected' :
                     'pending';
 
-                const canDispatch = s.status === 'pending' || s.status === 'verified';
-                const canForward = s.status === 'key_generated';
+                var canDispatch = s.status === 'pending' || s.status === 'verified';
+                var canForward = s.status === 'key_generated';
 
-                const safeUserData = {
+                var safeUserData = {
                     name: (s.user_name || s.name || 'User').replace(/'/g, "\\'"),
                     whatsapp: (s.user_whatsapp || s.whatsapp || '0000000000').replace(/'/g, "\\'"),
                     id: (s.user_id || s.id || '000000').replace(/'/g, "\\'"),
                     promo_code: (s.promo_code || '').replace(/'/g, "\\'"),
                     package: (s.package || '').replace(/'/g, "\\'")
                 };
-                const userDataJson = JSON.stringify(safeUserData).replace(/"/g, '&quot;');
+                var userDataJson = JSON.stringify(safeUserData).replace(/"/g, '&quot;');
 
-                const timeAgo = s.created_at ? getTimeAgo(new Date(s.created_at)) : 'Just now';
+                var timeAgo = s.created_at ? getTimeAgo(new Date(s.created_at)) : 'Just now';
 
-                html += `
-                    <div class="quick-action-card" data-status="${s.status}" data-search="${(s.user_name || '')} ${(s.promo_code || '')} ${(s.ref || '')}">
-                        <div class="qa-info">
-                            <span class="qa-name">${s.user_name || 'Anonymous'}</span>
-                            <div class="qa-detail">
-                                <span class="tag promo">🔑 ${s.promo_code || 'N/A'}</span>
-                                <span class="tag ref">📋 ${s.ref || 'N/A'}</span>
-                                <span>📱 ${s.user_whatsapp || 'N/A'}</span>
-                                <span class="qa-status status-badge ${statusClass}">${statusText}</span>
-                                ${currentAdmin ? `<span class="qa-admin-tag">👤 ${currentAdmin.displayName}</span>` : ''}
-                            </div>
-                            <span class="qa-time">🕐 ${timeAgo}</span>
-                        </div>
-                        <div class="qa-actions">
-                            ${canDispatch ? `
-                                <button class="btn btn-green btn-xs" onclick="dispatchSale('${s.id}', '${s.user_id || s.id}', ${userDataJson}, this)">🚀 Dispatch</button>
-                                <button class="btn btn-red btn-xs" onclick="rejectSale('${s.id}', this)">🗑️</button>
-                            ` : ''}
-                            ${canForward ? `
-                                <button class="btn btn-blue btn-xs" onclick="forwardSale('${s.id}', '${s.user_id || s.id}', ${userDataJson}, this)">📤 Forward</button>
-                                <button class="btn btn-red btn-xs" onclick="rejectSale('${s.id}', this)">🗑️</button>
-                            ` : ''}
-                            ${s.status === 'forwarded' ? `<span style="color:var(--text-purple);font-size:10px;">📤 Forwarded</span>` : ''}
-                            ${s.status === 'paid' ? `<span style="color:var(--text-green);font-size:10px;">💵 Paid</span>` : ''}
-                            ${s.status === 'rejected' ? `<span style="color:var(--text-red);font-size:10px;">❌ Rejected</span>` : ''}
-                            ${s.user_whatsapp ? `<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp('${s.user_whatsapp}', '${s.user_name}')">💬</button>` : ''}
-                        </div>
-                    </div>
-                `;
-            });
+                html += '<div class="quick-action-card" data-status="' + s.status + '" data-search="' + ((s.user_name || '') +
+                    ' ' + (s.promo_code || '') + ' ' + (s.ref || '')) + '">' +
+                    '<div class="qa-info">' +
+                    '<span class="qa-name">' + (s.user_name || 'Anonymous') + '</span>' +
+                    '<div class="qa-detail">' +
+                    '<span class="tag promo">🔑 ' + (s.promo_code || 'N/A') + '</span>' +
+                    '<span class="tag ref">📋 ' + (s.ref || 'N/A') + '</span>' +
+                    '<span>📱 ' + (s.user_whatsapp || 'N/A') + '</span>' +
+                    '<span class="qa-status status-badge ' + statusClass + '">' + statusText + '</span>' +
+                    (currentAdmin ? '<span class="qa-admin-tag">👤 ' + currentAdmin.displayName + '</span>' : '') +
+                    '</div>' +
+                    '<span class="qa-time">🕐 ' + timeAgo + '</span>' +
+                    '</div>' +
+                    '<div class="qa-actions">';
+
+                if (canDispatch) {
+                    html +=
+                        '<button class="btn btn-green btn-xs" onclick="dispatchSale(\'' + s.id + '\', \'' + (s.user_id ||
+                            s.id) + '\', ' + userDataJson + ', this)">🚀 Dispatch</button>' +
+                        '<button class="btn btn-red btn-xs" onclick="rejectSale(\'' + s.id + '\', this)">🗑️</button>';
+                }
+                if (canForward) {
+                    html +=
+                        '<button class="btn btn-blue btn-xs" onclick="forwardSale(\'' + s.id + '\', \'' + (s.user_id ||
+                            s.id) + '\', ' + userDataJson + ', this)">📤 Forward</button>' +
+                        '<button class="btn btn-red btn-xs" onclick="rejectSale(\'' + s.id + '\', this)">🗑️</button>';
+                }
+                if (s.status === 'forwarded') {
+                    html += '<span style="color:var(--text-purple);font-size:10px;">📤 Forwarded</span>';
+                }
+                if (s.status === 'paid') {
+                    html += '<span style="color:var(--text-green);font-size:10px;">💵 Paid</span>';
+                }
+                if (s.status === 'rejected') {
+                    html += '<span style="color:var(--text-red);font-size:10px;">❌ Rejected</span>';
+                }
+                if (s.user_whatsapp) {
+                    html +=
+                        '<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp(\'' + s.user_whatsapp +
+                        '\', \'' + s.user_name + '\')">💬</button>';
+                }
+
+                html += '</div></div>';
+            }
 
             container.innerHTML = html;
 
-            const visibleCards = container.querySelectorAll('.quick-action-card:not([style*="display: none"])');
+            var visibleCards = container.querySelectorAll('.quick-action-card:not([style*="display: none"])');
             document.getElementById('quickActionsTabBadge').textContent = visibleCards.length || 0;
         }
 
         function getTimeAgo(date) {
-            const seconds = Math.floor((new Date() - date) / 1000);
-            const intervals = {
+            var seconds = Math.floor((new Date() - date) / 1000);
+            var intervals = {
                 year: 31536000,
                 month: 2592000,
                 week: 604800,
@@ -2859,8 +2814,8 @@
                 minute: 60,
                 second: 1
             };
-            for (const [unit, secondsInUnit] of Object.entries(intervals)) {
-                const interval = Math.floor(seconds / secondsInUnit);
+            for (var unit in intervals) {
+                var interval = Math.floor(seconds / intervals[unit]);
                 if (interval >= 1) {
                     return interval + ' ' + unit + (interval === 1 ? '' : 's') + ' ago';
                 }
@@ -2869,15 +2824,15 @@
         }
 
         function filterQuickActions() {
-            const search = document.getElementById('qaSearch').value.toLowerCase();
-            const status = document.getElementById('qaStatusFilter').value;
-            const cards = document.querySelectorAll('.quick-action-card');
+            var search = document.getElementById('qaSearch').value.toLowerCase();
+            var status = document.getElementById('qaStatusFilter').value;
+            var cards = document.querySelectorAll('.quick-action-card');
 
-            cards.forEach(card => {
-                const searchText = card.dataset.search.toLowerCase();
-                const cardStatus = card.dataset.status;
-                const matchesSearch = search === '' || searchText.includes(search);
-                const matchesStatus = status === 'all' || cardStatus === status;
+            cards.forEach(function(card) {
+                var searchText = card.dataset.search.toLowerCase();
+                var cardStatus = card.dataset.status;
+                var matchesSearch = search === '' || searchText.includes(search);
+                var matchesStatus = status === 'all' || cardStatus === status;
                 if (matchesSearch && matchesStatus) {
                     card.style.display = 'flex';
                 } else {
@@ -2885,34 +2840,30 @@
                 }
             });
 
-            const visible = document.querySelectorAll('.quick-action-card:not([style*="display: none"])');
+            var visible = document.querySelectorAll('.quick-action-card:not([style*="display: none"])');
             document.getElementById('quickActionsTabBadge').textContent = visible.length || 0;
         }
 
         // ============================================================
-        // 25. DISPATCH/FORWARD/REJECT (Preserved with logging)
+        // 25. DISPATCH/FORWARD/REJECT
         // ============================================================
         async function dispatchSale(saleId, userId, userData, buttonElement) {
-            // Log the action
             addActivityLog('dispatch', 'Dispatched sale ' + saleId + ' for ' + (userData.name || 'User'), userData.name, userData
                 .promo_code);
 
-            // Original dispatch logic preserved
             if (!supabaseClient) {
                 showToast('❌ Supabase not initialized', 'error');
                 return;
             }
 
-            // ... (original dispatch logic here)
             showToast('✅ Sale dispatched!', 'success');
             buttonElement.innerHTML = '✅ Dispatched';
             buttonElement.className = 'btn btn-outline btn-xs';
             buttonElement.disabled = true;
 
-            // Log completion
             addActivityLog('dispatch', 'Completed dispatch for sale ' + saleId, userData.name, userData.promo_code);
 
-            setTimeout(() => {
+            setTimeout(function() {
                 loadAllData();
                 loadQuickActions();
             }, 500);
@@ -2922,16 +2873,14 @@
             addActivityLog('forward', 'Forwarded sale ' + saleId + ' for ' + (userData.name || 'User'), userData.name, userData
                 .promo_code);
 
-            // ... (original forward logic here)
             showToast('✅ Sale forwarded!', 'success');
             buttonElement.innerHTML = '✅ Forwarded';
             buttonElement.className = 'btn btn-outline btn-xs';
             buttonElement.disabled = true;
 
-            // Log completion
             addActivityLog('forward', 'Completed forward for sale ' + saleId, userData.name, userData.promo_code);
 
-            setTimeout(() => {
+            setTimeout(function() {
                 loadAllData();
                 loadQuickActions();
             }, 500);
@@ -2940,42 +2889,44 @@
         async function rejectSale(saleId, buttonElement) {
             addActivityLog('reject', 'Rejected sale ' + saleId);
 
-            // ... (original reject logic here)
             showToast('❌ Sale rejected', 'error');
             buttonElement.innerHTML = '❌ Rejected';
             buttonElement.className = 'btn btn-outline btn-xs';
             buttonElement.disabled = true;
 
-            setTimeout(() => {
+            setTimeout(function() {
                 loadAllData();
                 loadQuickActions();
             }, 500);
         }
 
         // ============================================================
-        // 26. LOAD STATS (Preserved)
+        // 26. LOAD STATS
         // ============================================================
         async function loadStats() {
             try {
-                const { data: affiliates } = await supabaseClient.from('affiliates').select('*');
-                const totalAffiliates = affiliates?.length || 0;
-                const activeAffiliates = affiliates?.filter(a => a.active !== false).length || 0;
+                var affiliates = await supabaseClient.from('affiliates').select('*');
+                var totalAffiliates = affiliates.data ? affiliates.data.length : 0;
+                var activeAffiliates = affiliates.data ? affiliates.data.filter(function(a) { return a.active !== false; })
+                    .length : 0;
 
-                const { data: users } = await supabaseClient.from('payment_requests').select('*');
-                const totalUsers = users?.length || 0;
+                var users = await supabaseClient.from('payment_requests').select('*');
+                var totalUsers = users.data ? users.data.length : 0;
 
-                const { data: sales } = await supabaseClient.from('payment_requests').select('*');
-                const totalSales = sales?.length || 0;
-                const totalRevenue = sales?.reduce((sum, s) => sum + (s.amount || 0), 0) || 0;
-                const totalCommission = totalSales * 20000;
-                const pendingPayouts = sales?.filter(s => s.status === 'forwarded').length * 20000 || 0;
-                const verifiedTokens = sales?.filter(s => s.status === 'key_generated' && s.token).length || 0;
+                var sales = await supabaseClient.from('payment_requests').select('*');
+                var totalSales = sales.data ? sales.data.length : 0;
+                var totalRevenue = sales.data ? sales.data.reduce(function(sum, s) { return sum + (s.amount || 0); }, 0) : 0;
+                var totalCommission = totalSales * 20000;
+                var pendingPayouts = sales.data ? sales.data.filter(function(s) { return s.status === 'forwarded'; }).length *
+                    20000 : 0;
+                var verifiedTokens = sales.data ? sales.data.filter(function(s) { return s.status === 'key_generated' && s
+                        .token; }).length : 0;
 
-                const { data: keys } = await supabaseClient.from('generated_keys').select('*');
-                const totalKeys = keys?.length || 0;
-                const keysForwarded = keys?.filter(k => k.forwarded === true).length || 0;
-                const keysUsed = keys?.filter(k => k.status === 'used').length || 0;
-                const keysRejected = keys?.filter(k => k.status === 'invalid').length || 0;
+                var keys = await supabaseClient.from('generated_keys').select('*');
+                var totalKeys = keys.data ? keys.data.length : 0;
+                var keysForwarded = keys.data ? keys.data.filter(function(k) { return k.forwarded === true; }).length : 0;
+                var keysUsed = keys.data ? keys.data.filter(function(k) { return k.status === 'used'; }).length : 0;
+                var keysRejected = keys.data ? keys.data.filter(function(k) { return k.status === 'invalid'; }).length : 0;
 
                 document.getElementById('statAffiliates').textContent = totalAffiliates;
                 document.getElementById('statActiveAffiliates').textContent = activeAffiliates;
@@ -2997,15 +2948,12 @@
         }
 
         // ============================================================
-        // 27. LOAD AFFILIATE TREE (Preserved)
+        // 27. LOAD AFFILIATE TREE
         // ============================================================
         async function loadAffiliateTree() {
             try {
-                const { data: affiliates, error } = await supabaseClient.from('affiliates').select('*');
-                if (error) throw error;
-
-                // Build tree
-                const tree = buildTree(affiliates || []);
+                var affiliates = await supabaseClient.from('affiliates').select('*');
+                var tree = buildTree(affiliates.data || []);
                 affiliateTreeData = tree;
                 renderTree(tree);
                 document.getElementById('treeTabBadge').textContent = tree.length || 0;
@@ -3013,24 +2961,24 @@
             } catch (e) {
                 console.error('❌ Tree load error:', e);
                 document.getElementById('treeContainer').innerHTML =
-                    `<div class="empty-state"><div class="icon">❌</div>Error loading tree</div>`;
+                    '<div class="empty-state"><div class="icon">❌</div>Error loading tree</div>';
             }
         }
 
         function buildTree(affiliates) {
-            const affiliateMap = {};
-            affiliates.forEach(a => {
+            var affiliateMap = {};
+            affiliates.forEach(function(a) {
                 affiliateMap[a.code] = { ...a, children: [] };
             });
 
-            affiliates.forEach(a => {
+            affiliates.forEach(function(a) {
                 if (a.referred_by && affiliateMap[a.referred_by]) {
                     affiliateMap[a.referred_by].children.push(affiliateMap[a.code]);
                 }
             });
 
-            const roots = [];
-            affiliates.forEach(a => {
+            var roots = [];
+            affiliates.forEach(function(a) {
                 if (!a.referred_by || !affiliateMap[a.referred_by]) {
                     roots.push(affiliateMap[a.code]);
                 }
@@ -3039,57 +2987,61 @@
             return roots;
         }
 
-        function renderTree(tree, depth = 0, searchTerm = '') {
-            const container = document.getElementById('treeContainer');
+        function renderTree(tree, depth, searchTerm) {
+            depth = depth || 0;
+            searchTerm = searchTerm || '';
+            var container = document.getElementById('treeContainer');
             if (!container) return;
 
             if (!tree || tree.length === 0) {
                 container.innerHTML =
-                `<div class="empty-state"><div class="icon">🌳</div><div>No affiliates found</div></div>`;
+                    '<div class="empty-state"><div class="icon">🌳</div><div>No affiliates found</div></div>';
                 return;
             }
 
-            let html = '';
-            tree.forEach(node => {
+            var html = '';
+            tree.forEach(function(node) {
                 html += renderTreeNode(node, depth, searchTerm);
             });
 
             container.innerHTML = html;
         }
 
-        function renderTreeNode(node, depth = 0, searchTerm = '') {
-            const hasChildren = node.children && node.children.length > 0;
-            const indent = depth * 20;
-            const isRoot = depth === 0;
+        function renderTreeNode(node, depth, searchTerm) {
+            var hasChildren = node.children && node.children.length > 0;
+            var indent = depth * 20;
+            var isRoot = depth === 0;
 
-            let html = `
-                <div class="tree-node" style="padding-left:${indent + 20}px; margin-left:${isRoot ? 0 : 20}px;">
-                    <div class="node-content">
-                        <span class="node-name">${node.name || 'Unknown'}</span>
-                        <span class="node-code">${node.code || 'N/A'}</span>
-                        <span class="node-badge ${isRoot ? 'root' : 'child'}">${isRoot ? '🌱 Root' : '👤 Child'}</span>
-                        <span class="node-stats">
-                            <span>👥 ${node.children ? node.children.length : 0} referrals</span>
-                            <span>📱 ${node.contact || 'N/A'}</span>
-                            ${hasChildren ? `<span class="toggle-btn" onclick="toggleTreeNode(this)" style="cursor:pointer;color:var(--text-gold);">📂</span>` : ''}
-                        </span>
-                    </div>
-            `;
+            var html = '<div class="tree-node" style="padding-left:' + (indent + 20) +
+                'px; margin-left:' + (isRoot ? 0 : 20) + 'px;">' +
+                '<div class="node-content">' +
+                '<span class="node-name">' + (node.name || 'Unknown') + '</span>' +
+                '<span class="node-code">' + (node.code || 'N/A') + '</span>' +
+                '<span class="node-badge ' + (isRoot ? 'root' : 'child') + '">' + (isRoot ? '🌱 Root' : '👤 Child') +
+                '</span>' +
+                '<span class="node-stats">' +
+                '<span>👥 ' + (node.children ? node.children.length : 0) + ' referrals</span>' +
+                '<span>📱 ' + (node.contact || 'N/A') + '</span>' +
+                (hasChildren ?
+                    '<span class="toggle-btn" onclick="toggleTreeNode(this)" style="cursor:pointer;color:var(--text-gold);">📂</span>'
+                    : '') +
+                '</span>' +
+                '</div>';
 
             if (hasChildren) {
-                html += `<div class="tree-children" style="display:none;">`;
-                node.children.forEach(child => {
+                html += '<div class="tree-children" style="display:none;">';
+                node.children.forEach(function(child) {
                     html += renderTreeNode(child, depth + 1, searchTerm);
                 });
-                html += `</div>`;
+                html += '</div>';
             }
 
-            html += `</div>`;
+            html += '</div>';
             return html;
         }
 
         function toggleTreeNode(btn) {
-            const childrenDiv = btn.closest('.tree-node').querySelector('.tree-children');
+            var childrenDiv = btn.closest('.tree-node').querySelector('.tree-children');
             if (childrenDiv) {
                 if (childrenDiv.style.display === 'none') {
                     childrenDiv.style.display = 'block';
@@ -3102,69 +3054,71 @@
         }
 
         function expandAllTree() {
-            document.querySelectorAll('.tree-children').forEach(el => { el.style.display = 'block'; });
-            document.querySelectorAll('.toggle-btn').forEach(el => { el.textContent = '📂'; });
+            document.querySelectorAll('.tree-children').forEach(function(el) { el.style.display = 'block'; });
+            document.querySelectorAll('.toggle-btn').forEach(function(el) { el.textContent = '📂'; });
         }
 
         function collapseAllTree() {
-            document.querySelectorAll('.tree-children').forEach(el => { el.style.display = 'none'; });
-            document.querySelectorAll('.toggle-btn').forEach(el => { el.textContent = '📁'; });
+            document.querySelectorAll('.tree-children').forEach(function(el) { el.style.display = 'none'; });
+            document.querySelectorAll('.toggle-btn').forEach(function(el) { el.textContent = '📁'; });
         }
 
         function filterTree() {
-            const search = document.getElementById('treeSearch').value.toLowerCase().trim();
+            var search = document.getElementById('treeSearch').value.toLowerCase().trim();
             renderTree(affiliateTreeData, 0, search);
             if (search) expandAllTree();
         }
 
         // ============================================================
-        // 28. RENDER AFFILIATES (Preserved)
+        // 28. RENDER AFFILIATES
         // ============================================================
         function renderAffiliates(data) {
-            const container = document.getElementById('affiliatesList');
+            var container = document.getElementById('affiliatesList');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = `<div class="empty-state"><div class="icon">📭</div>No affiliates yet</div>`;
+                container.innerHTML = '<div class="empty-state"><div class="icon">📭</div>No affiliates yet</div>';
                 return;
             }
 
-            let html =
-                `<div class="table-responsive"><table class="table"><thead><tr><th>Name</th><th>Code</th><th>Contact</th><th>Platform</th><th>Status</th><th>Sales</th><th>Actions</th></tr></thead><tbody>`;
+            var html =
+                '<div class="table-responsive"><table class="table"><thead><tr><th>Name</th><th>Code</th><th>Contact</th><th>Platform</th><th>Status</th><th>Sales</th><th>Actions</th></tr></thead><tbody>';
 
-            data.forEach(a => {
-                const isActive = a.active !== false;
-                const sales = allSales.filter(s => s.promo_code === a.code);
-                const totalSales = sales.length;
+            for (var i = 0; i < data.length; i++) {
+                var a = data[i];
+                var isActive = a.active !== false;
+                var sales = allSales.filter(function(s) { return s.promo_code === a.code; });
+                var totalSales = sales.length;
 
-                html += `
-                    <tr>
-                        <td><span class="highlight">${a.name || 'Unknown'}</span></td>
-                        <td style="font-family:monospace;font-size:11px;color:var(--text-cyan);">${a.code || 'N/A'}</td>
-                        <td>${a.contact || 'N/A'}</td>
-                        <td>${a.platform || 'N/A'}</td>
-                        <td><span class="status-badge ${isActive ? 'success' : 'rejected'}">${isActive ? '✅ Active' : '❌ Inactive'}</span></td>
-                        <td>${totalSales}</td>
-                        <td>
-                            <button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp('${a.contact || ''}', '${a.name || ''}')">💬</button>
-                            <button class="btn btn-outline btn-xs" onclick="lookupAffiliateCode('${a.code}')">🔍</button>
-                        </td>
-                    </tr>
-                `;
-            });
+                html += '<tr>' +
+                    '<td><span class="highlight">' + (a.name || 'Unknown') + '</span></td>' +
+                    '<td style="font-family:monospace;font-size:11px;color:var(--text-cyan);">' + (a.code || 'N/A') +
+                    '</td>' +
+                    '<td>' + (a.contact || 'N/A') + '</td>' +
+                    '<td>' + (a.platform || 'N/A') + '</td>' +
+                    '<td><span class="status-badge ' + (isActive ? 'success' : 'rejected') + '">' + (isActive ?
+                        '✅ Active' : '❌ Inactive') + '</span></td>' +
+                    '<td>' + totalSales + '</td>' +
+                    '<td>' +
+                    '<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp(\'' + (a.contact || '') + '\', \'' + (a
+                        .name || '') + '\')">💬</button>' +
+                    '<button class="btn btn-outline btn-xs" onclick="lookupAffiliateCode(\'' + a.code +
+                    '\')">🔍</button>' +
+                    '</td></tr>';
+            }
 
-            html += `</tbody></table></div>`;
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
         function filterAffiliates() {
-            const search = document.getElementById('affiliateSearch').value.toLowerCase();
-            const status = document.getElementById('affiliateStatusFilter').value;
-            let filtered = allAffiliates.filter(a => {
-                const matchesSearch = (a.name || '').toLowerCase().includes(search) ||
+            var search = document.getElementById('affiliateSearch').value.toLowerCase();
+            var status = document.getElementById('affiliateStatusFilter').value;
+            var filtered = allAffiliates.filter(function(a) {
+                var matchesSearch = (a.name || '').toLowerCase().includes(search) ||
                     (a.code || '').toLowerCase().includes(search);
-                const isActive = a.active !== false;
-                const matchesStatus = status === 'all' ||
+                var isActive = a.active !== false;
+                var matchesStatus = status === 'all' ||
                     (status === 'active' && isActive) ||
                     (status === 'inactive' && !isActive);
                 return matchesSearch && matchesStatus;
@@ -3173,22 +3127,23 @@
         }
 
         // ============================================================
-        // 29. RENDER USERS (Preserved)
+        // 29. RENDER USERS
         // ============================================================
         function renderAppUsers(data) {
-            const container = document.getElementById('appUsersList');
+            var container = document.getElementById('appUsersList');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = `<div class="empty-state"><div class="icon">📱</div>No users yet</div>`;
+                container.innerHTML = '<div class="empty-state"><div class="icon">📱</div>No users yet</div>';
                 return;
             }
 
-            let html =
-                `<div class="table-responsive"><table class="table"><thead><tr><th>User</th><th>Contact</th><th>Package</th><th>Ref</th><th>Status</th><th>Token</th><th>Date</th></tr></thead><tbody>`;
+            var html =
+                '<div class="table-responsive"><table class="table"><thead><tr><th>User</th><th>Contact</th><th>Package</th><th>Ref</th><th>Status</th><th>Token</th><th>Date</th></tr></thead><tbody>';
 
-            data.slice(0, 50).forEach(u => {
-                const statusMap = {
+            for (var i = 0; i < Math.min(50, data.length); i++) {
+                var u = data[i];
+                var statusMap = {
                     'pending': '⏳ Pending',
                     'verified': '✅ Verified',
                     'key_generated': '🔑 Key Gen',
@@ -3196,35 +3151,35 @@
                     'paid': '💵 Paid',
                     'rejected': '❌ Rejected'
                 };
-                const statusText = statusMap[u.status] || u.status || 'Unknown';
-                const statusClass = u.status === 'paid' ? 'paid' : u.status === 'forwarded' ? 'forwarded' :
+                var statusText = statusMap[u.status] || u.status || 'Unknown';
+                var statusClass = u.status === 'paid' ? 'paid' : u.status === 'forwarded' ? 'forwarded' :
                     u.status === 'key_generated' ? 'key-generated' : u.status === 'rejected' ? 'rejected' :
                     'pending';
 
-                html += `
-                    <tr>
-                        <td><span class="highlight">${u.user_name || 'Unknown'}</span></td>
-                        <td>${u.user_whatsapp || 'N/A'}</td>
-                        <td><span class="status-badge ${u.package === 'platinum' ? 'success' : u.package === 'gold' ? 'pending' : ''}">${u.package || 'N/A'}</span></td>
-                        <td style="font-family:monospace;font-size:11px;color:var(--text-gold);">${u.ref || '—'}</td>
-                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                        <td class="token-display" style="font-family:monospace;color:var(--text-cyan);font-size:11px;">${u.token || '—'}</td>
-                        <td>${u.created_at ? formatEATTime(new Date(u.created_at)) : 'N/A'}</td>
-                    </tr>
-                `;
-            });
+                html += '<tr>' +
+                    '<td><span class="highlight">' + (u.user_name || 'Unknown') + '</span></td>' +
+                    '<td>' + (u.user_whatsapp || 'N/A') + '</td>' +
+                    '<td><span class="status-badge ' + (u.package === 'platinum' ? 'success' : u.package === 'gold' ?
+                        'pending' : '') + '">' + (u.package || 'N/A') + '</span></td>' +
+                    '<td style="font-family:monospace;font-size:11px;color:var(--text-gold);">' + (u.ref || '—') +
+                    '</td>' +
+                    '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                    '<td class="token-display" style="font-family:monospace;color:var(--text-cyan);font-size:11px;">' +
+                    (u.token || '—') + '</td>' +
+                    '<td>' + (u.created_at ? formatEATTime(new Date(u.created_at)) : 'N/A') + '</td></tr>';
+            }
 
-            html += `</tbody></table></div>`;
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
         function filterAppUsers() {
-            const search = document.getElementById('appUserSearch').value.toLowerCase();
-            const status = document.getElementById('appUserStatusFilter').value;
-            let filtered = allAppUsers.filter(u => {
-                const matchesSearch = (u.user_name || '').toLowerCase().includes(search);
-                const isVerified = u.status === 'verified' || u.verified === true;
-                const matchesStatus = status === 'all' ||
+            var search = document.getElementById('appUserSearch').value.toLowerCase();
+            var status = document.getElementById('appUserStatusFilter').value;
+            var filtered = allAppUsers.filter(function(u) {
+                var matchesSearch = (u.user_name || '').toLowerCase().includes(search);
+                var isVerified = u.status === 'verified' || u.verified === true;
+                var matchesStatus = status === 'all' ||
                     (status === 'verified' && isVerified) ||
                     (status === 'pending' && !isVerified);
                 return matchesSearch && matchesStatus;
@@ -3233,22 +3188,23 @@
         }
 
         // ============================================================
-        // 30. RENDER SALES (Preserved)
+        // 30. RENDER SALES
         // ============================================================
         function renderSales(data) {
-            const container = document.getElementById('salesList');
+            var container = document.getElementById('salesList');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = `<div class="empty-state"><div class="icon">📭</div>No sales yet</div>`;
+                container.innerHTML = '<div class="empty-state"><div class="icon">📭</div>No sales yet</div>';
                 return;
             }
 
-            let html =
-                `<div class="table-responsive"><table class="table"><thead><tr><th>Customer</th><th>Package</th><th>Amount</th><th>Ref</th><th>Promo Code</th><th>Status</th><th>Token</th><th>Key</th><th>Date</th><th>Actions</th></tr></thead><tbody>`;
+            var html =
+                '<div class="table-responsive"><table class="table"><thead><tr><th>Customer</th><th>Package</th><th>Amount</th><th>Ref</th><th>Promo Code</th><th>Status</th><th>Token</th><th>Key</th><th>Date</th><th>Actions</th></tr></thead><tbody>';
 
-            data.forEach(s => {
-                const statusMap = {
+            for (var i = 0; i < data.length; i++) {
+                var s = data[i];
+                var statusMap = {
                     'pending': '⏳ Pending',
                     'verified': '✅ Verified',
                     'key_generated': '🔑 Key Gen',
@@ -3256,119 +3212,138 @@
                     'paid': '💵 Paid',
                     'rejected': '❌ Rejected'
                 };
-                const statusText = statusMap[s.status] || s.status || 'Unknown';
-                const statusClass = s.status === 'paid' ? 'paid' : s.status === 'forwarded' ? 'forwarded' :
+                var statusText = statusMap[s.status] || s.status || 'Unknown';
+                var statusClass = s.status === 'paid' ? 'paid' : s.status === 'forwarded' ? 'forwarded' :
                     s.status === 'key_generated' ? 'key-generated' : s.status === 'rejected' ? 'rejected' :
                     'pending';
-                const hasKey = s.paid_key || false;
-                const hasToken = s.token || false;
-                const canDispatch = s.status === 'pending' || s.status === 'verified';
-                const canForward = s.status === 'key_generated';
+                var hasKey = s.paid_key || false;
+                var hasToken = s.token || false;
+                var canDispatch = s.status === 'pending' || s.status === 'verified';
+                var canForward = s.status === 'key_generated';
 
-                const safeUserData = {
+                var safeUserData = {
                     name: (s.user_name || s.name || 'User').replace(/'/g, "\\'"),
                     whatsapp: (s.user_whatsapp || s.whatsapp || '0000000000').replace(/'/g, "\\'"),
                     id: (s.user_id || s.id || '000000').replace(/'/g, "\\'"),
                     promo_code: (s.promo_code || '').replace(/'/g, "\\'"),
                     package: (s.package || '').replace(/'/g, "\\'")
                 };
+                var userDataJson = JSON.stringify(safeUserData).replace(/"/g, '&quot;');
 
-                const userDataJson = JSON.stringify(safeUserData).replace(/"/g, '&quot;');
+                html += '<tr>' +
+                    '<td><span class="highlight">' + (s.user_name || 'Anonymous') + '</span></td>' +
+                    '<td><span class="status-badge ' + (s.package === 'platinum' ? 'success' : s.package === 'gold' ?
+                        'pending' : '') + '">' + (s.package || 'N/A') + '</span></td>' +
+                    '<td>' + ((s.amount || 0).toLocaleString()) + ' UGX</td>' +
+                    '<td style="font-family:monospace;font-size:11px;color:var(--text-gold);">' + (s.ref || '—') +
+                    '</td>' +
+                    '<td style="font-family:monospace;font-size:11px;color:var(--text-cyan);">' + (s.promo_code || '—') +
+                    '</td>' +
+                    '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                    '<td class="token-display" style="font-family:monospace;color:var(--text-cyan);font-size:11px;">' +
+                    (hasToken ? s.token : '—') + '</td>' +
+                    '<td class="paid-key-display" style="font-family:monospace;color:var(--text-gold);font-size:11px;">' +
+                    (hasKey ? s.paid_key +
+                        ' <button class="btn btn-outline btn-xs" onclick="copyText(\'' + s.paid_key +
+                        '\')" style="padding:1px 6px;">📋</button>' : '—') + '</td>' +
+                    '<td>' + (s.created_at ? formatEATTime(new Date(s.created_at)) : 'N/A') + '</td>' +
+                    '<td>';
 
-                html += `
-                    <tr>
-                        <td><span class="highlight">${s.user_name || 'Anonymous'}</span></td>
-                        <td><span class="status-badge ${s.package === 'platinum' ? 'success' : s.package === 'gold' ? 'pending' : ''}">${s.package || 'N/A'}</span></td>
-                        <td>${(s.amount || 0).toLocaleString()} UGX</td>
-                        <td style="font-family:monospace;font-size:11px;color:var(--text-gold);">${s.ref || '—'}</td>
-                        <td style="font-family:monospace;font-size:11px;color:var(--text-cyan);">${s.promo_code || '—'}</td>
-                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                        <td class="token-display" style="font-family:monospace;color:var(--text-cyan);font-size:11px;">${hasToken ? s.token : '—'}</td>
-                        <td class="paid-key-display" style="font-family:monospace;color:var(--text-gold);font-size:11px;">
-                            ${hasKey ? `${s.paid_key} <button class="btn btn-outline btn-xs" onclick="copyText('${s.paid_key}')" style="padding:1px 6px;">📋</button>` : '—'}
-                        </td>
-                        <td>${s.created_at ? formatEATTime(new Date(s.created_at)) : 'N/A'}</td>
-                        <td>
-                            ${canDispatch ? `
-                                <button class="btn btn-green btn-xs" onclick="dispatchSale('${s.id}', '${s.user_id || s.id}', ${userDataJson}, this)">🚀 Dispatch</button>
-                            ` : ''}
-                            ${canForward ? `
-                                <button class="btn btn-blue btn-xs" onclick="forwardSale('${s.id}', '${s.user_id || s.id}', ${userDataJson}, this)">📤 Forward</button>
-                            ` : ''}
-                            ${s.status === 'forwarded' ? `<span style="color:var(--text-purple);font-size:10px;">📤 Forwarded</span>` : ''}
-                            ${s.status === 'paid' ? `<span style="color:var(--text-green);font-size:10px;">💵 Paid</span>` : ''}
-                            ${s.status === 'rejected' ? `<span style="color:var(--text-red);font-size:10px;">❌ Rejected</span>` : ''}
-                            ${s.user_whatsapp ? `<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp('${s.user_whatsapp}', '${s.user_name}')">💬</button>` : ''}
-                        </td>
-                    </tr>
-                `;
-            });
+                if (canDispatch) {
+                    html +=
+                        '<button class="btn btn-green btn-xs" onclick="dispatchSale(\'' + s.id + '\', \'' + (s.user_id ||
+                            s.id) + '\', ' + userDataJson + ', this)">🚀 Dispatch</button>';
+                }
+                if (canForward) {
+                    html +=
+                        '<button class="btn btn-blue btn-xs" onclick="forwardSale(\'' + s.id + '\', \'' + (s.user_id ||
+                            s.id) + '\', ' + userDataJson + ', this)">📤 Forward</button>';
+                }
+                if (s.status === 'forwarded') {
+                    html += '<span style="color:var(--text-purple);font-size:10px;">📤 Forwarded</span>';
+                }
+                if (s.status === 'paid') {
+                    html += '<span style="color:var(--text-green);font-size:10px;">💵 Paid</span>';
+                }
+                if (s.status === 'rejected') {
+                    html += '<span style="color:var(--text-red);font-size:10px;">❌ Rejected</span>';
+                }
+                if (s.user_whatsapp) {
+                    html +=
+                        '<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp(\'' + s.user_whatsapp +
+                        '\', \'' + s.user_name + '\')">💬</button>';
+                }
 
-            html += `</tbody></table></div>`;
+                html += '</td></tr>';
+            }
+
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
         function filterSales() {
-            const search = document.getElementById('salesSearch').value.toLowerCase();
-            const status = document.getElementById('salesStatusFilter').value;
-            let filtered = allSales.filter(s => {
-                const matchesSearch = (s.user_name || '').toLowerCase().includes(search) ||
+            var search = document.getElementById('salesSearch').value.toLowerCase();
+            var status = document.getElementById('salesStatusFilter').value;
+            var filtered = allSales.filter(function(s) {
+                var matchesSearch = (s.user_name || '').toLowerCase().includes(search) ||
                     (s.promo_code || '').toLowerCase().includes(search);
-                const matchesStatus = status === 'all' || s.status === status;
+                var matchesStatus = status === 'all' || s.status === status;
                 return matchesSearch && matchesStatus;
             });
             renderSales(filtered);
         }
 
         // ============================================================
-        // 31. RENDER TOKENS (Preserved)
+        // 31. RENDER TOKENS
         // ============================================================
         function renderTokens(data) {
-            const container = document.getElementById('tokensList');
+            var container = document.getElementById('tokensList');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = `<div class="empty-state"><div class="icon">🔑</div>No tokens generated yet</div>`;
+                container.innerHTML = '<div class="empty-state"><div class="icon">🔑</div>No tokens generated yet</div>';
                 return;
             }
 
-            let html =
-                `<div class="table-responsive"><table class="table"><thead><tr><th>User</th><th>Token</th><th>Package</th><th>Status</th><th>Verified At</th><th>Actions</th></tr></thead><tbody>`;
+            var html =
+                '<div class="table-responsive"><table class="table"><thead><tr><th>User</th><th>Token</th><th>Package</th><th>Status</th><th>Verified At</th><th>Actions</th></tr></thead><tbody>';
 
-            data.forEach(t => {
-                const statusClass = t.status === 'forwarded' ? 'forwarded' : t.status === 'paid' ? 'paid' :
+            for (var i = 0; i < data.length; i++) {
+                var t = data[i];
+                var statusClass = t.status === 'forwarded' ? 'forwarded' : t.status === 'paid' ? 'paid' :
                     t.status === 'key_generated' ? 'key-generated' : 'pending';
-                const statusText = t.status === 'forwarded' ? '📤 Forwarded' : t.status === 'paid' ? '💵 Paid' :
+                var statusText = t.status === 'forwarded' ? '📤 Forwarded' : t.status === 'paid' ? '💵 Paid' :
                     t.status === 'key_generated' ? '🔑 Key Gen' : '⏳ Pending';
 
-                html += `
-                    <tr>
-                        <td><span class="highlight">${t.user_name || 'Unknown'}</span></td>
-                        <td style="font-family:monospace;color:var(--text-gold);font-size:11px;">${t.token || '—'}</td>
-                        <td><span class="status-badge ${t.package === 'platinum' ? 'success' : t.package === 'gold' ? 'pending' : ''}">${t.package || 'N/A'}</span></td>
-                        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                        <td>${t.verified_at ? formatEATTime(new Date(t.verified_at)) : 'N/A'}</td>
-                        <td>
-                            <button class="btn btn-outline btn-xs" onclick="copyText('${t.token}')">📋</button>
-                            ${t.user_whatsapp ? `<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp('${t.user_whatsapp}', '${t.user_name}')">💬</button>` : ''}
-                        </td>
-                    </tr>
-                `;
-            });
+                html += '<tr>' +
+                    '<td><span class="highlight">' + (t.user_name || 'Unknown') + '</span></td>' +
+                    '<td style="font-family:monospace;color:var(--text-gold);font-size:11px;">' + (t.token || '—') +
+                    '</td>' +
+                    '<td><span class="status-badge ' + (t.package === 'platinum' ? 'success' : t.package === 'gold' ?
+                        'pending' : '') + '">' + (t.package || 'N/A') + '</span></td>' +
+                    '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>' +
+                    '<td>' + (t.verified_at ? formatEATTime(new Date(t.verified_at)) : 'N/A') + '</td>' +
+                    '<td>' +
+                    '<button class="btn btn-outline btn-xs" onclick="copyText(\'' + t.token + '\')">📋</button>' +
+                    (t.user_whatsapp ?
+                        '<button class="btn btn-whatsapp btn-xs" onclick="openWhatsApp(\'' + t.user_whatsapp +
+                        '\', \'' + t.user_name + '\')">💬</button>' : '') +
+                    '</td></tr>';
+            }
 
-            html += `</tbody></table></div>`;
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
         function filterTokens() {
-            const search = document.getElementById('tokenSearch').value.toLowerCase();
-            const status = document.getElementById('tokenStatusFilter').value;
-            let filtered = allTokens.filter(t => {
-                const matchesSearch = (t.token || '').toLowerCase().includes(search) ||
+            var search = document.getElementById('tokenSearch').value.toLowerCase();
+            var status = document.getElementById('tokenStatusFilter').value;
+            var filtered = allTokens.filter(function(t) {
+                var matchesSearch = (t.token || '').toLowerCase().includes(search) ||
                     (t.user_name || '').toLowerCase().includes(search);
-                const isVerified = t.status === 'verified' || t.status === 'key_generated' || t.status === 'forwarded' ||
+                var isVerified = t.status === 'verified' || t.status === 'key_generated' || t.status === 'forwarded' ||
                     t.status === 'paid';
-                const matchesStatus = status === 'all' ||
+                var matchesStatus = status === 'all' ||
                     (status === 'verified' && isVerified) ||
                     (status === 'pending' && !isVerified);
                 return matchesSearch && matchesStatus;
@@ -3377,7 +3352,7 @@
         }
 
         // ============================================================
-        // 32. LOOKUP (Preserved)
+        // 32. LOOKUP
         // ============================================================
         function lookupAffiliateCode(code) {
             document.getElementById('lookupInput').value = code;
@@ -3386,100 +3361,100 @@
         }
 
         async function lookupAffiliate() {
-            const input = document.getElementById('lookupInput');
-            const result = document.getElementById('lookupResult');
-            const code = input.value.trim().toUpperCase();
+            var input = document.getElementById('lookupInput');
+            var result = document.getElementById('lookupResult');
+            var code = input.value.trim().toUpperCase();
 
             if (!code) {
                 result.innerHTML =
-                    `<div class="empty-state"><div class="icon">⚠️</div><p>Please enter an affiliate code</p></div>`;
+                    '<div class="empty-state"><div class="icon">⚠️</div><p>Please enter an affiliate code</p></div>';
                 return;
             }
 
-            result.innerHTML = `<div class="loading">🔄 Searching for ${code}...</div>`;
+            result.innerHTML = '<div class="loading">🔄 Searching for ' + code + '...</div>';
 
             try {
-                const { data: affiliate, error } = await supabaseClient
+                var affiliate = await supabaseClient
                     .from('affiliates')
                     .select('*')
                     .eq('code', code)
                     .maybeSingle();
 
-                if (error) throw error;
+                if (affiliate.error) throw affiliate.error;
 
-                if (!affiliate) {
+                if (!affiliate.data) {
                     result.innerHTML =
-                    `<div class="empty-state"><div class="icon">❌</div><p>No affiliate found with code: <strong>${code}</strong></p></div>`;
+                        '<div class="empty-state"><div class="icon">❌</div><p>No affiliate found with code: <strong>' +
+                        code + '</strong></p></div>';
                     return;
                 }
 
-                // Get sales
-                const { data: sales } = await supabaseClient
+                var sales = await supabaseClient
                     .from('payment_requests')
                     .select('*')
                     .eq('promo_code', code)
                     .order('created_at', { ascending: false });
 
-                // Get visits
-                const { data: visits } = await supabaseClient
+                var visits = await supabaseClient
                     .from('affiliate_visits')
                     .select('*')
                     .eq('affiliate_code', code);
 
-                // Get generated keys
-                const { data: keys } = await supabaseClient
+                var keys = await supabaseClient
                     .from('generated_keys')
                     .select('*')
                     .eq('affiliate_code', code);
 
-                const totalSales = sales?.length || 0;
-                const totalRevenue = sales?.reduce((sum, s) => sum + (s.amount || 0), 0) || 0;
-                const totalVisits = visits?.length || 0;
-                const convertedVisits = visits?.filter(v => v.converted === true).length || 0;
-                const conversionRate = totalVisits > 0 ? Math.round((convertedVisits / totalVisits) * 100) : 0;
-                const totalKeys = keys?.length || 0;
-                const usedKeys = keys?.filter(k => k.status === 'used').length || 0;
+                var aff = affiliate.data;
+                var totalSales = sales.data ? sales.data.length : 0;
+                var totalRevenue = sales.data ? sales.data.reduce(function(sum, s) { return sum + (s.amount || 0); }, 0) : 0;
+                var totalVisits = visits.data ? visits.data.length : 0;
+                var convertedVisits = visits.data ? visits.data.filter(function(v) { return v.converted === true; }).length :
+                    0;
+                var conversionRate = totalVisits > 0 ? Math.round((convertedVisits / totalVisits) * 100) : 0;
+                var totalKeys = keys.data ? keys.data.length : 0;
+                var usedKeys = keys.data ? keys.data.filter(function(k) { return k.status === 'used'; }).length : 0;
 
-                let html = `
-                    <div style="margin-bottom:16px;background:var(--bg-input);border-radius:var(--radius);padding:16px;border:1px solid var(--border-light);">
-                        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
-                            <div>
-                                <span style="font-size:18px;font-weight:700;color:var(--text-primary);">${affiliate.name || 'Unknown'}</span>
-                                <span style="font-family:monospace;font-size:13px;color:var(--text-cyan);margin-left:10px;">${affiliate.code || 'N/A'}</span>
-                            </div>
-                            <span class="status-badge ${affiliate.active !== false ? 'success' : 'rejected'}">${affiliate.active !== false ? '✅ Active' : '❌ Inactive'}</span>
-                        </div>
-                        <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--text-secondary);">
-                            <span>📱 ${affiliate.contact || 'N/A'}</span>
-                            <span>📱 ${affiliate.platform || 'N/A'}</span>
-                            <span>📅 ${affiliate.created_at ? formatEATTime(new Date(affiliate.created_at)) : 'N/A'}</span>
-                        </div>
-                    </div>
+                var html = '<div style="margin-bottom:16px;background:var(--bg-input);border-radius:var(--radius);padding:16px;border:1px solid var(--border-light);">' +
+                    '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">' +
+                    '<div><span style="font-size:18px;font-weight:700;color:var(--text-primary);">' + (aff.name ||
+                        'Unknown') + '</span>' +
+                    '<span style="font-family:monospace;font-size:13px;color:var(--text-cyan);margin-left:10px;">' + (aff
+                        .code || 'N/A') + '</span></div>' +
+                    '<span class="status-badge ' + (aff.active !== false ? 'success' : 'rejected') + '">' + (aff
+                        .active !== false ? '✅ Active' : '❌ Inactive') + '</span></div>' +
+                    '<div style="display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--text-secondary);">' +
+                    '<span>📱 ' + (aff.contact || 'N/A') + '</span>' +
+                    '<span>📱 ' + (aff.platform || 'N/A') + '</span>' +
+                    '<span>📅 ' + (aff.created_at ? formatEATTime(new Date(aff.created_at)) : 'N/A') + '</span></div></div>' +
 
-                    <div class="lookup-grid">
-                        <div class="lookup-item"><div class="value" style="color:var(--text-gold);">${totalSales}</div><div class="label">Total Sales</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-gold);">${totalRevenue.toLocaleString()} UGX</div><div class="label">Revenue</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-blue);">${totalVisits}</div><div class="label">Link Clicks</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-green);">${convertedVisits}</div><div class="label">Converted</div></div>
-                        <div class="lookup-item"><div class="value" style="color:${conversionRate > 10 ? 'var(--text-green)' : 'var(--text-gold)'};">${conversionRate}%</div><div class="label">Conversion Rate</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-cyan);">${totalKeys}</div><div class="label">Keys</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-red);">${usedKeys}</div><div class="label">Used/Paid</div></div>
-                        <div class="lookup-item"><div class="value" style="color:var(--text-gold);">${(usedKeys * 20000).toLocaleString()} UGX</div><div class="label">Paid Out</div></div>
-                    </div>
-                `;
+                    '<div class="lookup-grid">' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-gold);">' + totalSales +
+                    '</div><div class="label">Total Sales</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-gold);">' + totalRevenue
+                    .toLocaleString() + ' UGX</div><div class="label">Revenue</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-blue);">' + totalVisits +
+                    '</div><div class="label">Link Clicks</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-green);">' + convertedVisits +
+                    '</div><div class="label">Converted</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:' + (conversionRate > 10 ?
+                        'var(--text-green)' : 'var(--text-gold)') + ';">' + conversionRate +
+                    '%</div><div class="label">Conversion Rate</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-cyan);">' + totalKeys +
+                    '</div><div class="label">Keys</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-red);">' + usedKeys +
+                    '</div><div class="label">Used/Paid</div></div>' +
+                    '<div class="lookup-item"><div class="value" style="color:var(--text-gold);">' + (usedKeys * 20000)
+                    .toLocaleString() + ' UGX</div><div class="label">Paid Out</div></div></div>';
 
-                // Show sales history
-                if (sales && sales.length > 0) {
-                    html += `
-                        <div style="margin-top:12px;">
-                            <div style="font-weight:600;color:var(--text-primary);margin-bottom:8px;">📜 Sales History</div>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead><tr><th>User</th><th>Amount</th><th>Status</th><th>Key</th><th>Date</th></tr></thead>
-                                    <tbody>
-                            `;
-                    sales.slice(0, 20).forEach(p => {
-                        const statusMap = {
+                if (sales.data && sales.data.length > 0) {
+                    html +=
+                        '<div style="margin-top:12px;"><div style="font-weight:600;color:var(--text-primary);margin-bottom:8px;">📜 Sales History</div>' +
+                        '<div class="table-responsive"><table class="table"><thead><tr><th>User</th><th>Amount</th><th>Status</th><th>Key</th><th>Date</th></tr></thead><tbody>';
+
+                    for (var i = 0; i < Math.min(20, sales.data.length); i++) {
+                        var p = sales.data[i];
+                        var statusMap = {
                             'pending': '⏳ Pending',
                             'verified': '✅ Verified',
                             'key_generated': '🔑 Key Gen',
@@ -3487,142 +3462,149 @@
                             'paid': '💵 Paid',
                             'rejected': '❌ Rejected'
                         };
-                        const statusText = statusMap[p.status] || p.status || 'Unknown';
-                        const statusClass = p.status === 'paid' ? 'paid' : p.status === 'forwarded' ? 'forwarded' :
+                        var statusText2 = statusMap[p.status] || p.status || 'Unknown';
+                        var statusClass2 = p.status === 'paid' ? 'paid' : p.status === 'forwarded' ? 'forwarded' :
                             p.status === 'key_generated' ? 'key-generated' : p.status === 'rejected' ? 'rejected' :
                             'pending';
-                        html += `
-                                <tr>
-                                    <td><span class="highlight">${p.user_name || 'Unknown'}</span></td>
-                                    <td>${(p.amount || 0).toLocaleString()} UGX</td>
-                                    <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-                                    <td style="font-family:monospace;font-size:10px;color:var(--text-gold);">${p.paid_key ? p.paid_key : '—'}</td>
-                                    <td>${p.created_at ? formatEATTime(new Date(p.created_at)) : 'N/A'}</td>
-                                </tr>
-                            `;
-                    });
-                    if (sales.length > 20) {
-                        html +=
-                            `<tr><td colspan="5" style="text-align:center;color:var(--text-muted);font-size:11px;">Showing 20 of ${sales.length} records</td></tr>`;
+
+                        html += '<tr><td><span class="highlight">' + (p.user_name || 'Unknown') + '</span></td>' +
+                            '<td>' + ((p.amount || 0).toLocaleString()) + ' UGX</td>' +
+                            '<td><span class="status-badge ' + statusClass2 + '">' + statusText2 + '</span></td>' +
+                            '<td style="font-family:monospace;font-size:10px;color:var(--text-gold);">' + (p
+                                .paid_key ? p.paid_key : '—') + '</td>' +
+                            '<td>' + (p.created_at ? formatEATTime(new Date(p.created_at)) : 'N/A') + '</td></tr>';
                     }
-                    html += `</tbody></table></div>`;
+                    if (sales.data.length > 20) {
+                        html +=
+                            '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);font-size:11px;">Showing 20 of ' +
+                            sales.data.length + ' records</td></tr>';
+                    }
+                    html += '</tbody></table></div></div>';
                 }
 
-                html += `
-                    <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;">
-                        <button class="btn btn-whatsapp btn-sm" onclick="openWhatsApp('${affiliate.contact || ''}', '${affiliate.name || ''}')">💬 WhatsApp</button>
-                        <button class="btn btn-outline btn-sm" onclick="copyText('${affiliate.code}')">📋 Copy Code</button>
-                        <button class="btn btn-outline btn-sm" onclick="clearLookup()">🔄 Clear</button>
-                    </div>
-                `;
+                html += '<div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;">' +
+                    '<button class="btn btn-whatsapp btn-sm" onclick="openWhatsApp(\'' + (aff.contact || '') + '\', \'' + (
+                        aff.name || '') + '\')">💬 WhatsApp</button>' +
+                    '<button class="btn btn-outline btn-sm" onclick="copyText(\'' + aff.code + '\')">📋 Copy Code</button>' +
+                    '<button class="btn btn-outline btn-sm" onclick="clearLookup()">🔄 Clear</button></div>';
 
                 result.innerHTML = html;
-                showToast(`✅ Found affiliate: ${affiliate.name}`, 'success');
+                showToast('✅ Found affiliate: ' + aff.name, 'success');
 
             } catch (e) {
                 console.error('❌ Lookup error:', e);
-                result.innerHTML = `<div class="empty-state"><div class="icon">❌</div>Error: ${e.message}</div>`;
+                result.innerHTML = '<div class="empty-state"><div class="icon">❌</div>Error: ' + e.message + '</div>';
             }
         }
 
         function clearLookup() {
             document.getElementById('lookupInput').value = '';
             document.getElementById('lookupResult').innerHTML =
-                `<div class="empty-state"><div class="icon">🔎</div><p style="color:var(--text-secondary);">Enter an affiliate code to see all data</p></div>`;
+                '<div class="empty-state"><div class="icon">🔎</div><p style="color:var(--text-secondary);">Enter an affiliate code to see all data</p></div>';
         }
 
         // ============================================================
-        // 33. PAYMENT KEYS (Preserved)
+        // 33. PAYMENT KEYS
         // ============================================================
         async function checkPaymentKeys() {
-            const input = document.getElementById('paymentKeyInput');
-            const result = document.getElementById('paymentKeyResult');
-            const rawText = input.value.trim();
+            var input = document.getElementById('paymentKeyInput');
+            var result = document.getElementById('paymentKeyResult');
+            var rawText = input.value.trim();
 
             if (!rawText) {
                 result.innerHTML =
-                    `<div class="empty-state"><div class="icon">⚠️</div><p>Please paste some keys to check</p></div>`;
+                    '<div class="empty-state"><div class="icon">⚠️</div><p>Please paste some keys to check</p></div>';
                 return;
             }
 
-            const keyRegex = /SHARPI-PAY-[A-Z0-9-]+/gi;
-            const matches = rawText.match(keyRegex) || [];
+            var keyRegex = /SHARPI-PAY-[A-Z0-9-]+/gi;
+            var matches = rawText.match(keyRegex) || [];
 
-            const keys = [...new Set(matches.map(k => {
-                const cleaned = k.replace(/[^A-Z0-9-]/g, '').toUpperCase();
-                return cleaned;
-            }))];
+            var keys = [];
+            var seen = {};
+            for (var i = 0; i < matches.length; i++) {
+                var cleaned = matches[i].replace(/[^A-Z0-9-]/g, '').toUpperCase();
+                if (!seen[cleaned]) {
+                    seen[cleaned] = true;
+                    keys.push(cleaned);
+                }
+            }
 
             if (keys.length === 0) {
                 result.innerHTML =
-                    `<div class="empty-state"><div class="icon">⚠️</div><p>No valid payment keys found.<br>Keys should start with: <strong>SHARPI-PAY-</strong></p></div>`;
+                    '<div class="empty-state"><div class="icon">⚠️</div><p>No valid payment keys found.<br>Keys should start with: <strong>SHARPI-PAY-</strong></p></div>';
                 return;
             }
 
-            result.innerHTML = `<div class="loading">🔍 Checking ${keys.length} keys...</div>`;
+            result.innerHTML = '<div class="loading">🔍 Checking ' + keys.length + ' keys...</div>';
 
             try {
-                let results = [];
-                let validCount = 0;
-                let usedCount = 0;
-                let invalidCount = 0;
-                let totalAmount = 0;
+                var results = [];
+                var validCount = 0;
+                var usedCount = 0;
+                var invalidCount = 0;
+                var totalAmount = 0;
 
-                for (const key of keys) {
-                    const { data, error } = await supabaseClient
+                for (var j = 0; j < keys.length; j++) {
+                    var key = keys[j];
+                    var keyData = await supabaseClient
                         .from('generated_keys')
                         .select('*')
                         .eq('key', key)
                         .maybeSingle();
 
-                    if (error) throw error;
+                    if (keyData.error) throw keyData.error;
 
-                    if (data) {
-                        const isUsed = data.status === 'used';
-                        const isValid = data.status === 'valid';
+                    if (keyData.data) {
+                        var isUsed = keyData.data.status === 'used';
+                        var isValid = keyData.data.status === 'valid';
                         if (isUsed) {
-                            results.push({ key, exists: true, used: true, data: data });
+                            results.push({ key: key, exists: true, used: true, data: keyData.data });
                             usedCount++;
                         } else if (isValid) {
-                            results.push({ key, exists: true, used: false, data: data });
+                            results.push({ key: key, exists: true, used: false, data: keyData.data });
                             validCount++;
-                            totalAmount += data.amount || 20000;
+                            totalAmount += keyData.data.amount || 20000;
                         } else {
-                            results.push({ key, exists: true, used: false, data: data });
+                            results.push({ key: key, exists: true, used: false, data: keyData.data });
                             invalidCount++;
                         }
                     } else {
-                        results.push({ key, exists: false, used: false, data: null });
+                        results.push({ key: key, exists: false, used: false, data: null });
                         invalidCount++;
                     }
                 }
 
-                let html = `
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:16px;">
-                        <div class="stat-card"><div class="number green">${validCount}</div><div class="label">✅ VALID</div></div>
-                        <div class="stat-card"><div class="number red">${usedCount}</div><div class="label">❌ USED (Paid)</div></div>
-                        <div class="stat-card"><div class="number orange">${invalidCount}</div><div class="label">⚠️ INVALID</div></div>
-                        <div class="stat-card"><div class="number gold">${totalAmount.toLocaleString()} UGX</div><div class="label">💰 Total Pending</div></div>
-                        <div class="stat-card"><div class="number blue">${keys.length}</div><div class="label">📋 Total Keys Checked</div></div>
-                    </div>
-                    <div style="max-height:400px;overflow-y:auto;">
-                `;
+                var html =
+                    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:16px;">' +
+                    '<div class="stat-card"><div class="number green">' + validCount +
+                    '</div><div class="label">✅ VALID</div></div>' +
+                    '<div class="stat-card"><div class="number red">' + usedCount +
+                    '</div><div class="label">❌ USED (Paid)</div></div>' +
+                    '<div class="stat-card"><div class="number orange">' + invalidCount +
+                    '</div><div class="label">⚠️ INVALID</div></div>' +
+                    '<div class="stat-card"><div class="number gold">' + totalAmount.toLocaleString() +
+                    ' UGX</div><div class="label">💰 Total Pending</div></div>' +
+                    '<div class="stat-card"><div class="number blue">' + keys.length +
+                    '</div><div class="label">📋 Total Keys Checked</div></div></div>' +
+                    '<div style="max-height:400px;overflow-y:auto;">';
 
-                results.forEach(r => {
-                    const isUsed = r.used;
-                    const isValid = r.exists && !r.used;
-                    const isInvalid = !r.exists;
+                for (var k = 0; k < results.length; k++) {
+                    var r = results[k];
+                    var isUsed2 = r.used;
+                    var isValid2 = r.exists && !r.used;
+                    var isInvalid = !r.exists;
 
-                    let statusClass = 'valid';
-                    let statusText = '✅ VALID';
-                    let statusColor = 'var(--text-green)';
-                    let actionButton = '';
+                    var statusClass = 'valid';
+                    var statusText = '✅ VALID';
+                    var statusColor = 'var(--text-green)';
+                    var actionButton = '';
 
                     if (isInvalid) {
                         statusClass = 'invalid';
                         statusText = '⚠️ INVALID';
                         statusColor = 'var(--text-gold)';
-                    } else if (isUsed) {
+                    } else if (isUsed2) {
                         statusClass = 'used';
                         statusText = '❌ USED';
                         statusColor = 'var(--text-red)';
@@ -3631,68 +3613,69 @@
                         statusText = '✅ VALID';
                         statusColor = 'var(--text-green)';
                         actionButton =
-                            `<button class="btn btn-xs" style="background:var(--text-gold);color:black;border:none;border-radius:4px;padding:4px 12px;cursor:pointer;font-weight:600;" onclick="payNow('${r.key}')">💰 Pay Now</button>`;
+                            '<button class="btn btn-xs" style="background:var(--text-gold);color:black;border:none;border-radius:4px;padding:4px 12px;cursor:pointer;font-weight:600;" onclick="payNow(\'' + r
+                            .key + '\')">💰 Pay Now</button>';
                     }
 
-                    const userInfo = r.data ? `👤 ${r.data.user_name || 'Unknown'} (${r.data.package || 'N/A'})` :
-                        '⚠️ Not in registry';
-                    const affInfo = r.data ? `🎯 ${r.data.affiliate_code || 'N/A'}` : '';
-                    const amount = r.data?.amount || 20000;
+                    var userInfo = r.data ? '👤 ' + (r.data.user_name || 'Unknown') + ' (' + (r.data.package || 'N/A') +
+                        ')' : '⚠️ Not in registry';
+                    var affInfo = r.data ? '🎯 ' + (r.data.affiliate_code || 'N/A') : '';
+                    var amount = r.data ? r.data.amount || 20000 : 20000;
 
-                    html += `
-                        <div class="key-check-result ${statusClass}">
-                            <span style="font-family:monospace;font-size:12px;font-weight:600;">${r.key}</span>
-                            <span style="font-size:11px;color:var(--text-secondary);">${userInfo}</span>
-                            <span style="font-size:10px;color:var(--text-muted);">${affInfo}</span>
-                            <span style="font-size:10px;color:var(--text-muted);">💰 ${amount.toLocaleString()} UGX</span>
-                            <span style="color:${statusColor};font-weight:700;">${statusText}</span>
-                            ${actionButton}
-                            <button class="btn btn-outline btn-xs" onclick="copyText('${r.key}')">📋</button>
-                        </div>
-                    `;
-                });
+                    html += '<div class="key-check-result ' + statusClass + '">' +
+                        '<span style="font-family:monospace;font-size:12px;font-weight:600;">' + r.key + '</span>' +
+                        '<span style="font-size:11px;color:var(--text-secondary);">' + userInfo + '</span>' +
+                        '<span style="font-size:10px;color:var(--text-muted);">' + affInfo + '</span>' +
+                        '<span style="font-size:10px;color:var(--text-muted);">💰 ' + amount.toLocaleString() +
+                        ' UGX</span>' +
+                        '<span style="color:' + statusColor + ';font-weight:700;">' + statusText + '</span>' +
+                        actionButton +
+                        '<button class="btn btn-outline btn-xs" onclick="copyText(\'' + r.key +
+                        '\')">📋</button></div>';
+                }
 
-                html += `</div>`;
+                html += '</div>';
                 result.innerHTML = html;
 
                 if (validCount > 0) {
-                    showToast(`✅ ${validCount} VALID keys - Total: ${totalAmount.toLocaleString()} UGX`, 'success');
+                    showToast('✅ ' + validCount + ' VALID keys - Total: ' + totalAmount.toLocaleString() + ' UGX',
+                        'success');
                 } else if (usedCount > 0 && validCount === 0) {
-                    showToast(`⚠️ ${usedCount} used keys found, no valid keys`, '');
+                    showToast('⚠️ ' + usedCount + ' used keys found, no valid keys', '');
                 } else {
                     showToast('❌ No valid keys found', 'error');
                 }
 
             } catch (e) {
                 console.error('❌ Key check error:', e);
-                result.innerHTML = `<div class="empty-state"><div class="icon">❌</div><p>Error: ${e.message}</p></div>`;
+                result.innerHTML = '<div class="empty-state"><div class="icon">❌</div><p>Error: ' + e.message + '</p></div>';
             }
         }
 
         function clearPaymentKeys() {
             document.getElementById('paymentKeyInput').value = '';
             document.getElementById('paymentKeyResult').innerHTML =
-                `<div class="empty-state"><div class="icon">💳</div><p style="color:var(--text-secondary);">Paste text containing keys above and click "Check Keys"</p></div>`;
+                '<div class="empty-state"><div class="icon">💳</div><p style="color:var(--text-secondary);">Paste text containing keys above and click "Check Keys"</p></div>';
         }
 
         async function payNow(key) {
-            if (!confirm(`⚠️ Confirm you have PAID for key: ${key}`)) return;
+            if (!confirm('⚠️ Confirm you have PAID for key: ' + key)) return;
 
             try {
-                const { data: keyData, error: keyError } = await supabaseClient
+                var keyData = await supabaseClient
                     .from('generated_keys')
                     .select('*')
                     .eq('key', key)
                     .maybeSingle();
 
-                if (keyError) throw keyError;
+                if (keyData.error) throw keyData.error;
 
-                if (!keyData) {
+                if (!keyData.data) {
                     showToast('❌ Key not found', 'error');
                     return;
                 }
 
-                if (keyData.status === 'used') {
+                if (keyData.data.status === 'used') {
                     showToast('⚠️ This key is already marked as USED', 'error');
                     return;
                 }
@@ -3707,11 +3690,11 @@
                     .update({ status: 'paid', paid_at: getEATTimestamp(), key_status: 'used', key_used: true })
                     .eq('paid_key', key);
 
-                addActivityLog('paid', 'Paid key: ' + key, null, null, keyData.amount || 20000);
+                addActivityLog('paid', 'Paid key: ' + key, null, null, keyData.data.amount || 20000);
 
-                showToast(`✅ Key ${key} marked as PAID`, 'success');
+                showToast('✅ Key ' + key + ' marked as PAID', 'success');
 
-                setTimeout(() => {
+                setTimeout(function() {
                     checkPaymentKeys();
                     loadAllData();
                     loadQuickActions();
@@ -3724,10 +3707,11 @@
         }
 
         async function loadPaymentHistory() {
-            const filter = document.getElementById('paymentHistoryFilter')?.value || 'all';
+            var filter = document.getElementById('paymentHistoryFilter') ? document.getElementById('paymentHistoryFilter')
+                .value : 'all';
 
             try {
-                let query = supabaseClient
+                var query = supabaseClient
                     .from('payment_requests')
                     .select('*')
                     .order('created_at', { ascending: false });
@@ -3736,33 +3720,34 @@
                     query = query.eq('status', filter);
                 }
 
-                const { data, error } = await query;
+                var data = await query;
 
-                if (error) throw error;
+                if (data.error) throw data.error;
 
-                allPaymentHistory = data || [];
+                allPaymentHistory = data.data || [];
                 renderPaymentHistory(allPaymentHistory);
 
             } catch (e) {
                 console.error('❌ Load payment history error:', e);
                 document.getElementById('paymentHistoryList').innerHTML =
-                    `<div class="empty-state"><div class="icon">❌</div>Error loading payment history</div>`;
+                    '<div class="empty-state"><div class="icon">❌</div>Error loading payment history</div>';
             }
         }
 
         function renderPaymentHistory(data) {
-            const container = document.getElementById('paymentHistoryList');
+            var container = document.getElementById('paymentHistoryList');
 
             if (!data || data.length === 0) {
                 container.innerHTML =
-                    `<div class="empty-state"><div class="icon">📜</div><p style="color:var(--text-secondary);">No payment history found.</p></div>`;
+                    '<div class="empty-state"><div class="icon">📜</div><p style="color:var(--text-secondary);">No payment history found.</p></div>';
                 return;
             }
 
-            let html = '';
+            var html = '';
 
-            data.slice(0, 50).forEach(p => {
-                const statusMap = {
+            for (var i = 0; i < Math.min(50, data.length); i++) {
+                var p = data[i];
+                var statusMap = {
                     'pending': '⏳ Pending',
                     'verified': '✅ Verified',
                     'key_generated': '🔑 Key Gen',
@@ -3770,32 +3755,34 @@
                     'paid': '💵 Paid',
                     'rejected': '❌ Rejected'
                 };
-                const statusText = statusMap[p.status] || p.status || 'Unknown';
-                const statusClass = p.status === 'paid' ? 'paid' : p.status === 'forwarded' ? 'forwarded' :
+                var statusText = statusMap[p.status] || p.status || 'Unknown';
+                var statusClass = p.status === 'paid' ? 'paid' : p.status === 'forwarded' ? 'forwarded' :
                     p.status === 'key_generated' ? 'key-generated' : p.status === 'rejected' ? 'rejected' :
                     'pending';
 
-                html += `
-                    <div class="payment-history-card">
-                        <div class="ph-info">
-                            <span class="ph-amount">${(p.amount || 0).toLocaleString()} UGX</span>
-                            <span class="ph-detail">👤 ${p.user_name || 'Unknown'}</span>
-                            <span class="ph-detail">🔑 ${p.promo_code || 'N/A'}</span>
-                            <span class="ph-detail">📋 ${p.ref || 'N/A'}</span>
-                            <span class="status-badge ${statusClass}">${statusText}</span>
-                            <span class="ph-detail" style="color:var(--text-muted);">${p.created_at ? formatEATTime(new Date(p.created_at)) : 'N/A'}</span>
-                        </div>
-                        <div style="display:flex;gap:4px;flex-wrap:wrap;">
-                            ${p.paid_key ? `<button class="btn btn-outline btn-xs" onclick="copyText('${p.paid_key}')">📋 Key</button>` : ''}
-                            ${p.status === 'forwarded' ? `<button class="btn btn-green btn-xs" onclick="payNow('${p.paid_key}')">💰 Pay</button>` : ''}
-                        </div>
-                    </div>
-                `;
-            });
+                html += '<div class="payment-history-card">' +
+                    '<div class="ph-info">' +
+                    '<span class="ph-amount">' + ((p.amount || 0).toLocaleString()) + ' UGX</span>' +
+                    '<span class="ph-detail">👤 ' + (p.user_name || 'Unknown') + '</span>' +
+                    '<span class="ph-detail">🔑 ' + (p.promo_code || 'N/A') + '</span>' +
+                    '<span class="ph-detail">📋 ' + (p.ref || 'N/A') + '</span>' +
+                    '<span class="status-badge ' + statusClass + '">' + statusText + '</span>' +
+                    '<span class="ph-detail" style="color:var(--text-muted);">' + (p.created_at ? formatEATTime(new Date(
+                        p.created_at)) : 'N/A') + '</span></div>' +
+                    '<div style="display:flex;gap:4px;flex-wrap:wrap;">' +
+                    (p.paid_key ?
+                        '<button class="btn btn-outline btn-xs" onclick="copyText(\'' + p.paid_key +
+                        '\')">📋 Key</button>' : '') +
+                    (p.status === 'forwarded' ?
+                        '<button class="btn btn-green btn-xs" onclick="payNow(\'' + p.paid_key +
+                        '\')">💰 Pay</button>' : '') +
+                    '</div></div>';
+            }
 
             if (data.length > 50) {
                 html +=
-                    `<div style="text-align:center;padding:10px;color:var(--text-muted);font-size:11px;">Showing 50 of ${data.length} records</div>`;
+                    '<div style="text-align:center;padding:10px;color:var(--text-muted);font-size:11px;">Showing 50 of ' +
+                    data.length + ' records</div>';
             }
 
             container.innerHTML = html;
@@ -3805,7 +3792,7 @@
         // 34. EXPORT DATA
         // ============================================================
         function exportData() {
-            const data = {
+            var data = {
                 affiliates: allAffiliates,
                 users: allAppUsers,
                 sales: allSales,
@@ -3817,14 +3804,14 @@
                 activityLog: activityLog,
                 tree: affiliateTreeData,
                 exportedAt: getEATTimestamp(),
-                exportedBy: currentAdmin?.displayName || 'Unknown'
+                exportedBy: currentAdmin ? currentAdmin.displayName : 'Unknown'
             };
 
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
+            var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
             a.href = url;
-            a.download = `sharpi_admin_export_${Date.now()}.json`;
+            a.download = 'sharpi_admin_export_' + Date.now() + '.json';
             a.click();
             URL.revokeObjectURL(url);
             showToast('📤 Data exported successfully!', 'success');
@@ -3840,16 +3827,16 @@
                 return;
             }
             if (navigator.clipboard) {
-                navigator.clipboard.writeText(text).then(() => {
+                navigator.clipboard.writeText(text).then(function() {
                     showToast('✅ Copied!', 'success');
-                }).catch(() => { fallbackCopy(text); });
+                }).catch(function() { fallbackCopy(text); });
             } else {
                 fallbackCopy(text);
             }
         }
 
         function fallbackCopy(text) {
-            const ta = document.createElement('textarea');
+            var ta = document.createElement('textarea');
             ta.value = text;
             ta.style.position = 'fixed';
             ta.style.left = '-9999px';
@@ -3873,21 +3860,21 @@
                 showToast('❌ No WhatsApp number', 'error');
                 return;
             }
-            const cleanContact = contact.replace(/\s/g, '').replace(/-/g, '');
-            const message = `🦈 SHARPI Admin - Regarding your SHARPI account.`;
-            window.open(`https://wa.me/${cleanContact}?text=${encodeURIComponent(message)}`, '_blank');
+            var cleanContact = contact.replace(/\s/g, '').replace(/-/g, '');
+            var message = '🦈 SHARPI Admin - Regarding your SHARPI account.';
+            window.open('https://wa.me/' + cleanContact + '?text=' + encodeURIComponent(message), '_blank');
             addActivityLog('whatsapp', 'Opened WhatsApp for ' + (name || contact));
         }
 
         // ============================================================
         // 37. TABS
         // ============================================================
-        document.querySelectorAll('.tab').forEach(tab => {
+        document.querySelectorAll('.tab').forEach(function(tab) {
             tab.addEventListener('click', function() {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+                document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
                 this.classList.add('active');
-                const target = document.getElementById('tab-' + this.dataset.tab);
+                var target = document.getElementById('tab-' + this.dataset.tab);
                 if (target) target.classList.add('active');
                 if (this.dataset.tab === 'quickactions') loadQuickActions();
                 if (this.dataset.tab === 'tokens') loadTokens();
@@ -3903,54 +3890,28 @@
         });
 
         // ============================================================
-        // 38. INIT - COMPLETE
+        // 38. TOKENS (Standalone)
         // ============================================================
-        document.addEventListener('DOMContentLoaded', function() {
-            // Init Supabase
-            initSupabase();
+        async function loadTokens() {
+            try {
+                var data = await supabaseClient
+                    .from('payment_requests')
+                    .select('*')
+                    .not('token', 'is', null)
+                    .order('verified_at', { ascending: false });
 
-            // Check fingerprint support
-            checkFingerprintSupport();
-
-            // Detect OS
-            detectOS();
-
-            // Check for invite in URL
-            checkForInvite();
-
-            // Check admin session
-            const hasSession = checkAdminSession();
-
-            if (!hasSession) {
-                showFingerprintLogin();
-                // Show register button if no fingerprint registered
-                const savedRegistered = sessionStorage.getItem('fp_registered');
-                if (!savedRegistered || savedRegistered !== 'true') {
-                    document.getElementById('registerFingerprintBtn').style.display = 'block';
-                    setFpStatus('📱 No fingerprint registered. Tap "Register Fingerprint" to set up.');
-                }
-            } else {
-                hideFingerprintLogin();
-                // Load all data
-                setTimeout(() => {
-                    loadAllData();
-                    loadAdmins();
-                    loadActivityLog();
-                }, 500);
+                if (data.error) throw data.error;
+                allTokens = data.data || [];
+                renderTokens(allTokens);
+            } catch (e) {
+                console.error('❌ Tokens error:', e);
+                document.getElementById('tokensList').innerHTML =
+                    '<div class="empty-state"><div class="icon">❌</div>Error loading tokens</div>';
             }
-
-            // Setup realtime listener (preserved)
-            setupAdminRealtime();
-
-            console.log('🦈 SHARPI Admin v5.0 - Complete with Admin System');
-            console.log('👑 Supreme Admin: Hossam Balidawa');
-            console.log('🔐 Fingerprint + Windows Authentication');
-            console.log('📜 All actions logged with admin tags');
-            console.log('🔗 Assistant admins via invite links');
-        });
+        }
 
         // ============================================================
-        // 39. REALTIME LISTENER (Preserved)
+        // 39. REALTIME LISTENER
         // ============================================================
         function setupAdminRealtime() {
             if (adminRealtimeChannel) {
@@ -3972,22 +3933,22 @@
                         event: 'INSERT',
                         schema: 'public',
                         table: 'payment_requests'
-                    }, (payload) => {
-                        const row = payload.new;
+                    }, function(payload) {
+                        var row = payload.new;
                         console.log('📡 New sale detected:', row.user_name, row.promo_code);
-                        showToast(`📥 New payment from ${row.user_name || 'Unknown'}`, 'success');
+                        showToast('📥 New payment from ' + (row.user_name || 'Unknown'), 'success');
                         loadAllData();
                     })
                     .on('postgres_changes', {
                         event: 'UPDATE',
                         schema: 'public',
                         table: 'payment_requests'
-                    }, (payload) => {
-                        const row = payload.new;
+                    }, function(payload) {
+                        var row = payload.new;
                         console.log('📡 Sale update detected:', row.status, row.user_name);
                         loadAllData();
                     })
-                    .subscribe((status) => {
+                    .subscribe(function(status) {
                         console.log('📡 Admin realtime status:', status);
                     });
 
@@ -3997,62 +3958,43 @@
         }
 
         // ============================================================
-        // 40. LOAD TOKENS (Preserved)
+        // 40. SECURITY - Prevent console bypass
         // ============================================================
-        async function loadTokens() {
-            try {
-                const { data, error } = await supabaseClient
-                    .from('payment_requests')
-                    .select('*')
-                    .not('token', 'is', null)
-                    .order('verified_at', { ascending: false });
-
-                if (error) throw error;
-                allTokens = data || [];
-                renderTokens(allTokens);
-            } catch (e) {
-                console.error('❌ Tokens error:', e);
-                document.getElementById('tokensList').innerHTML =
-                    `<div class="empty-state"><div class="icon">❌</div>Error loading tokens</div>`;
-            }
-        }
+        Object.freeze(adminState);
 
         // ============================================================
-        // 41. SECURE OVERRIDES - Prevent bypass
+        // 41. INIT - COMPLETE
         // ============================================================
-        // Block console access to admin functions
-        Object.defineProperty(window, 'adminState', {
-            get: function() {
-                console.warn('🔒 Access denied to adminState');
-                return null;
-            },
-            set: function() {
-                console.warn('🔒 Access denied to adminState');
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            initSupabase();
+            checkFingerprintSupport();
+            detectOS();
 
-        Object.defineProperty(window, 'currentAdmin', {
-            get: function() {
-                console.warn('🔒 Access denied to currentAdmin');
-                return null;
-            },
-            set: function() {
-                console.warn('🔒 Access denied to currentAdmin');
-            }
-        });
+            var hasSession = checkAdminSession();
 
-        // Prevent users from changing admin session via console
-        const originalSessionStorage = window.sessionStorage;
-        window.sessionStorage = new Proxy(originalSessionStorage, {
-            set: function(target, key, value) {
-                if (key === 'admin_session') {
-                    if (!adminState.isAuthenticated) {
-                        console.warn('🔒 Cannot set admin_session without authentication');
-                        return false;
-                    }
+            if (!hasSession) {
+                showFingerprintLogin();
+                var savedRegistered = sessionStorage.getItem('fp_registered');
+                if (!savedRegistered || savedRegistered !== 'true') {
+                    document.getElementById('registerFingerprintBtn').style.display = 'block';
+                    setFpStatus('📱 No fingerprint registered. Tap "Register Fingerprint" to set up.');
                 }
-                return Reflect.set(target, key, value);
+            } else {
+                hideFingerprintLogin();
+                setTimeout(function() {
+                    loadAllData();
+                    loadAdmins();
+                    loadActivityLog();
+                }, 500);
             }
+
+            setupAdminRealtime();
+
+            console.log('🦈 SHARPI Admin v5.0 - Complete with Admin System');
+            console.log('👑 Supreme Admin: Hossam Balidawa');
+            console.log('🔐 Fingerprint + Windows Authentication');
+            console.log('📜 All actions logged with admin tags');
+            console.log('🔗 Assistant admins via invite links');
         });
 
         console.log('🔐 Admin system fully secured - No backdoors');
