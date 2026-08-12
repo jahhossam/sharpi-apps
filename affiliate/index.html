@@ -1446,7 +1446,7 @@
             color: white;
         }
 
-        /* COMMISSION CARD - UPDATES COLUMN */
+        /* COMMISSION CARD - CLEAN UPDATES COLUMN (NO SPLIT/INTERNAL LOGIC) */
         .commission-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -2065,6 +2065,10 @@
             color: #0b1e33 !important;
             background: #ffffff !important;
         }
+
+        /* ============================================================
+        WITHDRAWAL MODAL STYLES - RE-ADDED
+        ============================================================ */
         .withdrawal-modal-overlay {
             position: absolute;
             top: 0;
@@ -2095,6 +2099,9 @@
             box-shadow: var(--shadow-popup);
             border: 1px solid var(--border-glass);
             position: relative;
+        }
+        [data-theme="dark"] .withdrawal-modal {
+            border: 1px solid var(--border-glass);
         }
         .withdrawal-modal .modal-title {
             font-size: 20px;
@@ -2217,9 +2224,6 @@
             opacity: 0.5;
             cursor: not-allowed;
         }
-        [data-theme="dark"] .withdrawal-modal {
-            border: 1px solid var(--border-glass);
-        }
         [data-theme="dark"] .withdrawal-modal .modal-actions .btn-cancel {
             background: rgba(255, 255, 255, 0.08);
             color: var(--text-secondary);
@@ -2242,6 +2246,7 @@
                 font-size: 13px;
             }
         }
+
         .pull-to-refresh-indicator {
             position: fixed;
             top: -60px;
@@ -2447,8 +2452,8 @@
         }
 
         /* ============================================================
-           GUIDE PAGE - UPDATED WITH 9:16 IMAGE PLACEHOLDERS & INFOGRAPHICS
-           ============================================================ */
+        GUIDE PAGE STYLES (PDF-STYLE DOCUMENT)
+        ============================================================ */
         .guide-page {
             background: var(--bg-card);
             border-radius: 20px;
@@ -2609,180 +2614,33 @@
             opacity: 0.7;
             margin-top: 2px;
         }
-
-        /* 9:16 IMAGE PLACEHOLDERS */
-        .image-placeholder-916 {
+        .guide-section .section-content .illustration-placeholder {
             background: var(--bg-input);
-            border-radius: 16px;
-            padding: 0;
-            margin: 10px 0;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
             border: 2px dashed var(--border-glass);
-            overflow: hidden;
-            position: relative;
-            aspect-ratio: 9 / 16;
-            max-height: 340px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin: 10px 0;
             color: var(--text-muted);
             font-size: 12px;
-            text-align: center;
         }
-        .image-placeholder-916 .icon-big {
-            font-size: 48px;
+        .guide-section .section-content .illustration-placeholder .icon-big {
+            font-size: 40px;
             display: block;
             margin-bottom: 6px;
             color: var(--text-gold);
         }
-        .image-placeholder-916 .icon-big.red {
+        .guide-section .section-content .illustration-placeholder .icon-big.red {
             color: var(--text-red);
         }
-        .image-placeholder-916 .icon-big.green {
+        .guide-section .section-content .illustration-placeholder .icon-big.green {
             color: var(--text-green);
         }
-        .image-placeholder-916 .icon-big.blue {
+        .guide-section .section-content .illustration-placeholder .icon-big.blue {
             color: var(--text-link);
         }
-        .image-placeholder-916 .icon-big.purple {
+        .guide-section .section-content .illustration-placeholder .icon-big.purple {
             color: var(--text-purple);
-        }
-        .image-placeholder-916 .placeholder-label {
-            font-size: 11px;
-            opacity: 0.6;
-            padding: 0 12px;
-        }
-        .image-placeholder-916 .placeholder-badge {
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background: var(--bg-badge);
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 8px;
-            color: var(--text-muted);
-            border: 1px solid var(--border-glass-light);
-        }
-        .image-placeholder-916 .placeholder-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.05) 100%);
-            pointer-events: none;
-            border-radius: 14px;
-        }
-
-        /* INFOGRAPHIC CYCLES */
-        .infographic-cycle {
-            background: var(--bg-stat);
-            border-radius: 16px;
-            padding: 14px 12px;
-            margin: 10px 0;
-            border: 1px solid var(--border-glass-light);
-            position: relative;
-            overflow: hidden;
-        }
-        .infographic-cycle .cycle-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-align: center;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .infographic-cycle .cycle-steps {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 4px;
-            position: relative;
-        }
-        .infographic-cycle .cycle-steps .step {
-            text-align: center;
-            padding: 6px 2px;
-            border-radius: 10px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-glass-light);
-            position: relative;
-        }
-        .infographic-cycle .cycle-steps .step .step-icon {
-            font-size: 22px;
-            display: block;
-        }
-        .infographic-cycle .cycle-steps .step .step-label {
-            font-size: 8px;
-            color: var(--text-secondary);
-            margin-top: 2px;
-            font-weight: 500;
-        }
-        .infographic-cycle .cycle-steps .step .step-arrow {
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 14px;
-            opacity: 0.4;
-        }
-        .infographic-cycle .cycle-steps .step:last-child .step-arrow {
-            display: none;
-        }
-        .infographic-cycle .cycle-steps .step.active {
-            border-color: var(--text-gold);
-            background: rgba(245, 176, 66, 0.08);
-        }
-        .infographic-cycle .cycle-steps .step.active .step-label {
-            color: var(--text-gold);
-            font-weight: 600;
-        }
-        .infographic-cycle .cycle-steps .step.completed {
-            border-color: var(--text-green);
-            background: rgba(52, 211, 153, 0.08);
-        }
-        .infographic-cycle .cycle-steps .step.completed .step-label {
-            color: var(--text-green);
-            font-weight: 600;
-        }
-
-        .infographic-cycle .cycle-flow-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 4px 0;
-            margin-top: 6px;
-            border-top: 1px solid var(--border-glass-light);
-        }
-        .infographic-cycle .cycle-flow-line .flow-item {
-            font-size: 9px;
-            color: var(--text-secondary);
-            opacity: 0.7;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .infographic-cycle .cycle-flow-line .flow-item .arrow {
-            color: var(--text-gold);
-            font-size: 12px;
-        }
-
-        @media (max-width: 480px) {
-            .guide-section .section-content .two-col {
-                grid-template-columns: 1fr;
-            }
-            .infographic-cycle .cycle-steps {
-                grid-template-columns: 1fr 1fr;
-                gap: 6px;
-            }
-            .infographic-cycle .cycle-steps .step .step-arrow {
-                display: none;
-            }
-            .image-placeholder-916 {
-                max-height: 280px;
-            }
         }
         .guide-footer {
             text-align: center;
@@ -2809,7 +2667,7 @@
             transform: translateY(-2px);
         }
         .guide-btn .guide-btn-text {
-            font-size: 26px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--text-link);
             display: flex;
@@ -2819,6 +2677,11 @@
         }
         .guide-btn .guide-btn-text .arrow {
             font-size: 18px;
+        }
+        @media (max-width: 480px) {
+            .guide-section .section-content .two-col {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -2841,6 +2704,7 @@
             <span>Slide down from top to refresh your dashboard</span>
         </div>
 
+        <!-- POPUP OVERLAY -->
         <div class="popup-overlay" id="popupOverlay">
             <div class="popup-card" style="max-width:340px;width:90%;margin:20px auto;padding:32px 24px 28px;background:var(--bg-popup);border-radius:28px;text-align:center;box-shadow:var(--shadow-popup);position:relative;animation:popIn 0.3s ease;border:1px solid var(--border-glass);max-height:80vh;overflow-y:auto;">
                 <button class="popup-close" onclick="closePopup()" style="position:absolute;top:12px;right:16px;font-size:22px;cursor:pointer;color:var(--text-muted);background:none;border:none;font-weight:300;line-height:1;">✕</button>
@@ -2854,18 +2718,25 @@
             </div>
         </div>
 
-        <!-- WITHDRAWAL MODAL -->
+        <!-- ============================================================
+        WITHDRAWAL DETAILS MODAL - RE-ADDED
+        ============================================================ -->
         <div class="withdrawal-modal-overlay" id="withdrawalModal">
             <div class="withdrawal-modal">
                 <button onclick="closeWithdrawalModal()" style="position:absolute;top:12px;right:16px;font-size:22px;cursor:pointer;color:var(--text-muted);background:none;border:none;font-weight:300;line-height:1;">✕</button>
                 <div class="modal-title" id="modalTitle">💰 Withdrawal Request</div>
                 <div class="modal-subtitle" id="modalSubtitle">Complete your withdrawal details below</div>
+
+                <!-- Summary Box -->
                 <div class="summary-box" id="withdrawalSummary">
                     <div class="summary-row"><span class="label">📋 Keys:</span><span class="value" id="modalKeyCount">0</span></div>
                     <div class="summary-row"><span class="label">💰 Total Amount:</span><span class="value" id="modalTotalAmount">0 UGX</span></div>
+                    <div class="summary-row"><span class="label">📊 Type:</span><span class="value" id="modalWithdrawType">Sales</span></div>
                 </div>
+
+                <!-- Form Fields -->
                 <div class="form-group">
-                    <label>Mobile Money Network <span class="required">*</span></label>
+                    <label>📱 Mobile Money Network <span class="required">*</span></label>
                     <select id="withdrawNetwork">
                         <option value="">Select network...</option>
                         <option value="Airtel">Airtel</option>
@@ -2873,22 +2744,27 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <label>📱 Phone Number <span class="required">*</span></label>
                     <input type="tel" id="withdrawPhone" placeholder="Enter phone number to receive deposit" maxlength="15" />
                     <div class="error-message" id="phoneError">Please enter a valid phone number</div>
                 </div>
+
                 <div class="form-group">
                     <label>🔄 Confirm Phone Number <span class="required">*</span></label>
                     <input type="tel" id="withdrawPhoneConfirm" placeholder="Confirm phone number" maxlength="15" />
                     <div class="match-indicator" id="phoneMatchIndicator"></div>
                     <div class="error-message" id="phoneMatchError">Phone numbers do not match</div>
                 </div>
+
                 <div class="form-group">
                     <label>👤 Registered Name <span class="required">*</span></label>
                     <input type="text" id="withdrawName" placeholder="Full name on mobile money account" />
                     <div class="error-message" id="nameError">Please enter your registered name</div>
                 </div>
+
+                <!-- Actions -->
                 <div class="modal-actions">
                     <button class="btn-cancel" onclick="closeWithdrawalModal()">Cancel</button>
                     <button class="btn-confirm" id="confirmWithdrawBtn" onclick="confirmWithdrawal()">Confirm Withdrawal</button>
@@ -2896,6 +2772,7 @@
             </div>
         </div>
 
+        <!-- APP HEADER -->
         <div class="app-header">
             <h1>SHARPI</h1>
             <div class="header-actions">
@@ -2905,6 +2782,7 @@
             </div>
         </div>
 
+        <!-- PAGES CONTAINER -->
         <div class="pages-container" id="pagesContainer">
 
             <!-- PAGE 1: LANDING -->
@@ -2964,11 +2842,11 @@
 
                     <div class="readmore-card" onclick="goToPage(3)"><span class="readmore-text">📖 Read More <span class="readmore-arrow">→</span></span></div>
 
-                    <!-- NEW: GUIDE BUTTON -->
+                    <!-- GUIDE BUTTON -->
                     <div class="guide-btn" onclick="goToPage(4)">
                         <div class="guide-btn-text">
                             <span class="material-symbols-rounded" style="font-size:20px;">menu_book</span>
-                            MORE INFORMATION
+                            📘 Affiliate Guide
                             <span class="arrow">→</span>
                         </div>
                     </div>
@@ -3032,11 +2910,11 @@
                 </div>
                 <input type="file" id="dashboardProfilePicInput" accept="image/*" style="display:none;" onchange="handleDashboardProfileUpload(event)" />
 
-                <!-- BALANCE CARD -->
+                <!-- BALANCE CARD - CLEANED (removed "Keys are ONE-TIME USE") -->
                 <div class="balance-card">
                     <div class="balance-label">💰 AVAILABLE BALANCE</div>
                     <div class="balance-amount" id="balanceAmount">0 UGX</div>
-                    <div class="balance-sub"></div>
+                    <div class="balance-sub">💰 Commissions are forwarded to your balance after verification</div>
                     <div class="balance-row">
                         <div class="row-item"><div class="num" id="balanceTotalEarned" style="color:#fbbf24;">0 UGX</div><div class="lbl">Total Earned</div></div>
                         <div class="row-item"><div class="num" id="balanceForwarded" style="color:#f59e0b;">0 UGX</div><div class="lbl">Forwarded</div></div>
@@ -3076,7 +2954,7 @@
                     <div class="referral-header">
                         <div class="title-wrap">
                             <span class="icon">🤝</span>
-                            <span class="label">AFFILIATE PARTNERSHIP PERFORMANCE</span>
+                            <span class="label">Affiliate Invite Performance</span>
                         </div>
                         <span id="inviteLinkStatus" style="font-size:9px;padding:2px 12px;border-radius:12px;background:rgba(251,191,36,0.1);color:var(--text-gold);">
                             🔒 Locked
@@ -3088,24 +2966,24 @@
                         <div class="stat-item"><div class="number cyan" id="referralEarnings">0 UGX</div><div class="lbl">Referral Earn</div></div>
                     </div>
                     <div class="referral-list">
-                        <div class="list-header"><span class="list-label">⏳ Partnership Commissions</span><span class="list-count" id="referralPendingCount">0 pending</span></div>
+                        <div class="list-header"><span class="list-label">⏳ Referral Commissions</span><span class="list-count" id="referralPendingCount">0 pending</span></div>
                         <div id="referralEarningsList"><div style="color:var(--text-muted);font-size:12px;text-align:center;padding:10px 0;">No referral earnings yet. Invite affiliates!</div></div>
                     </div>
                     <div class="referral-list">
-                        <div class="list-header"><span class="list-label">👥 YOUR PARTNERS</span><span class="list-count" id="referredCount">0</span></div>
+                        <div class="list-header"><span class="list-label">👥 People You Referred</span><span class="list-count" id="referredCount">0</span></div>
                         <div id="referralsList"><div style="color:var(--text-muted);font-size:12px;text-align:center;padding:10px 0;">No affiliates referred yet. Share your invite link!</div></div>
                     </div>
                     <div class="referral-link-section">
-                        <div class="link-header"><span class="link-icon">🔗</span><span class="link-label">YOUR AFFILIATE PARTNERSHIP LINK</span></div>
+                        <div class="link-header"><span class="link-icon">🔗</span><span class="link-label">Your Affiliate Invite Link</span></div>
                         <div class="link-box" style="margin-top:4px;">
                             <span class="link-text" id="affiliateInviteLinkDisplay" style="font-size:11px;color:var(--text-muted);">Complete your first sale to unlock</span>
                             <button class="copy-btn" id="copyInviteLinkBtn" onclick="copyInviteLink()" style="padding:4px 12px;font-size:10px;" disabled>Copy</button>
                         </div>
-                        <div class="earn-notice" style="font-size:10px;color:var(--text-gold);margin-top:4px;">💰 Invite other affiliates → Earn 10% of ALL their earnings!</div>
+                        <div class="earn-notice" style="font-size:10px;color:var(--text-gold);margin-top:4px;">💰 Invite affiliates → Earn 10% of ALL their earnings!</div>
                     </div>
                 </div>
 
-                <!-- COMMISSIONS CARD (UPDATES COLUMN) -->
+                <!-- COMMISSIONS CARD (UPDATES COLUMN) - CLEAN, NO SPLIT/INTERNAL LOGIC -->
                 <div style="background:var(--bg-card);border-radius:16px;padding:16px;border:1px solid var(--border-glass-light);margin-bottom:12px;">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
                         <span style="font-weight:700;color:var(--text-primary);font-size:15px;">📋 Updates</span>
@@ -3126,7 +3004,7 @@
                         <div class="amount" id="withdrawSalesAmount">0 UGX</div>
                         <div class="keys-count" id="withdrawSalesKeys">0 keys pending</div>
                     </div>
-                    <button class="withdraw-btn-large" id="withdrawSalesBtn" onclick="withdrawAllSales()">
+                    <button class="withdraw-btn-large" id="withdrawSalesBtn" onclick="openWithdrawalModal('sales')">
                         💰 Withdraw Sales
                     </button>
                 </div>
@@ -3138,13 +3016,13 @@
                         <div class="amount" id="withdrawReferralsAmount">0 UGX</div>
                         <div class="keys-count" id="withdrawReferralsKeys">0 keys pending</div>
                     </div>
-                    <button class="withdraw-btn-large" id="withdrawReferralsBtn" onclick="withdrawAllReferrals()">
+                    <button class="withdraw-btn-large" id="withdrawReferralsBtn" onclick="openWithdrawalModal('referrals')">
                         🤝 Withdraw Referrals
                     </button>
                 </div>
 
                 <div class="link-section">
-                    <div style="font-size:12px;font-weight:600;color:var(--text-primary);margin-bottom:4px;">YOUR PRODUCT SALE LINK</div>
+                    <div style="font-size:12px;font-weight:600;color:var(--text-primary);margin-bottom:4px;">Your Affiliate Link</div>
                     <div class="link-box"><span class="link-text" id="affiliateLinkDisplay">Loading...</span><button class="copy-btn" id="copyLinkBtn" onclick="copyAffiliateLink()">Copy</button></div>
                     <div class="earn-notice">💰 Every time this link is used and verified, you earn <span style="color:var(--text-gold);font-weight:700;">50%</span> of the sale amount!</div>
                 </div>
@@ -3301,521 +3179,79 @@
                 </div>
             </div>
 
-            <!-- PAGE 4: GUIDE (PDF-STYLE DOCUMENT) - UPDATED WITH 9:16 PLACEHOLDERS & INFOGRAPHICS -->
+            <!-- PAGE 4: GUIDE (PDF-STYLE DOCUMENT) -->
             <div class="page" id="guidePage">
                 <div class="page-header">
                     <button class="back-btn" onclick="goToPage(0)"><span class="material-symbols-rounded">arrow_back</span> Back</button>
                     <span class="page-title">📘 Affiliate Guide</span>
                 </div>
-
-                <!-- =========================================================
-                PDF-STYLE GUIDE DOCUMENT
-                ========================================================= -->
                 <div class="guide-page">
                     <div class="guide-header">
                         <h2>📘 SHARPI AFFILIATE</h2>
                         <div class="subhead">Complete Guide • How to use the Affiliate App</div>
                         <div class="version">v2.0 • June 2026</div>
                     </div>
-
-                    <!-- SECTION 1: Your Sales Link & Tracking -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon">🔗</span>
-                            Your Affiliate Sales Link
-                        </div>
+                        <div class="section-title"><span class="icon">🔗</span>Your Affiliate Sales Link</div>
                         <div class="section-content">
-                            <p>Every affiliate receives a <strong>unique sales link</strong> that tracks every visitor, click, and purchase. This is your digital storefront.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big">🔗</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Your Affiliate Dashboard</div>
-                                <div class="placeholder-label">[IMAGE: Affiliate Link & Stats Display]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">Shows your unique link, total clicks & earnings</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- SALES CYCLE INFOGRAPHIC -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🔄 Your Sales Cycle</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">🔗</span>
-                                        <span class="step-label">Share Link</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">👆</span>
-                                        <span class="step-label">Click</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🛒</span>
-                                        <span class="step-label">Purchase</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">💰</span>
-                                        <span class="step-label">Earn 50%</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">📊 Track every click</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> Real-time updates</span>
-                                    <span class="flow-item">💳 Instant commissions</span>
-                                </div>
-                            </div>
-
-                            <div class="highlight-box">
-                                <strong>📊 Link Tracking</strong><br>
-                                • <strong>Total Clicks</strong> – Count of all visitors who clicked your link.<br>
-                                • <strong>Conversions</strong> – Number of verified purchases made through your link.<br>
-                                • <strong>Earnings</strong> – Commission earned from each sale (50% of sale price).
-                            </div>
-                            <div class="two-col">
-                                <div class="col-item">
-                                    <div class="big-num">50%</div>
-                                    <div class="lbl">Your Commission Per Sale</div>
-                                </div>
-                                <div class="col-item">
-                                    <div class="big-num">44k - 332k</div>
-                                    <div class="lbl">Product Price Range (UGX)</div>
-                                </div>
-                            </div>
-                            <div class="highlight-box green">
-                                <strong>💡 Example:</strong> A customer buys the SHARPI Predictor at 88,000 UGX. You earn 50% = <strong>44,000 UGX</strong> directly to your balance.
-                            </div>
+                            <p>Every affiliate receives a <strong>unique sales link</strong> that tracks every visitor, click, and purchase.</p>
+                            <div class="illustration-placeholder"><span class="icon-big">🔗</span>[IMAGE: Affiliate Link Dashboard Display]</div>
+                            <div class="highlight-box"><strong>📊 Link Tracking</strong><br>• <strong>Total Clicks</strong> – Count of all visitors<br>• <strong>Conversions</strong> – Number of verified purchases<br>• <strong>Earnings</strong> – Commission earned (50% of sale price)</div>
+                            <div class="two-col"><div class="col-item"><div class="big-num">50%</div><div class="lbl">Your Commission Per Sale</div></div><div class="col-item"><div class="big-num">44k - 332k</div><div class="lbl">Product Price Range (UGX)</div></div></div>
+                            <div class="highlight-box green"><strong>💡 Example:</strong> A customer buys at 88,000 UGX. You earn 50% = <strong>44,000 UGX</strong>.</div>
                         </div>
                     </div>
-
-                    <!-- SECTION 2: Payment Updates & Keys -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon red">💳</span>
-                            Payment Updates & Key Security
-                        </div>
+                        <div class="section-title"><span class="icon red">💳</span>Payment Updates & Key Security</div>
                         <div class="section-content">
-                            <p>Your dashboard updates <strong>in real-time</strong>. When a sale is verified and forwarded, you will see it appear in the <strong>"Updates"</strong> column immediately.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big red">🔑</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Updates Column</div>
-                                <div class="placeholder-label">[IMAGE: Forwarded Sale with Payment Key]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">Each forwarded sale shows your unique payment key</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- KEY CYCLE INFOGRAPHIC -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🔐 Key Generation Cycle</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">✅</span>
-                                        <span class="step-label">Sale Verified</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🔑</span>
-                                        <span class="step-label">Key Generated</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">📤</span>
-                                        <span class="step-label">Forwarded</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">💵</span>
-                                        <span class="step-label">Paid Out</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">🔒 One-time use key</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> Confidential</span>
-                                    <span class="flow-item">⏳ Expires after use</span>
-                                </div>
-                            </div>
-
-                            <ul class="step-list">
-                                <li><span class="step-num">1.</span> <strong>Sale Made</strong> – Customer purchases using your link.</li>
-                                <li><span class="step-num">2.</span> <strong>Verification</strong> – Sale is verified and marked as "Forwarded".</li>
-                                <li><span class="step-num">3.</span> <strong>Key Assigned</strong> – A unique payment key is generated and displayed in your updates.</li>
-                                <li><span class="step-num">4.</span> <strong>Security</strong> – Each key is <strong>one-time use</strong> and cannot be reused. Keep your keys secure.</li>
-                            </ul>
-                            <div class="highlight-box red">
-                                <strong>🔐 Key Security Rules</strong><br>
-                                • Payment keys are <strong>confidential</strong>. Do not share them with anyone.<br>
-                                • Keys are used only for processing your withdrawal.<br>
-                                • Once a key is used, it is marked as "Paid" and becomes inactive.
-                            </div>
+                            <p>Your dashboard updates <strong>in real-time</strong>.</p>
+                            <div class="illustration-placeholder"><span class="icon-big red">🔑</span>[IMAGE: Updates Column – Forwarded Sale with Payment Key]</div>
+                            <ul class="step-list"><li><span class="step-num">1.</span> <strong>Sale Made</strong> – Customer purchases using your link.</li><li><span class="step-num">2.</span> <strong>Verification</strong> – Sale is verified and marked as "Forwarded".</li><li><span class="step-num">3.</span> <strong>Key Assigned</strong> – A unique payment key is generated.</li><li><span class="step-num">4.</span> <strong>Security</strong> – Each key is <strong>one-time use</strong>.</li></ul>
+                            <div class="highlight-box red"><strong>🔐 Key Security Rules</strong><br>• Payment keys are <strong>confidential</strong>.<br>• Keys are used only for processing your withdrawal.<br>• Once used, it becomes inactive.</div>
                         </div>
                     </div>
-
-                    <!-- SECTION 3: Withdrawal Process -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon green">💰</span>
-                            Withdraw Your Earnings
-                        </div>
+                        <div class="section-title"><span class="icon green">💰</span>Withdraw Your Earnings</div>
                         <div class="section-content">
-                            <p>Withdrawing your earnings is simple and instant. You can withdraw <strong>sales commissions</strong> and <strong>referral commissions</strong> separately.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big green">📱</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Two Withdraw Cards</div>
-                                <div class="placeholder-label">[IMAGE: Sales & Referrals Withdraw Cards]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">Withdraw Sales and Referrals independently</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- WITHDRAWAL CYCLE INFOGRAPHIC -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">💳 Withdrawal Cycle</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">📋</span>
-                                        <span class="step-label">Select Keys</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">💬</span>
-                                        <span class="step-label">WhatsApp Request</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">⏳</span>
-                                        <span class="step-label">Processing</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">📱</span>
-                                        <span class="step-label">Mobile Money</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">⚡ Instant processing</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> No delays</span>
-                                    <span class="flow-item">✅ Direct to your phone</span>
-                                </div>
-                            </div>
-
-                            <ul class="step-list">
-                                <li><span class="step-num">1.</span> Go to your <strong>Dashboard</strong>.</li>
-                                <li><span class="step-num">2.</span> Locate the <strong>"Withdraw Sales"</strong> or <strong>"Withdraw Referrals"</strong> card.</li>
-                                <li><span class="step-num">3.</span> The card shows the <strong>total amount</strong> and <strong>number of keys</strong> pending.</li>
-                                <li><span class="step-num">4.</span> Tap the <strong>Withdraw</strong> button. This will open WhatsApp with a pre-filled message containing all your keys and total amount.</li>
-                                <li><span class="step-num">5.</span> Send the message. Your payment will be processed and sent to your mobile money.</li>
-                            </ul>
-                            <div class="highlight-box green">
-                                <strong>⏱️ Instant Payouts</strong><br>
-                                Once your withdrawal request is received, your payment is processed <strong>instantly</strong> directly to your Airtel or MTN Mobile Money. No delays, no holding periods.
-                            </div>
+                            <p>Withdraw <strong>sales commissions</strong> and <strong>referral commissions</strong> separately.</p>
+                            <div class="illustration-placeholder"><span class="icon-big green">📱</span>[IMAGE: Two Withdraw Cards – Sales & Referrals]</div>
+                            <ul class="step-list"><li><span class="step-num">1.</span> Go to <strong>Dashboard</strong>.</li><li><span class="step-num">2.</span> Tap <strong>"Withdraw Sales"</strong> or <strong>"Withdraw Referrals"</strong>.</li><li><span class="step-num">3.</span> Fill in your <strong>Mobile Money details</strong>.</li><li><span class="step-num">4.</span> Confirm and send your request.</li></ul>
+                            <div class="highlight-box green"><strong>⏱️ Instant Payouts</strong><br>Payment processed <strong>instantly</strong> to Airtel or MTN Mobile Money.</div>
                         </div>
                     </div>
-
-                    <!-- SECTION 4: Affiliate Sales Link – Full Work -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon blue">🚀</span>
-                            Affiliate Sales Link – Full Workflow
-                        </div>
+                        <div class="section-title"><span class="icon blue">🚀</span>Affiliate Sales Link – Full Workflow</div>
                         <div class="section-content">
-                            <p>Your affiliate sales link is the engine of your earnings. Here is the complete workflow from sharing to earning.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big blue">📤</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Full Workflow</div>
-                                <div class="placeholder-label">[IMAGE: Share → Click → Purchase → Earn]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">From sharing your link to receiving your commission</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- COMPLETE WORKFLOW CYCLE -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🚀 Complete Affiliate Workflow</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">📱</span>
-                                        <span class="step-label">Share Link</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">👆</span>
-                                        <span class="step-label">Click</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🛒</span>
-                                        <span class="step-label">Purchase</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🔑</span>
-                                        <span class="step-label">Key</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">💰</span>
-                                        <span class="step-label">Withdraw</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">🌐 Any platform</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> Tracked automatically</span>
-                                    <span class="flow-item">💵 50% commission</span>
-                                </div>
-                            </div>
-
-                            <ul class="step-list">
-                                <li><span class="step-num">1.</span> <strong>Share</strong> – Share your unique link on TikTok, Instagram, WhatsApp, or any platform.</li>
-                                <li><span class="step-num">2.</span> <strong>Click</strong> – A potential customer clicks your link and lands on the SHARPI Predictor page.</li>
-                                <li><span class="step-num">3.</span> <strong>Purchase</strong> – The customer purchases the product (prices range from 44,000 to 332,000 UGX).</li>
-                                <li><span class="step-num">4.</span> <strong>Earn</strong> – You earn <strong>50% of the sale price</strong> instantly credited to your dashboard.</li>
-                                <li><span class="step-num">5.</span> <strong>Withdraw</strong> – Withdraw your earnings anytime using the withdrawal process above.</li>
-                            </ul>
-                            <div class="highlight-box blue">
-                                <strong>📈 Example Workflow</strong><br>
-                                You share your link on TikTok. A viewer clicks, purchases a 132,000 UGX package. You earn 50% = <strong>66,000 UGX</strong>. The sale appears in your dashboard, and you can withdraw instantly.
-                            </div>
+                            <div class="illustration-placeholder"><span class="icon-big blue">📤</span>[IMAGE: Full Workflow – Share → Click → Purchase → Earn]</div>
+                            <ul class="step-list"><li><span class="step-num">1.</span> <strong>Share</strong> – Share your unique link.</li><li><span class="step-num">2.</span> <strong>Click</strong> – Customer clicks your link.</li><li><span class="step-num">3.</span> <strong>Purchase</strong> – Customer buys (44,000 - 332,000 UGX).</li><li><span class="step-num">4.</span> <strong>Earn</strong> – You earn <strong>50% of the sale price</strong>.</li><li><span class="step-num">5.</span> <strong>Withdraw</strong> – Withdraw anytime.</li></ul>
+                            <div class="highlight-box blue"><strong>📈 Example:</strong> Share on TikTok. Viewer purchases 132,000 UGX. You earn 50% = <strong>66,000 UGX</strong>.</div>
                         </div>
                     </div>
-
-                    <!-- SECTION 5: Inviting Other Affiliates (10% Earnings) -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon purple">🤝</span>
-                            Inviting Other Affiliates – Earn 10%
-                        </div>
+                        <div class="section-title"><span class="icon purple">🤝</span>Inviting Other Affiliates – Earn 10%</div>
                         <div class="section-content">
-                            <p>As a SHARPI Affiliate, you can <strong>invite others</strong> to join the program. When they earn, <strong>you earn 10% of their income</strong> – permanently.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big purple">👥</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Invite & Earn</div>
-                                <div class="placeholder-label">[IMAGE: Invite Link & Referral Stats]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">Your invite link is unlocked after your first sale</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- REFERRAL CYCLE INFOGRAPHIC -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🤝 Referral Earnings Cycle</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">🔓</span>
-                                        <span class="step-label">Unlock</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">📤</span>
-                                        <span class="step-label">Invite</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">📊</span>
-                                        <span class="step-label">They Earn</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">💰</span>
-                                        <span class="step-label">You Get 10%</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">🔓 Unlocked after 1st sale</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> Lifetime commission</span>
-                                    <span class="flow-item">∞ Unlimited referrals</span>
-                                </div>
-                            </div>
-
-                            <div class="highlight-box purple">
-                                <strong>🔓 Unlock Your Invite Link</strong><br>
-                                Your invite link is <strong>locked</strong> until you complete your first verified sale. Once unlocked, you can start inviting others.
-                            </div>
-                            <ul class="step-list">
-                                <li><span class="step-num">1.</span> Complete your <strong>first sale</strong> to unlock your invite link.</li>
-                                <li><span class="step-num">2.</span> Copy your <strong>unique invite link</strong> from the Referral section.</li>
-                                <li><span class="step-num">3.</span> Share the link with friends, family, or your audience.</li>
-                                <li><span class="step-num">4.</span> When someone registers using your invite link, they become your <strong>downline</strong>.</li>
-                                <li><span class="step-num">5.</span> You earn <strong>10% of ALL their earnings</strong> – forever.</li>
-                            </ul>
-                            <div class="two-col">
-                                <div class="col-item">
-                                    <div class="big-num">10%</div>
-                                    <div class="lbl">You earn from their income</div>
-                                </div>
-                                <div class="col-item">
-                                    <div class="big-num">∞</div>
-                                    <div class="lbl">Lifetime commission</div>
-                                </div>
-                            </div>
-                            <div class="highlight-box green">
-                                <strong>💡 Example:</strong> You invite an affiliate who earns 100,000 UGX. You earn 10% = <strong>10,000 UGX</strong> automatically. This applies to all affiliates you refer.
-                            </div>
+                            <div class="illustration-placeholder"><span class="icon-big purple">👥</span>[IMAGE: Invite Link & Referral Stats]</div>
+                            <div class="highlight-box purple"><strong>🔓 Unlock Your Invite Link</strong><br>Your invite link is <strong>locked</strong> until you complete your first sale.</div>
+                            <ul class="step-list"><li><span class="step-num">1.</span> Complete your <strong>first sale</strong> to unlock.</li><li><span class="step-num">2.</span> Copy your <strong>unique invite link</strong>.</li><li><span class="step-num">3.</span> Share the link.</li><li><span class="step-num">4.</span> They become your <strong>downline</strong>.</li><li><span class="step-num">5.</span> Earn <strong>10% of ALL their earnings</strong> – forever.</li></ul>
+                            <div class="two-col"><div class="col-item"><div class="big-num">10%</div><div class="lbl">You earn from their income</div></div><div class="col-item"><div class="big-num">∞</div><div class="lbl">Lifetime commission</div></div></div>
                         </div>
                     </div>
-
-                    <!-- SECTION 6: Goals & Achievements -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon">🏆</span>
-                            Goals & Achievements
-                        </div>
+                        <div class="section-title"><span class="icon">🏆</span>Goals & Achievements</div>
                         <div class="section-content">
-                            <p>SHARPI rewards you for reaching milestones. The more you invite, the more you earn – including <strong>bonus cash</strong> rewards.</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big">🎯</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Goals & Rewards</div>
-                                <div class="placeholder-label">[IMAGE: 5 Goal Levels with Rewards]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">Track your progress and unlock bonus rewards</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- GOALS CYCLE INFOGRAPHIC -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🏆 Goal Progression</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">🎯</span>
-                                        <span class="step-label">1 Invite</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">⭐</span>
-                                        <span class="step-label">5 Invites</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🌟</span>
-                                        <span class="step-label">25 Invites</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">👑</span>
-                                        <span class="step-label">40 Invites</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">🏆</span>
-                                        <span class="step-label">50 Invites</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">💰 50% base commission</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> + Bonus cash</span>
-                                    <span class="flow-item">🎁 Up to 220,000 UGX</span>
-                                </div>
-                            </div>
-
-                            <div class="two-col">
-                                <div class="col-item">
-                                    <div class="big-num">50%</div>
-                                    <div class="lbl">Commission on every sale</div>
-                                </div>
-                                <div class="col-item">
-                                    <div class="big-num red">+220k</div>
-                                    <div class="lbl">Max bonus reward</div>
-                                </div>
-                            </div>
-                            <div class="highlight-box">
-                                <strong>🎯 Goal Rewards</strong><br>
-                                • <strong>Goal 1:</strong> 1st invite → 50% per sale<br>
-                                • <strong>Goal 2:</strong> 5 invites → 50% + 15,000 UGX bonus<br>
-                                • <strong>Goal 3:</strong> 25 invites → 50% + 75,000 UGX bonus<br>
-                                • <strong>Goal 4:</strong> 40 invites → 50% + 120,000 UGX bonus<br>
-                                • <strong>Goal 5:</strong> 50 invites → 50% + 220,000 UGX bonus
-                            </div>
-                            <div class="highlight-box green">
-                                <strong>📊 Track Your Progress</strong><br>
-                                Your goals are displayed on your dashboard. Each goal shows your current progress and the reward you'll unlock when completed.
-                            </div>
+                            <div class="illustration-placeholder"><span class="icon-big">🎯</span>[IMAGE: Goals Section – 5 Levels with Rewards]</div>
+                            <div class="two-col"><div class="col-item"><div class="big-num">50%</div><div class="lbl">Commission on every sale</div></div><div class="col-item"><div class="big-num red">+220k</div><div class="lbl">Max bonus reward</div></div></div>
+                            <div class="highlight-box"><strong>🎯 Goal Rewards</strong><br>• <strong>Goal 1:</strong> 1st invite → 50% per sale<br>• <strong>Goal 2:</strong> 5 invites → 50% + 15,000 UGX<br>• <strong>Goal 3:</strong> 25 invites → 50% + 75,000 UGX<br>• <strong>Goal 4:</strong> 40 invites → 50% + 120,000 UGX<br>• <strong>Goal 5:</strong> 50 invites → 50% + 220,000 UGX</div>
                         </div>
                     </div>
-
-                    <!-- SECTION 7: Security & Privacy -->
                     <div class="guide-section">
-                        <div class="section-title">
-                            <span class="icon green">🛡️</span>
-                            Your Security & Privacy
-                        </div>
+                        <div class="section-title"><span class="icon green">🛡️</span>Your Security & Privacy</div>
                         <div class="section-content">
-                            <p>SHARPI takes your security and privacy seriously. Here is how we protect you:</p>
-
-                            <!-- 9:16 IMAGE PLACEHOLDER -->
-                            <div class="image-placeholder-916">
-                                <div class="placeholder-overlay"></div>
-                                <span class="icon-big green">🛡️</span>
-                                <div style="font-weight:600;color:var(--text-primary);font-size:13px;">Security & Privacy</div>
-                                <div class="placeholder-label">[IMAGE: Security Features Overview]</div>
-                                <div style="font-size:9px;opacity:0.5;margin-top:4px;">PIN protection, one-time keys, encrypted data</div>
-                                <span class="placeholder-badge">9:16</span>
-                            </div>
-
-                            <!-- SECURITY CYCLE -->
-                            <div class="infographic-cycle">
-                                <div class="cycle-title">🛡️ Your Security Layers</div>
-                                <div class="cycle-steps">
-                                    <div class="step active">
-                                        <span class="step-icon">🔐</span>
-                                        <span class="step-label">PIN</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🔑</span>
-                                        <span class="step-label">One-Time Keys</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-icon">🔒</span>
-                                        <span class="step-label">Encrypted</span>
-                                        <span class="step-arrow">→</span>
-                                    </div>
-                                    <div class="step completed">
-                                        <span class="step-icon">📱</span>
-                                        <span class="step-label">Direct Payout</span>
-                                    </div>
-                                </div>
-                                <div class="cycle-flow-line">
-                                    <span class="flow-item">🔐 4-digit PIN protection</span>
-                                    <span class="flow-item"><span class="arrow">➜</span> Supabase encrypted</span>
-                                    <span class="flow-item">✅ No bank details needed</span>
-                                </div>
-                            </div>
-
-                            <ul class="step-list">
-                                <li><span class="step-num">✓</span> <strong>No Personal Details Required</strong> – We never ask for your personal details or payment information.</li>
-                                <li><span class="step-num">✓</span> <strong>Your PIN</strong> – Your 4-digit PIN protects your account. Only you know it.</li>
-                                <li><span class="step-num">✓</span> <strong>One-Time Keys</strong> – Each payment key is unique and can be used only once.</li>
-                                <li><span class="step-num">✓</span> <strong>Encrypted Data</strong> – All your data is encrypted and protected by Supabase.</li>
-                                <li><span class="step-num">✓</span> <strong>Instant Payouts</strong> – We pay you directly to your mobile money – no delays, no intermediaries.</li>
-                            </ul>
-                            <div class="highlight-box green">
-                                <strong>🔒 How You Receive Your Cash</strong><br>
-                                When you withdraw, your payment is sent <strong>instantly</strong> to your Airtel or MTN Mobile Money. You do not need to share any bank details. Your mobile money number is all we need.
-                            </div>
-                            <div class="highlight-box blue">
-                                <strong>🛡️ Full Protection</strong><br>
-                                Your affiliate activity, sales, and earnings are fully protected. SHARPI is a trusted platform with a commitment to transparency and fairness.
-                            </div>
+                            <ul class="step-list"><li><span class="step-num">✓</span> <strong>No Personal Details Required</strong></li><li><span class="step-num">✓</span> <strong>Your PIN</strong> – 4-digit PIN protects your account</li><li><span class="step-num">✓</span> <strong>One-Time Keys</strong> – Unique, single-use</li><li><span class="step-num">✓</span> <strong>Encrypted Data</strong> – Protected by Supabase</li><li><span class="step-num">✓</span> <strong>Instant Payouts</strong> – Direct to mobile money</li></ul>
+                            <div class="highlight-box green"><strong>🔒 How You Receive Your Cash</strong><br>Payment sent <strong>instantly</strong> to your Airtel or MTN Mobile Money.</div>
                         </div>
                     </div>
-
-                    <div class="guide-footer">
-                        SHARPI Affiliate Program • Empowering East Africa • June 2026
-                    </div>
+                    <div class="guide-footer">SHARPI Affiliate Program • Empowering East Africa • June 2026</div>
                 </div>
                 <button class="cta-button" onclick="goToPage(0)" style="margin-top:4px;">← Back to Home</button>
                 <div class="footer" style="margin-top:4px;">
@@ -3842,10 +3278,7 @@
 
     <script>
         // ============================================================
-        // AFFILIATE DASHBOARD – COMPLETE WORKING VERSION v12.0
-        // CHANGES: Dynamic 50% commission from sale amount
-        // 90/10 split preserved
-        // EVERYTHING ELSE PRESERVED
+        // AFFILIATE DASHBOARD – COMPLETE WORKING VERSION WITH WITHDRAWAL MODAL
         // ============================================================
 
         // ============================================================
@@ -3869,6 +3302,7 @@
         let isRealtimeConnected = false;
         let refreshInterval = null;
         let isRefreshing = false;
+        let currentWithdrawType = 'sales';
 
         // Referral data
         let referralData = {
@@ -3882,13 +3316,6 @@
             paidEarnings: 0
         };
 
-        // Withdrawal state
-        let withdrawalData = {
-            keys: [],
-            totalAmount: 0,
-            mode: 'single'
-        };
-
         // Pull to refresh state
         let touchStartY = 0;
         let isPulling = false;
@@ -3896,8 +3323,6 @@
 
         // Track keys that are pending withdrawal
         let pendingWithdrawKeys = new Set();
-
-        // Track keys that have been paid (to show once and then hide)
         let paidKeysSeen = new Set();
 
         // ============================================================
@@ -4387,7 +3812,7 @@
         }
 
         // ============================================================
-        // ✅ FIXED: LOAD SALES FROM SUPABASE (UPDATED: Dynamic 50% Commission)
+        // LOAD SALES FROM SUPABASE (UPDATED: Dynamic 50% Commission)
         // ============================================================
         async function loadSalesFromSupabase(code) {
             if (!supabaseClient || !code) {
@@ -4422,17 +3847,15 @@
                     affPaid = [];
 
                     allData.forEach(s => {
-                        // ✅ UPDATED: Dynamic 50% commission
                         const salePrice = s.amount || 0;
-                        // Commission = 50% of sale price
                         const commissionAmount = s.child_amount || (salePrice * 0.5) || 20000;
                         
                         const mappedSale = {
                             id: s.id,
                             userName: s.user_name || 'Unknown',
                             package: s.package || 'Package',
-                            amount: commissionAmount, // Commission amount (50% of sale)
-                            saleAmount: salePrice, // Original sale price
+                            amount: commissionAmount,
+                            saleAmount: salePrice,
                             promoCode: s.promo_code,
                             date: s.created_at || new Date().toISOString(),
                             status: s.status || 'forwarded',
@@ -4470,7 +3893,6 @@
                 affPaid = [];
 
                 allData.forEach(s => {
-                    // ✅ UPDATED: Dynamic 50% commission
                     const salePrice = s.amount || 0;
                     const commissionAmount = s.child_amount || (salePrice * 0.5) || 20000;
                     
@@ -4478,8 +3900,8 @@
                         id: s.id,
                         userName: s.user_name || 'Unknown',
                         package: s.package || 'Package',
-                        amount: commissionAmount, // Commission amount (50% of sale)
-                        saleAmount: salePrice, // Original sale price
+                        amount: commissionAmount,
+                        saleAmount: salePrice,
                         promoCode: s.promo_code,
                         date: s.created_at || new Date().toISOString(),
                         status: s.status || 'forwarded',
@@ -4516,7 +3938,7 @@
         }
 
         // ============================================================
-        // ✅ FIXED: LOAD REFERRAL DATA - Separate pending and paid
+        // LOAD REFERRAL DATA - Separate pending and paid
         // ============================================================
         async function loadReferralData() {
             if (!supabaseClient || !currentAffiliate) return null;
@@ -4617,32 +4039,6 @@
             }
         }
 
-        function shareInviteLink() {
-            const link = getAffiliateInviteLink();
-            if (!link) {
-                showToast('⚠️ Please login first', 'error');
-                return;
-            }
-
-            if (!canInviteAffiliates()) {
-                showToast('🔓 Complete your first sale to unlock affiliate invites!', 'warning');
-                return;
-            }
-
-            const message =
-                `🚀 Join SHARPI as an affiliate using my invite link!\n\n🔗 ${link}\n\n💵 Earn 50% commission per sale!\n\n🦈 SHARPI Affiliate Program`;
-
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Join SHARPI Affiliate Program',
-                    text: message,
-                    url: link
-                }).catch(() => {});
-            } else {
-                window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
-            }
-        }
-
         // ============================================================
         // GET VISIT STATS
         // ============================================================
@@ -4729,83 +4125,170 @@
         }
 
         // ============================================================
-        // WITHDRAW ALL SALES
+        // WITHDRAWAL MODAL FUNCTIONS
         // ============================================================
-        function withdrawAllSales() {
-            const salesData = getSalesKeys();
-            if (salesData.keys.length === 0) {
-                showToast('❌ No sales keys available to withdraw', 'error');
+        function openWithdrawalModal(type) {
+            currentWithdrawType = type;
+            const modal = document.getElementById('withdrawalModal');
+            if (!modal) return;
+
+            let keysData;
+            let typeLabel;
+            if (type === 'sales') {
+                keysData = getSalesKeys();
+                typeLabel = 'Sales Earnings';
+            } else {
+                keysData = getReferralKeys();
+                typeLabel = 'Referral Earnings';
+            }
+
+            const availableKeys = keysData.keys.filter(k => !pendingWithdrawKeys.has(k.key));
+            const totalAmount = availableKeys.reduce((sum, k) => sum + k.amount, 0);
+
+            if (availableKeys.length === 0) {
+                showToast('❌ No ' + type + ' keys available to withdraw', 'error');
                 return;
             }
 
-            salesData.keys.forEach(k => {
-                pendingWithdrawKeys.add(k.key);
-            });
+            document.getElementById('modalKeyCount').textContent = availableKeys.length;
+            document.getElementById('modalTotalAmount').textContent = totalAmount.toLocaleString() + ' UGX';
+            document.getElementById('modalWithdrawType').textContent = typeLabel;
 
-            const affiliateCode = currentAffiliate ? currentAffiliate.code : 'N/A';
-            const affiliateName = currentAffiliate ? currentAffiliate.name : 'Affiliate';
-            const affiliateContact = currentAffiliate ? currentAffiliate.contact : 'N/A';
+            document.getElementById('withdrawNetwork').value = '';
+            document.getElementById('withdrawPhone').value = '';
+            document.getElementById('withdrawPhoneConfirm').value = '';
+            document.getElementById('withdrawName').value = '';
+            document.getElementById('phoneMatchIndicator').textContent = '';
+            document.getElementById('phoneMatchIndicator').className = 'match-indicator';
+            document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
+            document.getElementById('confirmWithdrawBtn').disabled = false;
 
-            let keysString = salesData.keys.map(k => k.key).join('\n');
-
-            const message = `💰 SALES WITHDRAWAL REQUEST
-
-👤 Affiliate: ${affiliateName}
-🆔 Code: ${affiliateCode}
-📱 Contact: ${affiliateContact}
-
-🔑 Payment Keys (${salesData.keys.length} key${salesData.keys.length > 1 ? 's' : ''}):
-${keysString}
-
-💰 Total Amount: ${salesData.totalAmount.toLocaleString()} UGX
-
-📱 Please process my sales withdrawal.
-
-Thank you! 🦈`;
-
-            const phoneNumber = '256740042068';
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-
-            showToast(`📤 Sent ${salesData.keys.length} sales keys to admin!`, 'success');
-            
-            setTimeout(() => {
-                renderDashboard();
-            }, 1000);
+            modal.classList.add('active');
         }
 
-        // ============================================================
-        // WITHDRAW ALL REFERRALS
-        // ============================================================
-        function withdrawAllReferrals() {
-            const referralKeyData = getReferralKeys();
-            if (referralKeyData.keys.length === 0) {
-                showToast('❌ No referral keys available to withdraw', 'error');
+        function closeWithdrawalModal() {
+            document.getElementById('withdrawalModal').classList.remove('active');
+        }
+
+        // Phone match validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('withdrawPhone');
+            const phoneConfirm = document.getElementById('withdrawPhoneConfirm');
+            const indicator = document.getElementById('phoneMatchIndicator');
+
+            if (phoneInput && phoneConfirm) {
+                function checkPhoneMatch() {
+                    const phone = phoneInput.value.trim();
+                    const confirm = phoneConfirm.value.trim();
+                    
+                    if (phone && confirm) {
+                        if (phone === confirm) {
+                            indicator.textContent = '✅ Numbers match';
+                            indicator.className = 'match-indicator match';
+                            document.getElementById('phoneMatchError').classList.remove('show');
+                            return true;
+                        } else {
+                            indicator.textContent = '❌ Numbers do not match';
+                            indicator.className = 'match-indicator no-match';
+                            document.getElementById('phoneMatchError').classList.add('show');
+                            return false;
+                        }
+                    } else {
+                        indicator.textContent = '';
+                        indicator.className = 'match-indicator';
+                        return false;
+                    }
+                }
+
+                phoneInput.addEventListener('input', checkPhoneMatch);
+                phoneConfirm.addEventListener('input', checkPhoneMatch);
+            }
+        });
+
+        function confirmWithdrawal() {
+            const network = document.getElementById('withdrawNetwork').value;
+            const phone = document.getElementById('withdrawPhone').value.trim();
+            const phoneConfirm = document.getElementById('withdrawPhoneConfirm').value.trim();
+            const name = document.getElementById('withdrawName').value.trim();
+            const confirmBtn = document.getElementById('confirmWithdrawBtn');
+
+            let hasError = false;
+
+            if (!network) {
+                showToast('⚠️ Please select a mobile money network', 'error');
+                hasError = true;
+            }
+
+            if (!phone || phone.length < 10) {
+                document.getElementById('phoneError').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('phoneError').classList.remove('show');
+            }
+
+            if (phone !== phoneConfirm) {
+                document.getElementById('phoneMatchError').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('phoneMatchError').classList.remove('show');
+            }
+
+            if (!name || name.length < 2) {
+                document.getElementById('nameError').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('nameError').classList.remove('show');
+            }
+
+            if (hasError) return;
+
+            let keysData;
+            let typeLabel;
+            if (currentWithdrawType === 'sales') {
+                keysData = getSalesKeys();
+                typeLabel = 'Sales Withdrawal';
+            } else {
+                keysData = getReferralKeys();
+                typeLabel = 'Referral Withdrawal';
+            }
+
+            const availableKeys = keysData.keys.filter(k => !pendingWithdrawKeys.has(k.key));
+            const totalAmount = availableKeys.reduce((sum, k) => sum + k.amount, 0);
+
+            if (availableKeys.length === 0) {
+                showToast('❌ No keys available', 'error');
                 return;
             }
 
-            referralKeyData.keys.forEach(k => {
+            confirmBtn.disabled = true;
+            confirmBtn.textContent = '⏳ Submitting...';
+
+            availableKeys.forEach(k => {
                 pendingWithdrawKeys.add(k.key);
             });
 
             const affiliateCode = currentAffiliate ? currentAffiliate.code : 'N/A';
             const affiliateName = currentAffiliate ? currentAffiliate.name : 'Affiliate';
-            const affiliateContact = currentAffiliate ? currentAffiliate.contact : 'N/A';
+            const keysString = availableKeys.map(k => k.key).join('\n');
+            const keyCount = availableKeys.length;
 
-            let keysString = referralKeyData.keys.map(k => k.key).join('\n');
-
-            const message = `💰 REFERRAL WITHDRAWAL REQUEST
+            const message = `💰 WITHDRAWAL REQUEST
 
 👤 Affiliate: ${affiliateName}
 🆔 Code: ${affiliateCode}
-📱 Contact: ${affiliateContact}
+📱 Contact: ${currentAffiliate?.contact || 'N/A'}
 
-🔑 Payment Keys (${referralKeyData.keys.length} key${referralKeyData.keys.length > 1 ? 's' : ''}):
+📱 Mobile Money Details:
+• Network: ${network}
+• Phone: ${phone}
+• Name: ${name}
+
+📋 ${typeLabel} (${keyCount} key${keyCount > 1 ? 's' : ''}):
 ${keysString}
 
-💰 Total Amount: ${referralKeyData.totalAmount.toLocaleString()} UGX
+💰 Total Amount: ${totalAmount.toLocaleString()} UGX
 
-📱 Please process my referral withdrawal.
+📱 Please process my withdrawal.
 
 Thank you! 🦈`;
 
@@ -4813,11 +4296,14 @@ Thank you! 🦈`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
 
-            showToast(`📤 Sent ${referralKeyData.keys.length} referral keys to admin!`, 'success');
-            
+            showToast(`📤 Withdrawal request sent!`, 'success');
+
             setTimeout(() => {
+                closeWithdrawalModal();
+                confirmBtn.disabled = false;
+                confirmBtn.textContent = 'Confirm Withdrawal';
                 renderDashboard();
-            }, 1000);
+            }, 1500);
         }
 
         // ============================================================
@@ -4979,8 +4465,7 @@ Thank you! 🦈`;
             const link = getShareLink();
             if (!link) { showToast('⚠️ Please login first', 'error'); return; }
             const text = '🎯 Join SHARPI using my affiliate link and earn 50% commission per sale!';
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(link)}`,
-            '_blank');
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(link)}`, '_blank');
         }
 
         function shareOnFacebook() {
@@ -5007,8 +4492,8 @@ Thank you! 🦈`;
         // ============================================================
         function updateSlider() {
             const val = parseInt(document.getElementById('inviteSlider').value);
-            const perSaleAmount = 44000; // Minimum package price
-            const commission = (val * perSaleAmount) * 0.5; // 50% commission
+            const perSaleAmount = 44000;
+            const commission = (val * perSaleAmount) * 0.5;
             document.getElementById('sliderValue').textContent = val;
             document.getElementById('sliderEarnings').textContent = commission.toLocaleString() + ' UGX';
         }
@@ -5450,7 +4935,7 @@ Thank you! 🦈`;
         }
 
         // ============================================================
-        // ✅ FIXED: REALTIME LISTENER
+        // REALTIME LISTENER
         // ============================================================
         function setupRealtimeListener() {
             if (realtimeChannel) {
@@ -5676,7 +5161,7 @@ Thank you! 🦈`;
         }
 
         // ============================================================
-        // ✅ FIXED: RENDER DASHBOARD (UPDATED: Dynamic 50% Commission)
+        // RENDER DASHBOARD - CLEAN VERSION (NO SPLIT/INTERNAL LOGIC)
         // ============================================================
         async function renderDashboard() {
             if (!currentAffiliate) {
@@ -5789,6 +5274,7 @@ Thank you! 🦈`;
                 } else {
                     withdrawSalesBtn.disabled = false;
                     withdrawSalesBtn.textContent = `💰 Withdraw Sales (${availableSalesKeys.length})`;
+                    withdrawSalesBtn.onclick = function() { openWithdrawalModal('sales'); };
                 }
             }
 
@@ -5811,6 +5297,7 @@ Thank you! 🦈`;
                 } else {
                     withdrawReferralsBtn.disabled = false;
                     withdrawReferralsBtn.textContent = `🤝 Withdraw Referrals (${availableReferralKeys.length})`;
+                    withdrawReferralsBtn.onclick = function() { openWithdrawalModal('referrals'); };
                 }
             }
 
@@ -5924,151 +5411,145 @@ Thank you! 🦈`;
             }
 
             // ============================================================
-            // COMMISSIONS LIST (UPDATES COLUMN) - UPDATED: Dynamic 50%
+            // COMMISSIONS LIST (UPDATES COLUMN) - CLEAN, NO SPLIT LOGIC
             // ============================================================
-           
-// ============================================================
-// COMMISSIONS LIST (UPDATES COLUMN) - CLEAN VERSION
-// ============================================================
-const commissionList = document.getElementById('commissionList');
-if (!commissionList) return;
+            const commissionList = document.getElementById('commissionList');
+            if (!commissionList) return;
 
-let pendingItems = [];
+            let pendingItems = [];
 
-// Add forwarded sales (skip paid)
-affForwarded.forEach(s => {
-    if (s.paid_key && paidKeysSeen.has(s.paid_key)) {
-        return;
-    }
-    if (s.splitType === 'child' || s.splitType === '1-party') {
-        const commissionAmount = s.amount || 0;
-        
-        pendingItems.push({
-            type: 'sale',
-            id: s.id,
-            userName: s.userName,
-            package: s.package,
-            amount: commissionAmount,
-            saleAmount: s.saleAmount || commissionAmount * 2 || 0,
-            date: s.date,
-            paid_key: s.paid_key || null,
-            is_referral: s.is_referral || false,
-            child_amount: s.child_amount || 0,
-            parent_amount: s.parent_amount || 0,
-            isSplit: s.is_referral || false,
-            raw: s,
-            percentage: s.is_referral ? '90%' : '100%',
-            splitType: s.splitType || '1-party',
-            parent_affiliate: s.parent_affiliate || null,
-            parent_key: s.parent_key || null,
-            status: s.status || 'forwarded'
-        });
-    }
-});
+            // Add forwarded sales (skip paid)
+            affForwarded.forEach(s => {
+                if (s.paid_key && paidKeysSeen.has(s.paid_key)) {
+                    return;
+                }
+                if (s.splitType === 'child' || s.splitType === '1-party') {
+                    const commissionAmount = s.amount || 0;
+                    
+                    pendingItems.push({
+                        type: 'sale',
+                        id: s.id,
+                        userName: s.userName,
+                        package: s.package,
+                        amount: commissionAmount,
+                        saleAmount: s.saleAmount || commissionAmount * 2 || 0,
+                        date: s.date,
+                        paid_key: s.paid_key || null,
+                        is_referral: s.is_referral || false,
+                        child_amount: s.child_amount || 0,
+                        parent_amount: s.parent_amount || 0,
+                        isSplit: s.is_referral || false,
+                        raw: s,
+                        splitType: s.splitType || '1-party',
+                        parent_affiliate: s.parent_affiliate || null,
+                        parent_key: s.parent_key || null,
+                        status: s.status || 'forwarded'
+                    });
+                }
+            });
 
-// Add referral earnings (skip paid)
-referralData.earnings.forEach(e => {
-    if (e.paid_key && paidKeysSeen.has(e.paid_key)) {
-        return;
-    }
-    if (e.status === 'forwarded') {
-        const commissionAmount = e.amount || 0;
-        const saleAmount = e.sale_amount || commissionAmount * 10 || 0;
-        
-        pendingItems.push({
-            type: 'referral_earning',
-            id: e.id,
-            userName: e.child_name || 'Referral Affiliate',
-            package: '🤝 Referral',
-            amount: commissionAmount,
-            saleAmount: saleAmount,
-            date: e.created_at || new Date().toISOString(),
-            paid_key: e.paid_key || null,
-            is_referral: true,
-            child_amount: 0,
-            parent_amount: commissionAmount,
-            isSplit: true,
-            raw: e,
-            parent_code: e.parent_code,
-            percentage: '10%',
-            splitType: 'parent',
-            status: e.status || 'forwarded'
-        });
-    }
-});
+            // Add referral earnings (skip paid)
+            referralData.earnings.forEach(e => {
+                if (e.paid_key && paidKeysSeen.has(e.paid_key)) {
+                    return;
+                }
+                if (e.status === 'forwarded') {
+                    const commissionAmount = e.amount || 0;
+                    const saleAmount = e.sale_amount || commissionAmount * 10 || 0;
+                    
+                    pendingItems.push({
+                        type: 'referral_earning',
+                        id: e.id,
+                        userName: e.child_name || 'Referral Affiliate',
+                        package: '🤝 Referral',
+                        amount: commissionAmount,
+                        saleAmount: saleAmount,
+                        date: e.created_at || new Date().toISOString(),
+                        paid_key: e.paid_key || null,
+                        is_referral: true,
+                        child_amount: 0,
+                        parent_amount: commissionAmount,
+                        isSplit: true,
+                        raw: e,
+                        parent_code: e.parent_code,
+                        splitType: 'parent',
+                        status: e.status || 'forwarded'
+                    });
+                }
+            });
 
-// Sort by date (newest first)
-pendingItems.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // Sort by date (newest first)
+            pendingItems.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-if (pendingItems.length === 0) {
-    commissionList.innerHTML = `
-        <div style="color:var(--text-muted);font-size:12px;text-align:center;padding:15px 0;">
-            No updates. Sales will appear here when forwarded.
-            ${isRealtimeConnected ? ' 🔵 Live' : ' ⚠️ Reconnecting...'}
-        </div>
-    `;
-} else {
-    let html = '';
-
-    pendingItems.forEach(item => {
-        const isReferral = item.type === 'referral_earning';
-        const amount = item.amount || 0;
-        const hasKey = item.paid_key && item.paid_key !== 'null' && item.paid_key !== '';
-
-        const isPending = hasKey && pendingWithdrawKeys.has(item.paid_key);
-        const isPaid = hasKey && paidKeysSeen.has(item.paid_key);
-
-        const pendingClass = isPending ? 'pending-withdraw' : '';
-        const paidClass = isPaid ? 'paid-off' : '';
-
-        let statusLabel = '';
-        if (isPaid) {
-            statusLabel = `<span class="status-badge paid">💵 Paid</span>`;
-        } else if (isPending) {
-            statusLabel = `<span class="status-badge pending-withdraw">⏳ Pending Withdraw</span>`;
-        } else {
-            statusLabel = `<span class="status-badge forwarded">📤 Forwarded</span>`;
-        }
-
-        // Determine card color
-        const cardColor = isReferral ? 'var(--text-purple)' : 'var(--text-gold)';
-        const borderColor = isReferral ? '3px solid var(--text-purple)' : '3px solid var(--text-gold)';
-        const typeLabel = isReferral ? '🤝 Referral' : '💰 Sale';
-
-        html += `
-            <div class="commission-card ${pendingClass} ${paidClass}" style="border-left: ${borderColor};">
-                <div class="header">
-                    <div>
-                        <span style="font-weight:600;font-size:13px;color:var(--text-primary);">${item.userName}</span>
-                        <span style="font-size:11px;color:var(--text-secondary);margin-left:6px;">${item.package}</span>
-                        <span style="font-size:9px;color:${cardColor};margin-left:4px;">${typeLabel}</span>
-                        ${statusLabel}
+            if (pendingItems.length === 0) {
+                commissionList.innerHTML = `
+                    <div style="color:var(--text-muted);font-size:12px;text-align:center;padding:15px 0;">
+                        No updates. Sales will appear here when forwarded.
+                        ${isRealtimeConnected ? ' 🔵 Live' : ' ⚠️ Reconnecting...'}
                     </div>
-                    <div class="amount">${amount.toLocaleString()} UGX</div>
-                </div>
-                <div class="details">
-                    📅 ${new Date(item.date).toLocaleDateString()} · <span style="color:var(--text-gold);">📤 Forwarded</span>
-                </div>
-                ${hasKey ? `
-                        <div class="key-row">🔑 ${item.paid_key}</div>
-                        <div class="actions">
-                            <button class="key-copy-btn" onclick="copyKeyToClipboard('${item.paid_key}')">📋 Copy Key</button>
-                            ${isPaid ? 
-                                `<span style="font-size:10px;color:var(--text-green);">💵 Paid ✓</span>` : 
-                                isPending ? 
-                                    `<span style="font-size:10px;color:var(--text-gold);">⏳ Pending Withdraw</span>` : 
-                                    `<span style="font-size:10px;color:var(--text-green);">✅ Ready to Withdraw</span>`
-                            }
-                        </div>
-                    ` : `
-                        <div style="font-size:10px;color:var(--text-red);margin-top:4px;">⏳ No payment key assigned yet</div>
-                    `}
-            </div>
-        `;
-    });
+                `;
+            } else {
+                let html = '';
 
-    commissionList.innerHTML = html;
-}
+                pendingItems.forEach(item => {
+                    const isReferral = item.type === 'referral_earning';
+                    const amount = item.amount || 0;
+                    const hasKey = item.paid_key && item.paid_key !== 'null' && item.paid_key !== '';
+
+                    const isPending = hasKey && pendingWithdrawKeys.has(item.paid_key);
+                    const isPaid = hasKey && paidKeysSeen.has(item.paid_key);
+
+                    const pendingClass = isPending ? 'pending-withdraw' : '';
+                    const paidClass = isPaid ? 'paid-off' : '';
+
+                    let statusLabel = '';
+                    if (isPaid) {
+                        statusLabel = `<span class="status-badge paid">💵 Paid</span>`;
+                    } else if (isPending) {
+                        statusLabel = `<span class="status-badge pending-withdraw">⏳ Pending Withdraw</span>`;
+                    } else {
+                        statusLabel = `<span class="status-badge forwarded">📤 Forwarded</span>`;
+                    }
+
+                    const cardColor = isReferral ? 'var(--text-purple)' : 'var(--text-gold)';
+                    const borderColor = isReferral ? '3px solid var(--text-purple)' : '3px solid var(--text-gold)';
+                    const typeLabel = isReferral ? '🤝 Referral' : '💰 Sale';
+
+                    html += `
+                        <div class="commission-card ${pendingClass} ${paidClass}" style="border-left: ${borderColor};">
+                            <div class="header">
+                                <div>
+                                    <span style="font-weight:600;font-size:13px;color:var(--text-primary);">${item.userName}</span>
+                                    <span style="font-size:11px;color:var(--text-secondary);margin-left:6px;">${item.package}</span>
+                                    <span style="font-size:9px;color:${cardColor};margin-left:4px;">${typeLabel}</span>
+                                    ${statusLabel}
+                                </div>
+                                <div class="amount">${amount.toLocaleString()} UGX</div>
+                            </div>
+                            <div class="details">
+                                📅 ${new Date(item.date).toLocaleDateString()} · <span style="color:var(--text-gold);">📤 Forwarded</span>
+                            </div>
+                            ${hasKey ? `
+                                    <div class="key-row">🔑 ${item.paid_key}</div>
+                                    <div class="actions">
+                                        <button class="key-copy-btn" onclick="copyKeyToClipboard('${item.paid_key}')">📋 Copy Key</button>
+                                        ${isPaid ? 
+                                            `<span style="font-size:10px;color:var(--text-green);">💵 Paid ✓</span>` : 
+                                            isPending ? 
+                                                `<span style="font-size:10px;color:var(--text-gold);">⏳ Pending Withdraw</span>` : 
+                                                `<span style="font-size:10px;color:var(--text-green);">✅ Ready to Withdraw</span>`
+                                        }
+                                    </div>
+                                ` : `
+                                    <div style="font-size:10px;color:var(--text-red);margin-top:4px;">⏳ No payment key assigned yet</div>
+                                `}
+                        </div>
+                    `;
+                });
+
+                commissionList.innerHTML = html;
+            }
+
             // Update Chart
             await updateChart();
 
@@ -6133,11 +5614,10 @@ if (pendingItems.length === 0) {
 
             setupPullToRefresh();
 
-            console.log('🦈 SHARPI Affiliate App v12.0 - DYNAMIC 50% COMMISSION');
-            console.log('✅ Commissions now = 50% of sale price');
-            console.log('✅ 90/10 split preserved');
-            console.log('✅ ALL original features preserved');
-            console.log('✅ NEW: Guide page with illustrations added');
+            console.log('🦈 SHARPI Affiliate App v12.0 - WITH WITHDRAWAL MODAL');
+            console.log('✅ Commissions = 50% of sale price');
+            console.log('✅ Clean cash cards (no split/internal logic)');
+            console.log('✅ Withdrawal modal restored');
         })();
 
         // ============================================================
@@ -6180,7 +5660,6 @@ if (pendingItems.length === 0) {
         window.shareOnFacebook = shareOnFacebook;
         window.copyAffiliateLink = copyAffiliateLink;
         window.copyInviteLink = copyInviteLink;
-        window.shareInviteLink = shareInviteLink;
         window.updateSlider = updateSlider;
         window.openWhatsApp = openWhatsApp;
         window.openWhatsAppWithContext = openWhatsAppWithContext;
@@ -6192,8 +5671,9 @@ if (pendingItems.length === 0) {
         window.showPopup = showPopup;
         window.closePopup = closePopup;
         window.copyKeyToClipboard = copyKeyToClipboard;
-        window.withdrawAllSales = withdrawAllSales;
-        window.withdrawAllReferrals = withdrawAllReferrals;
+        window.openWithdrawalModal = openWithdrawalModal;
+        window.closeWithdrawalModal = closeWithdrawalModal;
+        window.confirmWithdrawal = confirmWithdrawal;
         window.getSalesKeys = getSalesKeys;
         window.getReferralKeys = getReferralKeys;
         window.loginAffiliate = loginAffiliate;
@@ -6210,18 +5690,12 @@ if (pendingItems.length === 0) {
         (function() {
     'use strict';
 
-    // ============================================================
-    // 1. SILENTLY BLOCK RIGHT-CLICK
-    // ============================================================
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         e.stopPropagation();
         return false;
     }, true);
 
-    // ============================================================
-    // 2. SILENTLY BLOCK KEYBOARD SHORTCUTS
-    // ============================================================
     document.addEventListener('keydown', function(e) {
         const key = e.key;
         const ctrl = e.ctrlKey || e.metaKey;
@@ -6236,9 +5710,6 @@ if (pendingItems.length === 0) {
         }
     }, true);
 
-    // ============================================================
-    // 3. SILENTLY DISABLE ALL CONSOLE METHODS
-    // ============================================================
     const noop = function() {};
     const consoleMethods = ['log', 'warn', 'error', 'info', 'debug', 'trace', 
                            'dir', 'dirxml', 'group', 'groupEnd', 'table', 
@@ -6247,9 +5718,6 @@ if (pendingItems.length === 0) {
         console[method] = noop;
     });
 
-    // ============================================================
-    // 4. SILENTLY BLOCK SELECTION (except on inputs)
-    // ============================================================
     document.addEventListener('selectstart', function(e) {
         if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
             e.preventDefault();
@@ -6257,17 +5725,11 @@ if (pendingItems.length === 0) {
         }
     }, true);
 
-    // ============================================================
-    // 5. SILENTLY BLOCK DRAGGING
-    // ============================================================
     document.addEventListener('dragstart', function(e) {
         e.preventDefault();
         return false;
     }, true);
 
-    // ============================================================
-    // 6. SILENTLY DETECT DEVTOOLS AND BREAK IT
-    // ============================================================
     let devtoolsOpen = false;
     const element = new Image();
     Object.defineProperty(element, 'id', {
@@ -6288,18 +5750,12 @@ if (pendingItems.length === 0) {
         }
     }, 1000);
 
-    // ============================================================
-    // 7. SILENTLY BLOCK VIEW-SOURCE PROTOCOL
-    // ============================================================
     try {
         if (window.location.protocol === 'view-source:') {
             window.location.href = window.location.href.replace('view-source:', '');
         }
     } catch(e) {}
 
-    // ============================================================
-    // 8. SILENTLY BLOCK DEVTOOLS ON MOBILE
-    // ============================================================
     if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) {
@@ -6310,14 +5766,8 @@ if (pendingItems.length === 0) {
         }, true);
     }
 
-    // ============================================================
-    // 9. SILENTLY OVERRIDE DEBUGGER STATEMENT
-    // ============================================================
     window.debugger = function() { return; };
 
-    // ============================================================
-    // 10. SILENTLY REMOVE SOURCE MAPS
-    // ============================================================
     try {
         document.querySelectorAll('script[src*=".map"]').forEach(function(el) {
             el.remove();
